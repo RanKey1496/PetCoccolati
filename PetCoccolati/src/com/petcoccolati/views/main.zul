@@ -1,0 +1,147 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+	<style>
+		@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,400italic,300italic,500,500italic);
+		
+		body { 
+			padding: 0 0;
+		}
+		
+		.header { 
+			background-color:#212121; 
+			width: 100%;
+		}
+		.btn-headers { 
+			color: white; 
+			font-family: "Roboto"; 
+			font-size: 18px;
+			font-weight: 200;
+			text-decoration: none; 
+			position: relative;
+			-moz-box-shadow: 3px 3px 0 #9a9a9a; 
+			-webkit-transition: all 0.3s ease; 
+			-moz-transition: all 0.3s ease; 
+			padding: 5px; 
+			background:#212121; 
+			border:none;
+		}
+
+		.btn-headers:hover {
+			-webkit-box-shadow: 0px 0px 0 #1F4D69; 
+			-moz-box-shadow: 0px 0px 0 #1F4D69; 
+			background:
+			#FF9800; 
+		}
+		
+		.btn-headers-session { 
+			color: black; 
+			font-family: "Roboto"; 
+			font-size: 18px;
+			font-weight: 300;
+			text-decoration: none; 
+			position: relative;
+			-moz-box-shadow: 3px 3px 0 #9a9a9a; 
+			-webkit-transition: all 0.3s ease; 
+			-moz-transition: all 0.3s ease; 
+			padding: 5px; 
+			background:#eceff1; 
+			border:none;
+		}
+		.btn-headers-session:hover {
+			-webkit-box-shadow: 0px 0px 0 #1F4D69; 
+			-moz-box-shadow: 0px 0px 0 #1F4D69; 
+			background:#039be5; 
+			color:white;
+		}
+		.bigbtn {
+			-webkit-border-radius: 2em;
+			-moz-border-radius: 2em;
+			border-radius: 0em;
+			width: 110px;
+            height: 70px;
+		}
+		.info_container{
+			width:100%;
+			background-color: #ffffff;
+		}
+		.footer {
+			background-color: #212121;
+			height: 50px; 
+		}
+		.label_title{
+			font-family: "Roboto";
+			font-size: 28px;
+			color: #000000;
+		}
+		.label_description{
+			font-family: "Roboto";
+			font-size: 16px;
+			font-weight: 300;
+			color: #000000;
+		}
+		.feature {
+			width: 410px;
+			height: 315px;
+		}
+		.footer_copyright {
+			color: white; 
+			font-family: "Roboto"; 
+			font-size: 18px;
+			font-weight: 200;
+		}
+	</style>
+	<div sclass="header">
+		<hbox sclass="buttons" width="100%" pack="center">
+			<image style="margin-right:250px"
+				src="img/logoPetCoccolati.png" width="70px" height="70px">
+			</image>
+			<button style="margin-left:250px" label="Services"
+				class="btn-headers bigbtn">
+			</button>
+			<button label="Contact" class="btn-headers bigbtn"></button>
+			<button label="About" class="btn-headers bigbtn"></button>
+			<button id="btnLogin" label="LOGIN" class="btn-headers-session bigbtn" style="margin-left:40px;"></button>
+			<button id="btnSignup" label="SIGN UP" class="btn-headers-session bigbtn"></button>
+		</hbox>
+	</div>
+	<div sclass="wallheader">
+		<image src="img/wall.png"></image>
+	</div>
+	<div sclass = "info_container" width="100%">
+		<vbox width="100%">
+			<hbox width="100%" pack="center">
+				<vbox pack="center" align="center" sclass="feature">
+					<image src="img/icons/history.png"></image>
+					<label sclass="label_title">Historial</label>
+					<label  sclass="label_description">Siempre sabrás que servicios has contratado. Tendremos un historial a tu disposición para que puedas ver todos los servicios que ha recibido tu amigo.</label>
+				</vbox>
+				<vbox pack="center" align="center" sclass="feature">
+					<image src="img/icons/home.png"></image>
+					<label sclass="label_title">Domicilio</label>
+					<label  sclass="label_description">¡Tambien lo hacemos a domicilio! Pet Coccolati ofrece servicios en la comodidad de tu hogar para que tu y tu mejor amigo esten felices y tranquilos.</label>
+				</vbox>
+				<vbox pack="center" align="center" sclass="feature">
+					<image src="img/icons/hospital.png"></image>
+					<label sclass="label_title">Servicio 24h</label>
+					<label  sclass="label_description">Sabemos que los accidentes pasan en los momentos mas inesperados, por eso, Pet Coccolati presta un servicio de urgencias las 24 horas para que lo uses cuando sea necesario</label>
+				</vbox>
+			</hbox>
+			<hbox width="100%" align="center" pack="center">
+				<vbox pack="center" align="center" sclass="feature">
+					<image src="img/icons/medical.png"></image>
+					<label sclass="label_title">Personal Calificado</label>
+					<label  sclass="label_description">¡Tenemos el mejor personal! Los veterinarios de Pet Coccolati son personas apasionadas y profesionales que siempre garantizaran el mejor cuidado y una atencion personalizada para tu mascota</label>
+				</vbox>
+				<vbox pack="center" align="center" sclass="feature">
+					<image src="img/icons/shop.png"></image>
+					<label sclass="label_title">Shopping</label>
+					<label  sclass="label_description">Puedes adquirir productos por medio de nuestra tienda virtual. Alli veras una gran variedad de articulos para ti y tu amigo. ¡No te podras resistir!</label>
+				</vbox>
+			</hbox>
+		</vbox>
+	</div>
+	<hbox sclass="footer" align="center" pack="center" width="100%" >
+		<label sclass="footer_copyright" style="margin-right:250px;"> © 2015 Sensual RanKey and JuanCabezas - All Rights Reserved</label>
+		<image src="img/icons/facebook.png" width="24px" height="24px" style="margin-left:250px;"></image>
+	</hbox>
+</zk>
