@@ -61,6 +61,35 @@
 			width: 110px;
             height: 70px;
 		}
+		.btn-categories{
+			color: black; 
+			font-family: "Roboto"; 
+			font-size: 18px;
+			font-weight: 200;
+			width: 250px;
+			height: 35px;
+			text-decoration: none; 
+			position: relative;
+			-moz-box-shadow: 3px 3px 0 #9a9a9a; 
+			-webkit-transition: all 0.3s ease; 
+			-moz-transition: all 0.3s ease; 
+			padding: 5px; 
+			background:#484848; 
+			border:none;
+		}
+		.btn-categories:hover {
+			-webkit-box-shadow: 0px 0px 0 #1F4D69; 
+			-moz-box-shadow: 0px 0px 0 #1F4D69; 
+			background:#039be5; 
+			color:white;
+		}
+		.service_title{
+			font-family: "Roboto";
+			font-size:24px;
+			color:white;
+			font-weight: 400;
+			margin-bottom: 10%;
+		}
 		.info_container{
 			width:100%;
 			background-color: #ffffff;
@@ -95,8 +124,14 @@
 			background-color: #424242;
 			font-family: "Roboto";
 			width: 100%;
-			height: 30%;
-			font-weight: 200;
+			height: 42%;			
+		}
+		.extra {
+			font-family: "Roboto";
+			font-size: 18px;
+			color:#979797;
+			font-weight: 300;
+			margin-left: 5%;
 		}
 	</style>
 	<div sclass="header">
@@ -109,7 +144,7 @@
 			</button>
 			<button label="Contact" class="btn-headers bigbtn"></button>
 			<button label="About" class="btn-headers bigbtn"></button>
-			<button id="btnLogin" label="LOGIN" class="btn-headers-session bigbtn" style="margin-left:40px;"></button>
+			<button id="btnLogin" label="LOGIN" class="btn-headers-session bigbtn"></button>
 			<button id="btnSignup" label="SIGN UP" class="btn-headers-session bigbtn"></button>
 		</hbox>
 	</div>
@@ -149,15 +184,44 @@
 			</hbox>
 		</vbox>
 	</div>
-	<div sclass = "links">
-		<hbox>
-			<vbox>
+	<hbox sclass = "links" pack="center" align="center">
+		<hbox height="100%" width="50%" pack="center" align="center">
+			<vbox height = "100%" width="100%" pack="center" align="center">
+				<label sclass = "service_title">NUESTROS SERVICIOS</label>
+				<button style = "margin-top: 5%;" sclass = "btn-categories" label="Peluqueria"></button>
+				<button sclass = "btn-categories" label="Guarderia"></button>
+				<button sclass = "btn-categories" label="Hospital"></button>
+				<button sclass = "btn-categories" label="Tienda"></button>
 			</vbox>
 		</hbox>
-		<hbox></hbox>
-	</div>
+		<hbox style = "margin-left: 30%;" height="100%" width="50%" pack="center" align="center">
+			<vbox height="100%" width="50%" pack="center" align="center">
+				<label sclass = "service_title">CONECTATE</label>
+				<hbox  style = "margin-top: 5%;">
+					<image src="img/icons/phone.png"></image>
+					<label style = "font-family: Roboto; color: #DDDDDD; font-size: 18px; margin-left: 5%;">+57 301 000 0000</label>
+				</hbox>
+				<hbox>
+					<image src="img/icons/location.png"></image>
+					<label sclass = "extra">Universidad de Medellin, Colombia</label>
+				</hbox>
+				<hbox>
+					<image src="img/icons/mail.png"></image>
+					<label sclass = "extra">contacto@petcoccolati.com</label>
+				</hbox>
+				<hbox style = "margin-top: 5%;" width="100%" pack="center" align="center">
+					<image src="img/icons/facebook_extra.png"></image>
+					<image src="img/icons/twitter.png"></image>
+					<image src="img/icons/github-circle.png"></image>
+					<image src="img/icons/instagram.png"></image>
+				</hbox>
+			</vbox>
+		</hbox>
+	</hbox>
 	<hbox sclass="footer" align="center" pack="center" width="100%" >
-		<label sclass="footer_copyright" style="margin-right:250px;"> © 2015 Sensual RanKey and JuanCabezas - All Rights Reserved</label>
-		<image src="img/icons/facebook.png" width="24px" height="24px" style="margin-left:250px;"></image>
+		<label sclass="footer_copyright" style="margin-right:250px;"> © 2015 SoHomosexualRanGay - Villa pussy breaker - All Rights Reserved</label>
+		<image src="img/icons/facebook_extra.png" style="margin-left:250px;"></image>
+		<image src="img/icons/twitter.png" style="margin-left:2px;"></image>
+		<image src="img/icons/instagram.png" style="margin-left:2px;"></image>
 	</hbox>
 </zk>
