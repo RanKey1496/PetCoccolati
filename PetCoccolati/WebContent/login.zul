@@ -5,7 +5,23 @@
 		
 		body { 
 			padding: 0 0;
-			background-image:url('img/background.jpg');
+			background-color: #424242;
+		}
+		
+		.btn_sign { 
+			background:#616161; 
+			color:white;
+			font-family: "Roboto"; 
+			font-size: 18px;
+			font-weight: 300;
+			text-decoration: none; 
+			position: relative;
+			-moz-box-shadow: 3px 3px 0 #9a9a9a; 
+			-webkit-transition: all 0.3s ease; 
+			-moz-transition: all 0.3s ease; 
+			padding: 5px;
+			border:none;
+			margin-bottom: 10px;
 		}
 		
 		.btn { 
@@ -23,6 +39,13 @@
 			border:none;
 			margin-bottom: 10px;
 		}
+		
+		.btn_sign:hover {
+			-webkit-box-shadow: 0px 0px 0 #1F4D69; 
+			-moz-box-shadow: 0px 0px 0 #1F4D69; 
+			background:#0288D1; 
+			color:white;
+		}
 
 		.btn:hover {
 			-webkit-box-shadow: 0px 0px 0 #1F4D69; 
@@ -36,6 +59,14 @@
 			border-radius: 0em;
 			width: 110px;
             height: 40px;
+		}
+		.signup_btn
+		{
+			-webkit-border-radius: 2em;
+			-moz-border-radius: 2em;
+			border-radius: 0em;
+			width: 100%;
+            height: 40px;            
 		}
 		.z-textbox{
 			background-color:#F2F2F2;
@@ -54,12 +85,15 @@
 			margin-top: 10px;
 			font-family: "Roboto"; 
 			font-size: 14px;
-			font-weight: 200;
+			font-weight: 300;
+		}
+		.container{
+			box-shadow: 2px 2px 2px #212121;
 		}
 	</style>
-	<div align="center" style="margin-top: 30px; ">
-		<vbox align="center" width="380px" style="background-color:#FFF; border: 1px solid;">
-			<image src="img/logoPetCoccolati.png"></image>
+	<div align="center" style="margin-top: 3%;">
+		<vbox align="center" width="23%" style="background-color:#FFF;" sclass="container">
+			<image src="img/logoPetCoccolati.png" width="175px;" height="175px;"></image>
 			<label sclass="lbl" style="display: block; float: left;">EMAIL ADDRESS</label>
 			<textbox width="100%" height="35px"></textbox>
 			<hbox>
@@ -69,5 +103,8 @@
 			<textbox type="password" width="100%" height="35px"></textbox>
 			<button sclass="btn bigbtn" style="float: left; margin-top: 10px;">SIGN IN</button>
 		</vbox>
-	</div>
+		<hbox width="23%" align="center" pack="center" style="margin-top: 2%">
+			<button sclass="btn_sign signup_btn" label="CREATE A NEW ACCOUNT"></button>
+		</hbox>	
+	</div>	
 </zk>
