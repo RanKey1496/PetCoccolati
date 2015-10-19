@@ -1,7 +1,7 @@
 <?page title="Pet Coccolati"?>
 <zk>
 	<zscript>
-			java.io.InputStream zulInput = this.getClass().getClassLoader().getResourceAsStream("/com/petcoccolati/views/login.zul") ;
+			java.io.InputStream zulInput = this.getClass().getClassLoader().getResourceAsStream("/com/petcoccolati/views/main.zul") ;
 			java.io.Reader zulReader = new java.io.InputStreamReader(zulInput);
 			Executions.createComponentsDirectly(zulReader,"zul",null,new HashMap()) ;		
 	</zscript>
