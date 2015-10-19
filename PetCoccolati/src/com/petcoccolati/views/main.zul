@@ -93,7 +93,7 @@
 		}
 		.info_container{
 			width:100%;
-			background-color:#9e9e9e;
+			background-color:#eeeeee;
 			
 		}
 		.footer {
@@ -196,17 +196,17 @@
 			</vbox>
 		</hbox>
 		<hbox style = "margin-left: 30%;" height="100%" width="50%" pack="center" align="center">
-			<vbox height="100%" width="50%" pack="center" align="center">
+			<vbox height="100%" width="50%" pack="center" align="start">
 				<label sclass = "service_title">CONECTATE</label>
-				<hbox  style = "margin-top: 5%;">
+				<hbox  style = "margin-top: 5%;" align="start">
 					<image src="img/icons/phone.png"></image>
 					<label style = "font-family: Roboto; color: #DDDDDD; font-size: 18px; margin-left: 5%;">+57 301 000 0000</label>
 				</hbox>
-				<hbox>
+				<hbox align="start">
 					<image src="img/icons/location.png"></image>
 					<label sclass = "extra">Universidad de Medellin, Colombia</label>
 				</hbox>
-				<hbox>
+				<hbox align="start">
 					<image src="img/icons/mail.png"></image>
 					<label sclass = "extra">contacto@petcoccolati.com</label>
 				</hbox>
