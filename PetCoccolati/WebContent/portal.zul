@@ -1,0 +1,25 @@
+<?page title="Try" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:html="http://www.w3.org/1999/xhtml">
+	<style src="style/portal_style.css"/>
+	<vbox height="100%" style="background-color:#EEEEEE">
+		<image src="img/logoPetCoccolati.png"></image>
+		<div class="navigation" width="100%">
+		  <html:ul>
+		    <html:li class=""> <html:a href="#">HOME</html:a>
+		    </html:li>
+		    <html:li class="has-sub"> <html:a href="#">PETS</html:a>
+		      <html:ul>
+		        <html:li><html:a href="#">MY PETS</html:a></html:li>
+		        <html:li><html:a href="#">NEW PET</html:a></html:li>
+		      </html:ul>
+		    </html:li>
+		    <html:li class="has-sub"> <html:a href="#">SERVICES</html:a>
+		      <html:ul>
+		        <html:li><html:a href="#">NEW SERVICE</html:a></html:li>
+		        <html:li><html:a href="#">HISTORY</html:a></html:li>
+		      </html:ul>
+		    </html:li>
+		  </html:ul>
+		</div>
+	</vbox>
+</zk>
