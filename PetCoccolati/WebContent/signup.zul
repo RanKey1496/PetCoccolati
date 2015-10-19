@@ -29,6 +29,7 @@
 			-webkit-border-radius: 2em;
 			-moz-border-radius: 2em;
 			border-radius: 0em;
+			box-shadow: 2px 2px 2px #212121;
 			width: 100%;
             height: 40px;            
 		}
@@ -36,6 +37,7 @@
 		.btn_login:hover {
 			-webkit-box-shadow: 0px 0px 0 #1F4D69; 
 			-moz-box-shadow: 0px 0px 0 #1F4D69; 
+			
 			background:#0288D1; 
 			color:white;
 		}
@@ -65,12 +67,14 @@
 			-webkit-border-radius: 2em;
 			-moz-border-radius: 2em;
 			border-radius: 0em;
+			box-shadow: 2px 2px 2px #212121;
 			width: 200px;
             height: 40px;
 		}
 		.z-textbox{
 			background-color:#F2F2F2;
 			border-style:none;
+			box-shadow: 0.3px 0.3px 0.3px #101010;
 			
 		}
 		.z-textbox:focus{
@@ -85,7 +89,7 @@
 			margin-top: 10px;
 			font-family: "Roboto"; 
 			font-size: 14px;
-			font-weight: 200;
+			font-weight: 300;
 		}
 		.lbltitle {
 			margin-top: 10px;
@@ -97,17 +101,20 @@
 	</style>
 	<div align="center" style="margin-top: 3%;">
 		<vbox width="23%">
-			<vbox align="center" width="100%" style="background-color:#FFF; border: 1px solid;">
-				<image src="img/logoPetCoccolati.png" height="175px" width="175px"></image>
+			<vbox align="center" width="100%" style="background-color:#FFF;" sclass="container">
+				<image src="img/logoPetCoccolati.png" width="175px;" height="175px;"></image>
 				<label sclass="lbltitle">Create account!</label>
 				<label sclass="lbl" style="display: block; float: left;">EMAIL ADDRESS</label>
 				<textbox width="100%" height="35px"></textbox>
-				<label sclass="lbl" style="display: block; float: left;">PASSWORD</label>
+				<hbox style="display: block; float: left;">
+					<label sclass="lbl">PASSWORD</label>
+				</hbox>
 				<textbox type="password" width="100%" height="35px"></textbox>
-				<button sclass="btn bigbtn" style="float: left; margin-top: 10px;">CREATE MY ACCOUNT</button>
-				<label sclass="lbl" style="display: block; float: left; margin-bottom:15px;">By clicking above, you are agreeing to the Terms of Service</label>
+				<button sclass="btn bigbtn" style="float: left; margin-top: 15px; margin-bottom: 15px;">CREATE MY ACCOUNT</button>
+				<label style="font-family: Roboto; font-weight: 300; margin-bottom: 15px; color: #424242">By clicking above, you are agreeing to the Terms of Service</label>
+				<hbox style="margin-top: 15px"></hbox>
 			</vbox>
-			<button sclass="btn_login login_btn" width="100%" label="SIGN IN"></button>
+			<button style = "margin-top: 3%" sclass="btn_login login_btn" width="100%" label="SIGN IN"></button>
 		</vbox>
-	</div>
+	</div>	
 </zk>

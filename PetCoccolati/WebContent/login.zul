@@ -26,7 +26,7 @@
 		
 		.btn { 
 			background:#424242; 
-			color:white;
+			color:white;			
 			font-family: "Roboto"; 
 			font-size: 18px;
 			font-weight: 300;
@@ -58,6 +58,7 @@
 			-moz-border-radius: 2em;
 			border-radius: 0em;
 			width: 110px;
+			box-shadow: 2px 2px 2px #101010;
             height: 40px;
 		}
 		.signup_btn
@@ -65,12 +66,14 @@
 			-webkit-border-radius: 2em;
 			-moz-border-radius: 2em;
 			border-radius: 0em;
+			box-shadow: 2px 2px 2px #212121;
 			width: 100%;
             height: 40px;            
 		}
 		.z-textbox{
 			background-color:#F2F2F2;
 			border-style:none;
+			box-shadow: 0.3px 0.3px 0.3px #101010;
 			
 		}
 		.z-textbox:focus{
@@ -85,7 +88,7 @@
 			margin-top: 10px;
 			font-family: "Roboto"; 
 			font-size: 14px;
-			font-weight: 300;
+			font-weight: 300;			
 		}
 		.container{
 			box-shadow: 2px 2px 2px #212121;
@@ -105,7 +108,7 @@
 				<textbox type="password" width="100%" height="35px"></textbox>
 				<button sclass="btn bigbtn" style="float: left; margin-top: 15px;">SIGN IN</button>
 			</vbox>
-			<button sclass="btn_sign signup_btn" width="100%" label="CREATE A NEW ACCOUNT"></button>
+			<button style = "margin-top: 3%" sclass="btn_sign signup_btn" width="100%" label="CREATE A NEW ACCOUNT"></button>
 		</vbox>
 	</div>	
 </zk>
