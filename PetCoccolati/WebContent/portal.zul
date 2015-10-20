@@ -1,7 +1,7 @@
-<?page title="Try" contentType="text/html;charset=UTF-8"?>
+<?page title="Welcome User" contentType="text/html;charset=UTF-8"?>
 <zk xmlns:html="http://www.w3.org/1999/xhtml">
 	<style src="style/portal_style.css"/>
-	<vbox height="100%" style="background-color:#EEEEEE">
+	<vbox height="100%" style="background-color:#626262;">
 		<image src="img/logoPetCoccolati.png"></image>
 		<div class="navigation" width="100%">
 		  <html:ul>
@@ -18,6 +18,8 @@
 		        <html:li><html:a href="#">NEW SERVICE</html:a></html:li>
 		        <html:li><html:a href="#">HISTORY</html:a></html:li>
 		      </html:ul>
+		    </html:li>
+		    <html:li class=""> <html:a href="#">SETTINGS</html:a>
 		    </html:li>
 		  </html:ul>
 		</div>
