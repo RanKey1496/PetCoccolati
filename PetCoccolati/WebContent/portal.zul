@@ -23,5 +23,8 @@
 		    </html:li>
 		  </html:ul>
 		</div>
+		<div width="100%"> 
+			<button sclass="btn_login login_btn" width="100%" label="LOG OUT"></button>	
+		</div>
 	</vbox>
 </zk>

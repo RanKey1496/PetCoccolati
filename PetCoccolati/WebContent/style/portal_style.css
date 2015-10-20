@@ -72,7 +72,7 @@
 		.navigation {
 		  width: 13em;
 		  background: #757575;
-		  font-family: 'roboto', Tahoma, Arial, sans-serif;
+		  font-family: 'Roboto', Tahoma, Arial, sans-serif;
 		  zoom: 1;
 		}
 		
@@ -193,4 +193,64 @@
 		  -webkit-border-radius: 3px 0 0 3px;
 		  -moz-border-radius: 3px 0 0 3px;
 		  border-radius: 3px 0 0 3px;
+		}
+		.btn { 
+			background:#424242; 
+			color:white;
+			font-family: "Roboto"; 
+			font-size: 16px;
+			font-weight: 300;
+			text-decoration: none; 
+			position: relative;
+			-moz-box-shadow: 3px 3px 0 #9a9a9a; 
+			-webkit-transition: all 0.3s ease; 
+			-moz-transition: all 0.3s ease; 
+			padding: 5px;
+			border:none;
+		}
+
+		.btn:hover {
+			-webkit-box-shadow: 0px 0px 0 #1F4D69; 
+			-moz-box-shadow: 0px 0px 0 #1F4D69; 
+			background:#0288D1; 
+			color:white;
+		}
+		.bigbtn {
+			-webkit-border-radius: 2em;
+			-moz-border-radius: 2em;
+			border-radius: 0em;
+			box-shadow: 2px 2px 2px #212121;
+			width: 200px;
+            height: 40px;
+		}
+		.btn_login { 
+			background:#626262; 
+			color:white;
+			font-family: "Roboto"; 
+			font-size: 18px;
+			font-weight: 300;
+			text-decoration: none; 
+			position: relative;
+			-moz-box-shadow: 3px 3px 0 #9a9a9a; 
+			-webkit-transition: all 0.3s ease; 
+			-moz-transition: all 0.3s ease; 
+			padding: 5px;
+			border:none;
+			margin-bottom: 10px;
+		}
+		
+		.login_btn
+		{
+			-webkit-border-radius: 2em;
+			-moz-border-radius: 2em;
+			border-radius: 0em;			
+			width: 100%;
+            height: 40px;            
+		}
+		
+		.btn_login:hover {
+			-webkit-box-shadow: 0px 0px 0 #1F4D69; 
+			-moz-box-shadow: 0px 0px 0 #1F4D69; 			
+			background:#0288D1; 
+			color:white;
 		}

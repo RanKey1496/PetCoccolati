@@ -13,6 +13,7 @@
 			color:white;
 			font-family: "Roboto"; 
 			font-size: 18px;
+			float: left;
 			font-weight: 300;
 			text-decoration: none; 
 			position: relative;
@@ -36,8 +37,7 @@
 		
 		.btn_login:hover {
 			-webkit-box-shadow: 0px 0px 0 #1F4D69; 
-			-moz-box-shadow: 0px 0px 0 #1F4D69; 
-			
+			-moz-box-shadow: 0px 0px 0 #1F4D69; 			
 			background:#0288D1; 
 			color:white;
 		}
