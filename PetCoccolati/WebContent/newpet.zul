@@ -1,0 +1,104 @@
+<?page title="New Pet" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<style>
+		@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,400italic,300italic,500,500italic);
+		
+		.z-label {
+			font-family: "Roboto"; 
+			font-size: 25px;
+			font-weight: 300;
+		}
+		.title {
+			margin-left: 15px;
+			display:block;
+			background: #626262;
+		}
+		.lbltitle {
+			margin-left:3%;
+			font-family: "Roboto"; 
+			font-size: 80px;
+			font-weight: 100;
+			color: white;
+			letter-spacing: 25px;
+		}
+		.container {
+			margin-left: 16%;
+			margin-top: 1%;
+		}
+		.z-textbox{
+			margin:5%;
+			width:220px;
+			height:35px;
+			background-color:#F2F2F2;
+			border-style:none;
+			box-shadow: 0.3px 0.3px 0.3px #101010;
+		}
+		.z-textbox:focus{
+		    background: #e5e5e5 none;
+		}
+		.z-textbox:hover {
+			-webkit-box-shadow: 0px 0px 0 #1F4D69; 
+			-moz-box-shadow: 0px 0px 0 #1F4D69; 
+			background: #e5e5e5; 
+		}
+		.btn { 
+			margin-left: 5%;
+			margin-top: 5%;
+			background:#424242; 
+			color:white;			
+			font-family: "Roboto"; 
+			font-size: 18px;
+			font-weight: 300;
+			text-decoration: none; 
+			position: relative;
+			-moz-box-shadow: 3px 3px 0 #9a9a9a; 
+			-webkit-transition: all 0.3s ease; 
+			-moz-transition: all 0.3s ease; 
+			padding: 5px;
+			border:none;
+			margin-bottom: 10px;
+		}
+		.btn:hover {
+			-webkit-box-shadow: 0px 0px 0 #1F4D69; 
+			-moz-box-shadow: 0px 0px 0 #1F4D69; 
+			background:#0288D1; 
+			color:white;
+		}
+		.bigbtn {
+			-webkit-border-radius: 2em;
+			-moz-border-radius: 2em;
+			border-radius: 0em;
+			width: 110px;
+			box-shadow: 2px 2px 2px #101010;
+            height: 40px;
+		}
+	</style>
+	<div>
+		<include src="portal.zul" height="100%" style="float: left;"></include>
+		<div>
+			<div sclass="title" width="100%">
+				<label sclass="lbltitle" width="100%">New Pet</label>
+			</div>
+			<div sclass="container">
+				<hbox style="margin-left:3%; margin-top:1%;">
+					<vbox style="margin-right:5%;" width="250px">
+						<label>Name</label>
+						<textbox></textbox>
+						<label>DNI</label>
+						<textbox></textbox>
+					</vbox>
+					<vbox style="margin-right:5%" width="250px">
+						<label>Breed</label>
+						<textbox></textbox>
+						<label>Weight</label>
+						<textbox></textbox>
+					</vbox>
+				</hbox>
+				<hbox style="margin-left:3%;">
+					<button sclass="bigbtn btn" label="CANCEL"></button>
+					<button sclass="bigbtn btn" label="ADD" style="margin-left:70px;"></button>
+				</hbox>
+			</div>
+		</div>
+	</div>
+</zk>
