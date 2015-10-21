@@ -96,7 +96,7 @@
 						<label>Species</label>
 						<textbox></textbox>
 					</vbox>
-					<vbox style="margin-right:5%" width="350px">
+					<vbox style="margin-right:5% " width="350px">
 						<label>Gender</label>
 						<textbox></textbox>
 						<label>Weight</label>
