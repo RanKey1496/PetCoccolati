@@ -1,0 +1,30 @@
+<?page title="Bienvenido, Basura" contentType="text/html;charset=UTF-8"?>
+<zk >
+	<style>
+		@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,400italic,300italic,500,500italic);
+		
+		.body{
+			background-color: red;
+		}
+		.container
+		{
+			background-color: white;
+			height: 100%;
+			width: 100%; 
+		}
+		.title{
+			font-family: "Roboto";
+			color: white;
+			font-size: 40px;
+			font-weight: 100;
+		}
+		.welcome{
+			font-color: white;
+			font-family: "Roboto";
+			font-size: 28px;
+		}
+	</style>
+	<hbox height="100%" width="100%" sclass="body">
+		<include src="portal.zul"></include>
+	</hbox>
+</zk>

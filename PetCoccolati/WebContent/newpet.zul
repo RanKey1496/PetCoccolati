@@ -73,7 +73,7 @@
             height: 40px;
 		}
 	</style>
-	<div>
+	<div height="100%">
 		<include src="portal.zul" height="100%" style="float: left;"></include>
 		<div>
 			<div sclass="title" width="100%">
