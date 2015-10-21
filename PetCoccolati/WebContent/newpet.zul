@@ -5,7 +5,7 @@
 		
 		.z-label {
 			font-family: "Roboto"; 
-			font-size: 25px;
+			font-size: 40px;
 			font-weight: 300;
 		}
 		.title {
@@ -16,7 +16,7 @@
 		.lbltitle {
 			margin-left:3%;
 			font-family: "Roboto"; 
-			font-size: 80px;
+			font-size: 120px;
 			font-weight: 100;
 			color: white;
 			letter-spacing: 25px;
@@ -26,9 +26,12 @@
 			margin-top: 1%;
 		}
 		.z-textbox{
+			font-family: "Roboto"; 
+			font-size: 25px;
+			font-weight: 100;
 			margin:5%;
-			width:220px;
-			height:35px;
+			width:300px;
+			height:50px;
 			background-color:#F2F2F2;
 			border-style:none;
 			box-shadow: 0.3px 0.3px 0.3px #101010;
@@ -42,7 +45,7 @@
 			background: #e5e5e5; 
 		}
 		.btn { 
-			margin-left: 5%;
+			margin-left: 25px;
 			margin-top: 5%;
 			background:#424242; 
 			color:white;			
@@ -76,27 +79,33 @@
 	<div height="100%">
 		<include src="portal.zul" height="100%" style="float: left;"></include>
 		<div>
-			<div sclass="title" width="100%">
+			<div sclass="title" width="99.2%">
 				<label sclass="lbltitle" width="100%">New Pet</label>
 			</div>
 			<div sclass="container">
 				<hbox style="margin-left:3%; margin-top:1%;">
-					<vbox style="margin-right:5%;" width="250px">
+					<vbox style="margin-right:5%;" width="350px">
 						<label>Name</label>
 						<textbox></textbox>
-						<label>DNI</label>
+						<label>Breed</label>
 						<textbox></textbox>
 					</vbox>
-					<vbox style="margin-right:5%" width="250px">
-						<label>Breed</label>
+					<vbox style="margin-right:5%" width="350px">
+						<label>DNI</label>
+						<textbox></textbox>
+						<label>Species</label>
+						<textbox></textbox>
+					</vbox>
+					<vbox style="margin-right:5%" width="350px">
+						<label>Gender</label>
 						<textbox></textbox>
 						<label>Weight</label>
 						<textbox></textbox>
 					</vbox>
 				</hbox>
-				<hbox style="margin-left:3%;">
+				<hbox style="margin-left:38.5%;">
 					<button sclass="bigbtn btn" label="CANCEL"></button>
-					<button sclass="bigbtn btn" label="ADD" style="margin-left:70px;"></button>
+					<button sclass="bigbtn btn" label="ADD"></button>
 				</hbox>
 			</div>
 		</div>
