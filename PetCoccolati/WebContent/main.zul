@@ -4,7 +4,7 @@
 		@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,400italic,300italic,500,500italic);
 		
 		.body{
-			background-color: red;
+			background-color: #424242;
 		}
 		.container
 		{
