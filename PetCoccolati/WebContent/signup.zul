@@ -7,24 +7,31 @@
 			<vbox align="center" width="100%" style="background-color:#FFF;" sclass="container">
 				<image src="img/logoPetCoccolati.png" width="175px;" height="175px;"></image>
 				<label sclass="lbltitle">Create account!</label>
-				<label sclass="lbl" style="display: block; float: left;">EMAIL ADDRESS</label>
-				<textbox width="100%" height="35px"></textbox>
-				<hbox style="display: block; float: left;">
-					<label sclass="lbl">PASSWORD</label>
-				</hbox>
-				<textbox width="100%" height="35px"></textbox>   
+				
 				<hbox style="display: block; float: left;">
 					<label sclass="lbl">ID. NUMBER</label>
 				</hbox>
 				<textbox width="100%" height="35px"></textbox>
 				<hbox style="display: block; float: left;">
-					<label sclass="lbl">FULL NAME</label>
+					<label sclass="lbl">FIRST NAME</label>
+				</hbox>
+				<textbox width="100%" height="35px"></textbox>
+				<hbox style="display: block; float: left;">
+					<label sclass="lbl">LAST NAME</label>
 				</hbox>
 				<textbox width="100%" height="35px"></textbox>
 				<hbox style="display: block; float: left;">
 					<label sclass="lbl">CELLPHONE</label>
 				</hbox>
 				<textbox type="password" width="100%" height="35px"></textbox>
+				
+				<label sclass="lbl" style="display: block; float: left;">EMAIL ADDRESS</label>
+				<textbox width="100%" height="35px"></textbox>
+				<hbox style="display: block; float: left;">
+					<label sclass="lbl">PASSWORD</label>
+				</hbox>
+				<textbox width="100%" height="35px"></textbox> 
+				
 				<button sclass="btn bigbtn" style="float: left; margin-top: 15px; margin-bottom: 15px;">CREATE MY ACCOUNT</button>
 				<label style="font-family: Roboto; font-weight: 300; margin-bottom: 15px; color: #424242">By clicking above, you are agreeing to the Terms of Service</label>
 				<hbox style="margin-top: 15px"></hbox>
