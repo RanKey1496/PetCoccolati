@@ -58,7 +58,9 @@
 		  right: 0;
 		}
 		
-		.navigation ul li:hover > ul { visibility: visible; }
+		.navigation ul li:hover > ul { 
+			visibility: visible; 
+		}
 		
 		.navigation ul ul {
 		  top: 0;
@@ -71,8 +73,9 @@
 		
 		.navigation {
 		  width: 13em;
-		  background: #757575;
+		  background: #F5F5F5;
 		  font-family: 'Roboto', Tahoma, Arial, sans-serif;
+		  font-weight: 300;
 		  zoom: 1;
 		}
 		
@@ -101,7 +104,7 @@
 		
 		.navigation > ul > li > a {
 		  border-right: 0.3em solid #0288D1;
-		  color: white;
+		  color: black;
 		}
 		
 		.navigation > ul > li > a:hover { color: white; }
@@ -224,8 +227,8 @@
             height: 40px;
 		}
 		.btn_login { 
-			background:#626262; 
-			color:white;
+			background:#F5F5F5; 
+			color: black;
 			font-family: "Roboto"; 
 			font-size: 18px;
 			font-weight: 300;
