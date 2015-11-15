@@ -82,6 +82,11 @@
 			</div>
 			<div sclass="container">
 				<hbox style="margin-left:3%; margin-top:1%;">
+					<vbox>
+						<image src="img/petAvatar.png"></image>
+						<button id="uploadBtn" label="Upload file" />
+						<label id="msgLb" />
+					</vbox>
 					<vbox style="margin-right:5%;" width="350px">
 						<label>Name</label>
 						<textbox></textbox>

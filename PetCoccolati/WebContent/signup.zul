@@ -2,41 +2,51 @@
 <zk>
 	<style src="style/signup_style.css">
 	</style>
-	<div align="center" style="margin-top: 3%;">
+	<div align="center" style="margin-top: 3%;" apply="com.petcoccolati.controllers.SigUpCtl">
 		<vbox width="23%">
 			<vbox align="center" width="100%" style="background-color:#FFF;" sclass="container">
 				<image src="img/logoPetCoccolati.png" width="175px;" height="175px;"></image>
 				<label sclass="lbltitle">Create account!</label>
 				
-				<hbox style="display: block; float: left;">
-					<label sclass="lbl">ID. NUMBER</label>
+				<hbox style="display: block; float: left; margin-top: 3%;">
+					<label sclass="lbl">IDENTIFICATION DOCUMENT</label>
 				</hbox>
-				<textbox width="100%" height="35px"></textbox>
+				<textbox id="txtId" width="100%" height="35px"></textbox>
+				
 				<hbox style="display: block; float: left;">
 					<label sclass="lbl">FIRST NAME</label>
 				</hbox>
-				<textbox width="100%" height="35px"></textbox>
+				<textbox id="txtFirst" width="100%" height="35px"></textbox>
+				
 				<hbox style="display: block; float: left;">
 					<label sclass="lbl">LAST NAME</label>
 				</hbox>
-				<textbox width="100%" height="35px"></textbox>
+				<textbox id="txtLast" width="100%" height="35px"></textbox>
+				
 				<hbox style="display: block; float: left;">
 					<label sclass="lbl">CELLPHONE</label>
 				</hbox>
-				<textbox type="password" width="100%" height="35px"></textbox>
+				<textbox id="txtPhone" width="100%" height="35px"></textbox>
 				
-				<label sclass="lbl" style="display: block; float: left;">EMAIL ADDRESS</label>
-				<textbox width="100%" height="35px"></textbox>
+				<hbox style="display: block; float: left;">
+					<label sclass="lbl">EMAIL ADDRESS</label>
+				</hbox>
+				<textbox id="txtEmail" width="100%" height="35px"></textbox>
+				
 				<hbox style="display: block; float: left;">
 					<label sclass="lbl">PASSWORD</label>
 				</hbox>
-				<textbox width="100%" height="35px"></textbox> 
+				<textbox id="txtPassword" type="password" width="100%" height="35px"></textbox> 
 				
-				<button sclass="btn bigbtn" style="float: left; margin-top: 15px; margin-bottom: 15px;">CREATE MY ACCOUNT</button>
+				<button id="btnCreate" sclass="btn bigbtn" style="float: left; margin-top: 15px; margin-bottom: 15px;">CREATE MY ACCOUNT</button>
 				<label style="font-family: Roboto; font-weight: 300; margin-bottom: 15px; color: #424242">By clicking above, you are agreeing to the Terms of Service</label>
 				<hbox style="margin-top: 15px"></hbox>
 			</vbox>
-			<button style = "margin-top: 3%" sclass="btn_login login_btn" width="100%" label="SIGN IN"></button>
+			<button id="btnSignin" style="margin-top: 3%" sclass="btn_login login_btn" width="100%" label="SIGN IN">
+				<attribute name="onClick">
+					Executions.sendRedirect("login.zul");
+				</attribute>
+			</button>
 		</vbox>
 	</div>	
 </zk>
