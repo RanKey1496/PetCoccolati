@@ -1,5 +1,6 @@
 package com.petcoccolati.controllers;
 
+import org.zkoss.util.resource.Labels;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.event.Event;
@@ -31,6 +32,8 @@ public class SigUpCtl extends GenericForwardComposer {
 
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
+		btnCreate.setLabel(Labels.getLabel("lblCreateMyAccount"));
+		btnSignin.setLabel(Labels.getLabel("lblSignIn"));
 	}
 
 	public void onCreate() {
