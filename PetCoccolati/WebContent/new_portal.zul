@@ -2,7 +2,7 @@
 <zk xmlns:html="http://www.w3.org/1999/xhtml">
 
 	<borderlayout width="100%" height="100%">
-		<west width ="25%" sclass="west" >
+		<west width ="20%" sclass="west" >
 			<include src = "nav.zul"></include>
 		</west>
 		<center>
