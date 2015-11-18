@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 import com.petcoccolati.bd.Conection;
 import com.petcoccolati.bd.PoolConection;
-import com.petcoccolati.dto.SignUpDTO;
+import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.util.ExceptionPet;
 
 public class SignUpDAO {
@@ -21,7 +21,7 @@ public class SignUpDAO {
 		pool = new PoolConection();
 	}
 	
-	public void createPersona(SignUpDTO persona) throws ExceptionPet{
+	public void createPersona(PersonaDTO persona) throws ExceptionPet{
 		Statement st = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -70,7 +70,7 @@ public class SignUpDAO {
 		throw excepPet;
 	}
 	
-	public void searchPersona(SignUpDTO personaDTO) throws ExceptionPet{
+	public void searchPersona(PersonaDTO personaDTO) throws ExceptionPet{
 		ExceptionPet excepWeb = new ExceptionPet();
 		excepWeb.setMensajeUsuario("La persosna ya existe");
 		throw excepWeb;

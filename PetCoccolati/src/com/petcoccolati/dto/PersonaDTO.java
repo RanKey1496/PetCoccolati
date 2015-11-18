@@ -1,6 +1,6 @@
 package com.petcoccolati.dto;
 
-public class SignUpDTO {
+public class PersonaDTO {
 
 	int id;	
 	String first;
@@ -9,11 +9,11 @@ public class SignUpDTO {
 	String email;
 	String password;
 	
-	public SignUpDTO(){
+	public PersonaDTO(){
 		
 	}
 	
-	public SignUpDTO(int id, String first, String last, String phone, String email, String password){
+	public PersonaDTO(int id, String first, String last, String phone, String email, String password){
 		this.id = id;
 		this.first = first;
 		this.last = last;

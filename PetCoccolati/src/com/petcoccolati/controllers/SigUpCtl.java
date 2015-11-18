@@ -9,7 +9,7 @@ import org.zkoss.zul.Button;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Textbox;
 
-import com.petcoccolati.dto.SignUpDTO;
+import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.ngc.SignUpNGC;
 import com.petcoccolati.util.ExceptionPet;
 
@@ -41,7 +41,7 @@ public class SigUpCtl extends GenericForwardComposer {
 	}
 
 	public void onClick$btnCreate(Event e) {
-		SignUpDTO persona = new SignUpDTO();
+		PersonaDTO persona = new PersonaDTO();
 		persona.setId(Integer.parseInt(txtId.getText()));
 		persona.setFirst(txtFirst.getText());
 		persona.setLast(txtLast.getText());

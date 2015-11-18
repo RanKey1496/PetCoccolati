@@ -3,7 +3,7 @@ package com.petcoccolati.ngc;
 import com.petcoccolati.dao.LoginDAO;
 import com.petcoccolati.dao.SignUpDAO;
 import com.petcoccolati.dto.LoginDTO;
-import com.petcoccolati.dto.SignUpDTO;
+import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.util.ExceptionPet;
 
 public class LoginNGC {
@@ -22,13 +22,14 @@ public class LoginNGC {
 		return loginNGC;
 	}
 	
-	public Boolean verificarPersona(LoginDTO persona) throws ExceptionPet {
+	public PersonaDTO verificarPersona(LoginDTO persona) throws ExceptionPet {
 		try{
-			if(loginDAO.searchPersona(persona)){
-				return true;
+			PersonaDTO usuario = loginDAO.searchPersona(persona);
+			if(usuario != null){
+				return usuario;
 			}
 			else{
-				return false;
+				return null;
 			}
 		}catch(ExceptionPet eWeb){
 			throw eWeb;

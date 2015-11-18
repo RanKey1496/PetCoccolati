@@ -8,7 +8,7 @@ import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Textbox;
 
 import com.petcoccolati.dto.LoginDTO;
-import com.petcoccolati.dto.SignUpDTO;
+import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.ngc.LoginNGC;
 import com.petcoccolati.util.ExceptionPet;
 
@@ -38,8 +38,8 @@ public class LoginCtl extends GenericForwardComposer{
 		persona.setEmail(txtEmail.getText());
 		persona.setPassword(txtPassword.getText());
 		try {
-			Boolean sesion = loginNGC.verificarPersona(persona);
-			if(sesion){
+			PersonaDTO usuario = loginNGC.verificarPersona(persona);
+			if(usuario != null){
 				Messagebox.show("Existe");
 			}else{
 				Messagebox.show("No Existe");

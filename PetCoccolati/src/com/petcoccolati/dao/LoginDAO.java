@@ -9,6 +9,7 @@ import java.sql.Statement;
 import com.petcoccolati.bd.Conection;
 import com.petcoccolati.bd.PoolConection;
 import com.petcoccolati.dto.LoginDTO;
+import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.util.ExceptionPet;
 
 public class LoginDAO {
@@ -21,7 +22,7 @@ public class LoginDAO {
 		pool = new PoolConection();
 	}
 	
-	public Boolean searchPersona(LoginDTO persona) throws ExceptionPet{
+	public PersonaDTO searchPersona(LoginDTO persona) throws ExceptionPet{
 		Statement st = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -40,10 +41,15 @@ public class LoginDAO {
 			ps.setString(2, persona.getPassword());
 			
 			rs = ps.executeQuery();
-			if(rs.next()){
-				return true;
-			}else {
-				return false;
+			while(rs.next()){
+				PersonaDTO usuario = new PersonaDTO();
+				usuario.setId(rs.getInt("Cedula"));
+				usuario.setFirst(rs.getString("Nombre"));
+				usuario.setLast(rs.getString("Apellido"));
+				usuario.setPhone(rs.getString("Telefono"));
+				usuario.setEmail(rs.getString("Email"));
+				usuario.setPassword(rs.getString("Contrasena"));
+				return usuario;
 			}
 		} catch (SQLException e) {
 			ExceptionPet excepPet = new ExceptionPet();
@@ -65,5 +71,6 @@ public class LoginDAO {
 		    } catch (Exception e) { /* ignored */ }
 			
 		}
+		return null;
 	}
 }

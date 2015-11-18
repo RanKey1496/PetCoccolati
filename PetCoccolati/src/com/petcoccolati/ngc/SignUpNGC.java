@@ -1,7 +1,7 @@
 package com.petcoccolati.ngc;
 
 import com.petcoccolati.dao.SignUpDAO;
-import com.petcoccolati.dto.SignUpDTO;
+import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.util.ExceptionPet;
 
 public class SignUpNGC {
@@ -21,7 +21,7 @@ public class SignUpNGC {
 		return signupNGC;
 	}
 	
-	public void createPersona(SignUpDTO personaDTO) throws ExceptionPet {
+	public void createPersona(PersonaDTO personaDTO) throws ExceptionPet {
 		try{
 			signupDAO.createPersona(personaDTO);
 		}catch(ExceptionPet eWeb){
