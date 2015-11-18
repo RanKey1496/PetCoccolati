@@ -6,13 +6,13 @@
 			<vbox align="center" width="100%" style="background-color:#FFF;" sclass="container">
 				<image src="img/logoPetCoccolati.png" width="175px;" height="175px;"></image>
 				<label sclass="lbl" style="display: block; float: left;">EMAIL ADDRESS</label>
-				<textbox width="100%" height="35px"></textbox>
+				<textbox id="txtEmail" width="100%" height="35px"></textbox>
 				<hbox>
 					<label sclass="lbl" style="display: block; float: left; margin-right:100px;">PASSWORD</label>
 					<label sclass="lbl" style="display: block; float: right;">forgot password?</label>
 					
 				</hbox>
-				<textbox type="password" width="100%" height="35px"></textbox>
+				<textbox id="txtPassword" type="password" width="100%" height="35px"></textbox>
 				<button sclass="btn bigbtn" style="float: left; margin-top: 15px;">SIGN IN</button>
 			</vbox>
 			<button style = "margin-top: 3%" sclass="btn_sign signup_btn" width="100%" label="CREATE A NEW ACCOUNT"></button>
