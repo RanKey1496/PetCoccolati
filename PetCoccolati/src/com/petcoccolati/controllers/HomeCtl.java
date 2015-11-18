@@ -1,6 +1,8 @@
 package com.petcoccolati.controllers;
 
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.Execution;
+import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Label;
 
@@ -20,6 +22,13 @@ public class HomeCtl extends GenericForwardComposer{
 	
 	public HomeCtl(PersonaDTO persona){
 		
+	}
+	
+	public void onCreate(){
+		Execution execution = Executions.getCurrent();
+		String name = execution.getParameter("Nombre");
+		System.out.println(name);
+		userLabel.setValue(name);
 	}
 	
 }

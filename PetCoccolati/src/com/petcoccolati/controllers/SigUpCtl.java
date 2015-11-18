@@ -53,7 +53,6 @@ public class SigUpCtl extends GenericForwardComposer {
 			persona.setPassword(txtPassword.getText());
 
 			try {
-
 				signupNgc.createPersona(persona);
 			} catch (ExceptionPet e2) {
 				Messagebox.show(e2.getMensajeUsuario());

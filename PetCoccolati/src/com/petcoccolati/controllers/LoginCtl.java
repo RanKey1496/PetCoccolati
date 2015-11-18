@@ -1,6 +1,7 @@
 package com.petcoccolati.controllers;
 
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Button;
@@ -27,6 +28,7 @@ public class LoginCtl extends GenericForwardComposer{
 	
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
+		
 	}
 	
 	public void onCreate() {
@@ -40,9 +42,9 @@ public class LoginCtl extends GenericForwardComposer{
 		try {
 			PersonaDTO usuario = loginNGC.verificarPersona(persona);
 			if(usuario != null){
-				Messagebox.show("Existe");
+				Executions.sendRedirect("home.zul?Nombre="+usuario.getId());
 			}else{
-				Messagebox.show("No Existe");
+				Messagebox.show("El usuario no existe");
 			}
 		} catch (ExceptionPet e2) {
 			Messagebox.show(e2.getMensajeUsuario());
