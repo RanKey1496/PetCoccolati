@@ -1,0 +1,17 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style src="style/new_pet_style.css"></style>
+	<vbox height="100%" width="100%" pack="center" align="center">
+		<label sclass="header">
+			NEW PET
+		</label>		
+		<vbox style="margin-top: 7%;">
+			<label sclass="sub_header">PET NAME</label>
+	    	<textbox width="100%" height="35px"></textbox>
+		</vbox>		
+		<vbox>
+			<label sclass="sub_header">CHIP CODE</label>
+	    	<textbox width="100%" height="35px"></textbox>
+		</vbox>	
+	</vbox>
+</zk>

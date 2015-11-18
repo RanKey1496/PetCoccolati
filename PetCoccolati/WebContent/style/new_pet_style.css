@@ -1,0 +1,30 @@
+@CHARSET "ISO-8859-1";
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,400italic,300italic,500,500italic);
+
+.header{
+	color: #EE3A43;
+	font-family: "Roboto";
+	font-weight: 400;
+	font-size: 40px;
+}
+
+.sub_header{
+	color: #F37868;	
+	font-family: "Roboto";
+	font-weight: 300;
+}
+
+.z-textbox{
+			background-color:#F2F2F2;
+			border-style:none;
+			box-shadow: 0.3px 0.3px 0.3px #101010;
+			
+		}
+		.z-textbox:focus{
+		    background: #e5e5e5 none;
+		}
+		.z-textbox:hover {
+			-webkit-box-shadow: 0px 0px 0 #1F4D69; 
+			-moz-box-shadow: 0px 0px 0 #1F4D69; 
+			background: #e5e5e5; 
+		}

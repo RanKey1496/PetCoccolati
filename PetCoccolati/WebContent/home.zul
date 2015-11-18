@@ -4,7 +4,7 @@
 	<vbox style="height: 100%; width: 100%" pack="center" align="center">
 		<hbox sclass="header">
 			<label sclass="welcome_label">BIENVENIDO </label>
-			<label id="userLabel" sclass="welcome_label"></label>
+			<label id="userLabel" sclass="welcome_label" style="font-weight: 600;"></label>
 		</hbox>
 		<vbox pack="center" align="center">
 			<label sclass="header_label">A la izquierda tienes la barra de navegacion.</label>

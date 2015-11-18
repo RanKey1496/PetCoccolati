@@ -1,46 +1,11 @@
-<?page title="Welcome User" contentType="text/html;charset=UTF-8"?>
+<?page title="Portal" contentType="text/html;charset=UTF-8"?>
 <zk xmlns:html="http://www.w3.org/1999/xhtml">
-	<style src="style/portal_style.css" />	
-	<hbox height="100%">
-		<vbox height="100%" style="background-color:#F5F5F5;">
-			<image src="img/logoPetCoccolati.png"></image>
-			<div class="navigation" width="100%">
-				<html:ul>
-					<html:li class="">
-						<html:a href="#">HOME</html:a>
-					</html:li>
-					<html:li class="has-sub">
-						<html:a href="#">PETS</html:a>
-						<html:ul>
-							<html:li>
-								<html:a href="#">MY PETS</html:a>
-							</html:li>
-							<html:li>
-								<html:a href="#">NEW PET</html:a>
-							</html:li>
-						</html:ul>
-					</html:li>
-					<html:li class="has-sub">
-						<html:a href="#">SERVICES</html:a>
-						<html:ul>
-							<html:li>
-								<html:a href="#">NEW SERVICE</html:a>
-							</html:li>
-							<html:li>
-								<html:a href="#">HISTORY</html:a>
-							</html:li>
-						</html:ul>
-					</html:li>
-					<html:li class="">
-						<html:a href="#">SETTINGS</html:a>
-					</html:li>
-				</html:ul>
-			</div>
-			<div width="100%">
-				<button sclass="btn_login login_btn" width="100%"
-					label="LOG OUT">
-				</button>
-			</div>
-		</vbox>		
-	</hbox>	
+	<borderlayout width="100%" height="100%">
+		<west width ="24%" sclass="west" style="background-color: #F5F5F5;">
+			<include src = "nav.zul"></include>
+		</west>
+		<center>
+			<include src="new_pet.zul"></include>
+		</center>
+	</borderlayout>
 </zk>
