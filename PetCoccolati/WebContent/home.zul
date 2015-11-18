@@ -1,8 +1,9 @@
 <?page title="Home" contentType="text/html;charset=UTF-8"?>
 <zk>
-	<vbox>
+<style src="style/home_style.css" />
+	<vbox style="height: 100%; width: 100%" pack="center" align="center">
 		<hbox>
-			<label sclass="welcome_label">BIENVENIDO</label>
+			<label sclass="welcome_label">BIENVENIDO </label>
 			<label id="userLabel" sclass="welcome_label"></label>
 		</hbox>
 	</vbox>
