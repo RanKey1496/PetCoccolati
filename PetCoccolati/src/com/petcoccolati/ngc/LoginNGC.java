@@ -22,9 +22,9 @@ public class LoginNGC {
 		return loginNGC;
 	}
 	
-	public Boolean verificarPersona(LoginDTO personaDTO) throws ExceptionPet {
+	public Boolean verificarPersona(LoginDTO persona) throws ExceptionPet {
 		try{
-			if(loginDAO.searchPersona(personaDTO)){
+			if(loginDAO.searchPersona(persona)){
 				return true;
 			}
 			else{

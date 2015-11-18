@@ -41,10 +41,13 @@ public class LoginCtl extends GenericForwardComposer{
 			Boolean sesion = loginNGC.verificarPersona(persona);
 			if(sesion){
 				Messagebox.show("Existe");
+			}else{
+				Messagebox.show("No Existe");
 			}
 		} catch (ExceptionPet e2) {
 			Messagebox.show(e2.getMensajeUsuario());
 			System.out.println(e2.getMensajeTecnico()); 
+			System.out.println(e2.getExceptionOriginal().getMessage());
 		}
 	}
 	

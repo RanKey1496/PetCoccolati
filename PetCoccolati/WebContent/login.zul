@@ -13,9 +13,9 @@
 					
 				</hbox>
 				<textbox id="txtPassword" type="password" width="100%" height="35px"></textbox>
-				<button id="btnCreate" sclass="btn bigbtn" style="float: left; margin-top: 15px;">SIGN IN</button>
+				<button id="btnSignin" sclass="btn bigbtn" style="float: left; margin-top: 15px;">SIGN IN</button>
 			</vbox>
-			<button id="btnSignin" style = "margin-top: 3%" sclass="btn_sign signup_btn" width="100%" label="CREATE A NEW ACCOUNT"></button>
+			<button id="btnCreate" style = "margin-top: 3%" sclass="btn_sign signup_btn" width="100%" label="CREATE A NEW ACCOUNT"></button>
 		</vbox>
 	</div>	
 </zk>

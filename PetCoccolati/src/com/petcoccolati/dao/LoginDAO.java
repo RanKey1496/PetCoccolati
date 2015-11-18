@@ -34,17 +34,17 @@ public class LoginDAO {
 			conn = conexion.getConexion();
 			
 			st = conn.createStatement();
-			String query = "SELECT * FROM Clientes WHERE Email='?' AND Contrasena='?'";
+			String query = "SELECT * FROM Clientes WHERE Email=? AND Contrasena=?";
 			ps = conn.prepareStatement(query);
 			ps.setString(1, persona.getEmail());
 			ps.setString(2, persona.getPassword());
-			rs = ps.executeQuery(query);
+			
+			rs = ps.executeQuery();
 			if(rs.next()){
 				return true;
 			}else {
 				return false;
 			}
-			
 		} catch (SQLException e) {
 			ExceptionPet excepPet = new ExceptionPet();
 			excepPet.setMensajeUsuario("Error buscando persona");
