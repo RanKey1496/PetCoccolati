@@ -21,7 +21,7 @@ public class LoginDAO {
 		pool = new PoolConection();
 	}
 	
-	public LoginDTO searchPersona(LoginDTO persona) throws ExceptionPet{
+	public Boolean searchPersona(LoginDTO persona) throws ExceptionPet{
 		Statement st = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -39,13 +39,11 @@ public class LoginDAO {
 			ps.setString(1, persona.getEmail());
 			ps.setString(2, persona.getPassword());
 			rs = ps.executeQuery(query);
-			while (rs.next()) {
-					LoginDTO login = new LoginDTO();
-					login.setEmail(rs.getString("Email"));
-					login.setPassword(rs.getString("Contrasena"));
-					return login;
+			if(rs.next()){
+				return true;
+			}else {
+				return false;
 			}
-			return null;
 			
 		} catch (SQLException e) {
 			ExceptionPet excepPet = new ExceptionPet();

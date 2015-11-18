@@ -7,6 +7,10 @@ public class LoginDTO {
 	private String Email;
 	private String Password;
 	
+	public LoginDTO(){
+		
+	}
+	
 	public LoginDTO(String Email, String Password){
 		this.setEmail(Email);
 		this.setPassword(Password);

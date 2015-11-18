@@ -1,5 +1,6 @@
 package com.petcoccolati.ngc;
 
+import com.petcoccolati.dao.LoginDAO;
 import com.petcoccolati.dao.SignUpDAO;
 import com.petcoccolati.dto.LoginDTO;
 import com.petcoccolati.dto.SignUpDTO;
@@ -14,16 +15,21 @@ public class LoginNGC {
 		loginDAO = new LoginDAO();
 	}
 	
-	public static SignUpNGC getIntance(){
+	public static LoginNGC getIntance(){
 		if(loginNGC == null){
 			loginNGC = new LoginNGC();
 		}
 		return loginNGC;
 	}
 	
-	public void verificarPersona(LoginDTO personaDTO) throws ExceptionPet {
+	public Boolean verificarPersona(LoginDTO personaDTO) throws ExceptionPet {
 		try{
-			
+			if(loginDAO.searchPersona(personaDTO)){
+				return true;
+			}
+			else{
+				return false;
+			}
 		}catch(ExceptionPet eWeb){
 			throw eWeb;
 		}
