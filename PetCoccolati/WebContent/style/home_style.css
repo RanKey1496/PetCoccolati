@@ -6,9 +6,25 @@ body {
 			background-color: #FFFFFF;
 		}
 		
-		.welcome_label{
+		.header{
+			margin-bottom: 10%;
+		}
+		
+		.welcome_label{			
 			font-family: "Roboto"; 
 			font-size: 38px;
 			font-weight: 400;
+			color: #EE3A43;			
+		}
+		
+		.header_label{
+			font-family: "Roboto"; 
+			font-size: 28px;
+			font-weight: 300;	
+		}
+		.subheader_label{
+			font-family: "Roboto";
+			font-size: 20px;
+			font-weight: 100;	
 		}
 		

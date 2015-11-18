@@ -1,6 +1,6 @@
 <?page title="Welcome User" contentType="text/html;charset=UTF-8"?>
 <zk xmlns:html="http://www.w3.org/1999/xhtml">
-	<style src="style/portal_style.css" />
+	<style src="style/portal_style.css" />	
 	<hbox height="100%">
 		<vbox height="100%" style="background-color:#F5F5F5;">
 			<image src="img/logoPetCoccolati.png"></image>
@@ -41,9 +41,6 @@
 					label="LOG OUT">
 				</button>
 			</div>
-		</vbox>
-		<div>
-			<include src="newpet.zul" style="float: right;"></include>
-		</div>
-	</hbox>
+		</vbox>		
+	</hbox>	
 </zk>

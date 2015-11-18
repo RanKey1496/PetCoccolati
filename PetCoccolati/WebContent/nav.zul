@@ -1,0 +1,85 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:html="http://www.w3.org/1999/xhtml">
+	<style src="style/nav_style.css"></style>
+	<vbox height="100%" pack="center" align="center" sclass="container">		
+		<html:div class="backing">
+		<html:ul class="navbar" id="topnav">
+			<html:li class="active">
+
+				<html:a>HOME</html:a>
+
+				<html:ul class="menu-home">
+					<html:li>
+						<html:a href="#">
+							<html:span>Home</html:span>
+						</html:a>
+					</html:li>
+					<html:li>
+						<html:a href="#">
+							<html:span>About</html:span>
+						</html:a>
+					</html:li>
+					<html:li>
+						<html:a href="#">
+							<html:span>Info</html:span>
+						</html:a>
+					</html:li>
+				</html:ul>
+			</html:li>
+			<html:li>
+
+				<html:a>ABOUT</html:a>
+
+				<html:ul class="menu-chapter">
+					<html:li>
+						<html:a href="#">
+							<html:span>Home</html:span>
+						</html:a>
+					</html:li>
+					<html:li>
+						<html:a href="#">
+							<html:span>About</html:span>
+						</html:a>
+					</html:li>
+					<html:li>
+						<html:a href="#">
+							<html:span>Info</html:span>
+						</html:a>
+					</html:li>
+
+				</html:ul>
+			</html:li>
+			
+			<html:li>
+
+				<html:a>INFO</html:a>
+
+				<html:ul class="menu-home">
+					<html:li>
+						<html:a href="#">
+							<html:span>Home</html:span>
+						</html:a>
+					</html:li>
+					<html:li>
+						<html:a href="#">
+							<html:span>About</html:span>
+						</html:a>
+					</html:li>
+					<html:li>
+						<html:a href="#">
+							<html:span>Info</html:span>
+						</html:a>
+					</html:li>
+				</html:ul>
+			</html:li>
+			</html:ul>
+	</html:div>
+		
+			
+	</vbox>
+	
+	<html:script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+	</html:script>
+	<html:script src="scripts/nav_js.js"></html:script>
+</zk>
