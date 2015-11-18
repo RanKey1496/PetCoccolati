@@ -23,10 +23,10 @@ public class SigUpCtl extends GenericForwardComposer {
 	private Textbox txtPassword;
 	private Button btnCreate;
 	private Button btnSignin;
-	
+
 	private SignUpNGC signupNgc;
-	
-	public SigUpCtl(){
+
+	public SigUpCtl() {
 		signupNgc = SignUpNGC.getIntance();
 	}
 
@@ -41,22 +41,31 @@ public class SigUpCtl extends GenericForwardComposer {
 	}
 
 	public void onClick$btnCreate(Event e) {
-		PersonaDTO persona = new PersonaDTO();
-		persona.setId(Integer.parseInt(txtId.getText()));
-		persona.setFirst(txtFirst.getText());
-		persona.setLast(txtLast.getText());
-		persona.setPhone(txtPhone.getText());
-		persona.setEmail(txtEmail.getText());
-		persona.setPassword(txtPassword.getText());
-		try {
-			signupNgc.createPersona(persona);
-		} catch (ExceptionPet e2) {
-			Messagebox.show(e2.getMensajeUsuario());
-			System.out.println(e2.getMensajeTecnico()); 
+		if (!("").equals(txtId.getText()) && !("").equals(txtFirst.getText()) && !("").equals(txtLast.getText())
+				&& !("").equals(txtPhone.getText()) && !("").equals(txtEmail.getText())
+				&& !("").equals(txtPassword.getText())) {
+			PersonaDTO persona = new PersonaDTO();
+			persona.setId(Integer.parseInt(txtId.getText()));
+			persona.setFirst(txtFirst.getText());
+			persona.setLast(txtLast.getText());
+			persona.setPhone(txtPhone.getText());
+			persona.setEmail(txtEmail.getText());
+			persona.setPassword(txtPassword.getText());
+
+			try {
+
+				signupNgc.createPersona(persona);
+			} catch (ExceptionPet e2) {
+				Messagebox.show(e2.getMensajeUsuario());
+				System.out.println(e2.getMensajeTecnico());
+			}
+		} else {
+			Messagebox.show("Por favor ingrese todos los campos", "Error", Messagebox.OK, Messagebox.ERROR);
 		}
+
 	}
-	
-	public void onClick$btnSignin(Event e){
+
+	public void onClick$btnSignin(Event e) {
 		Executions.sendRedirect("login.zul");
 	}
 }
