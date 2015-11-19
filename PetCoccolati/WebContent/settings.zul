@@ -26,6 +26,7 @@
 			</vbox>	
 			<vbox pack="center" align="center">				
 				<label sclass="sub_header">Change picture</label>
+				<image src="img/profile.png"></image>
 				<button sclass="bigbtn btn" label="UPLOAD"></button>				
 			</vbox>	
 		</hbox>
