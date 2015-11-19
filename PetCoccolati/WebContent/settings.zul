@@ -5,19 +5,19 @@
 		<label sclass="header">SETTINGS</label>
 		<hbox style="margin-left:3%; margin-top:1%;">
 			<vbox style="margin-right:30px;">
-				<label sclass="sub_header">Change your name</label>
+				<label sclass="sub_header">CHANGE YOUR NAME</label>
 				<textbox></textbox>	
-				<label sclass="sub_header">Change your password</label>
+				<label sclass="sub_header">CHANGE YOUR PASS</label>
 				<textbox></textbox>					
 			</vbox>	
 			<vbox style="margin-right:30px;">
-				<label sclass="sub_header">Change your email</label>
+				<label sclass="sub_header">CHANGE YOUR EMAIL</label>
 				<textbox></textbox>	
-				<label sclass="sub_header">Change your address</label>
+				<label sclass="sub_header">CHANGE YOUR ADDRESS</label>
 				<textbox></textbox>					
 			</vbox>	
 			<vbox style="margin-right:30px;" pack="center" align="center">
-				<label sclass="sub_header">Choose language</label>
+				<label sclass="sub_header">CHOOSE LANGUAGE</label>
 				<radiogroup orient="vertical">
 					<radio selected="true" style="font-family: 'Roboto'; font-size = 25px;" label="ENGLISH"></radio>
 					<radio label="SPANISH" style="font-family: Roboto;"></radio>
@@ -25,12 +25,12 @@
 				</radiogroup>						
 			</vbox>	
 			<vbox pack="center" align="center">				
-				<label sclass="sub_header">Change picture</label>
+				<label sclass="sub_header">CHANGE PICTURE</label>
 				<image src="img/profile.png"></image>
 				<button sclass="bigbtn btn" label="UPLOAD"></button>				
 			</vbox>	
 		</hbox>
-		<hbox style="position: fixed; bottom: 10%; right: 25%;">
+		<hbox style="position: fixed; bottom: 10%; right: 7%;">
 			<button sclass="bigbtn btn" label="SAVE"></button>
 		</hbox>
 	</vbox>

@@ -5,7 +5,7 @@
 			<include src = "nav.zul"></include>
 		</west>
 		<center>
-			<include src="mypet.zul"></include>
+			<include src="settings.zul"></include>
 		</center>
 	</borderlayout>
 </zk>
