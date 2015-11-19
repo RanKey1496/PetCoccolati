@@ -3,7 +3,7 @@
 <style src="style/home_style.css" />
 	<vbox style="height: 100%; width: 100%" pack="center" align="center" apply="com.petcoccolati.controllers.HomeCtl">
 		<hbox sclass="header">
-			<label sclass="welcome_label">BIENVENIDO </label>
+			<label sclass="welcome_label">BIENVENID@ </label>
 			<label id="userLabel" sclass="welcome_label" style="font-weight: 600;"></label>
 		</hbox>
 		<vbox pack="center" align="center">

@@ -1,116 +1,31 @@
-<?page title="New Pet" contentType="text/html;charset=UTF-8"?>
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
 <zk>
-	<style>
-		@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,400italic,300italic,500,500italic);
-		
-		.z-label {
-			font-family: "Roboto"; 
-			font-size: 40px;
-			font-weight: 300;
-		}
-		.title {
-			margin-left: 15px;
-			display:block;
-		}
-		.lbltitle {
-			margin-left:3%;
-			font-family: "Roboto"; 
-			font-size: 120px;
-			font-weight: 100;
-			color: black;
-			letter-spacing: 25px;
-		}
-		.container {
-			margin-left: 16%;
-			margin-top: 1%;
-		}
-		.z-textbox{
-			font-family: "Roboto"; 
-			font-size: 25px;
-			font-weight: 100;
-			margin:5%;
-			width:300px;
-			height:50px;
-			background-color:#F2F2F2;
-			border-style:none;
-			box-shadow: 0.3px 0.3px 0.3px #101010;
-		}
-		.z-textbox:focus{
-		    background: #e5e5e5 none;
-		}
-		.z-textbox:hover {
-			-webkit-box-shadow: 0px 0px 0 #1F4D69; 
-			-moz-box-shadow: 0px 0px 0 #1F4D69; 
-			background: #e5e5e5; 
-		}
-		.btn { 
-			margin-left: 25px;
-			margin-top: 5%;
-			background:#424242; 
-			color:white;			
-			font-family: "Roboto"; 
-			font-size: 18px;
-			font-weight: 300;
-			text-decoration: none; 
-			position: relative;
-			-moz-box-shadow: 3px 3px 0 #9a9a9a; 
-			-webkit-transition: all 0.3s ease; 
-			-moz-transition: all 0.3s ease; 
-			padding: 5px;
-			border:none;
-			margin-bottom: 10px;
-		}
-		.btn:hover {
-			-webkit-box-shadow: 0px 0px 0 #1F4D69; 
-			-moz-box-shadow: 0px 0px 0 #1F4D69; 
-			background:#0288D1; 
-			color:white;
-		}
-		.bigbtn {
-			-webkit-border-radius: 2em;
-			-moz-border-radius: 2em;
-			border-radius: 0em;
-			width: 110px;
-			box-shadow: 2px 2px 2px #101010;
-            height: 40px;
-		}
-	</style>
-	<div height="100%">
-		<div>
-			<div sclass="title" width="99.2%">
-				<label sclass="lbltitle" width="100%">New Pet</label>
-			</div>
-			<div sclass="container">
-				<hbox style="margin-left:3%; margin-top:1%;">
-					<vbox>
-						<image src="img/petAvatar.png"></image>
-						<button id="uploadBtn" label="Upload file" />
-						<label id="msgLb" />
-					</vbox>
-					<vbox style="margin-right:5%;" width="350px">
-						<label>Name</label>
-						<textbox></textbox>
-						<label>Breed</label>
-						<textbox></textbox>
-					</vbox>
-					<vbox style="margin-right:5%" width="350px">
-						<label>DNI</label>
-						<textbox></textbox>
-						<label>Species</label>
-						<textbox></textbox>
-					</vbox>
-					<vbox style="margin-right:5% " width="350px">
-						<label>Gender</label>
-						<textbox></textbox>
-						<label>Weight</label>
-						<textbox></textbox>
-					</vbox>
-				</hbox>
-				<hbox style="right:0;">
-					<button sclass="bigbtn btn" label="CANCEL"></button>
-					<button sclass="bigbtn btn" label="ADD"></button>
-				</hbox>
-			</div>
-		</div>
-	</div>
+	<style src="style/new_pet_style.css"></style>
+	<vbox height="100%" width="100%" pack="center" align="center">
+		<label sclass="header">NEW PET</label>
+		<hbox style="margin-left:3%; margin-top:1%;">
+			<vbox style="margin-right:30px;">
+				<label sclass="sub_header">Name</label>
+				<textbox></textbox>
+				<label sclass="sub_header">Breed</label>
+				<textbox></textbox>
+			</vbox>
+			<vbox style="margin-right:30px;">
+				<label sclass="sub_header">DNI</label>
+				<textbox></textbox>
+				<label sclass="sub_header">Species</label>
+				<textbox></textbox>
+			</vbox>
+			<vbox style="margin-right:30px;">
+				<label sclass="sub_header">Gender</label>
+				<textbox></textbox>
+				<label sclass="sub_header">Weight</label>
+				<textbox></textbox>
+			</vbox>
+		</hbox>
+		<hbox style="position: fixed; bottom: 10%; right: 10%;">
+			<button sclass="bigbtn btn" label="CANCEL"></button>
+			<button sclass="bigbtn btn" label="ADD"></button>
+		</hbox>
+	</vbox>
 </zk>
