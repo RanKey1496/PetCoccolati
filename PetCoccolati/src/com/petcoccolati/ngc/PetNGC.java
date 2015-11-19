@@ -1,9 +1,6 @@
 package com.petcoccolati.ngc;
 
-import com.petcoccolati.dao.LoginDAO;
 import com.petcoccolati.dao.PetDAO;
-import com.petcoccolati.dto.LoginDTO;
-import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.dto.PetDTO;
 import com.petcoccolati.util.ExceptionPet;
 
@@ -25,7 +22,11 @@ private PetDAO petDao;
 	}
 	
 	public void crearPersona(PetDTO pet) throws ExceptionPet {
-		petDao.createPet(pet);	
+		try{
+			petDao.createPet(pet);
+		}catch(ExceptionPet eWeb){
+			throw eWeb;
+		}
 	}
 
 }

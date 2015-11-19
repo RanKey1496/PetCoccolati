@@ -39,10 +39,8 @@ public class NewPetCtl extends GenericForwardComposer{
 		pet.setGenre(genre.getText());
 		pet.setBreed(breed.getText());
 		pet.setSpecies(species.getText());
-		pet.setWeight(Integer.valueOf(weight.getText()));
-		
+		pet.setWeight(Integer.parseInt(weight.getText()));
 		petNgc.crearPersona(pet);
-		
 	}
 	
 	public void onCreate(){

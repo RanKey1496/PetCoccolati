@@ -8,7 +8,6 @@ import java.sql.Statement;
 
 import com.petcoccolati.bd.Conection;
 import com.petcoccolati.bd.PoolConection;
-import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.dto.PetDTO;
 import com.petcoccolati.util.ExceptionPet;
 
@@ -35,29 +34,26 @@ public class PetDAO {
 			conn = conexion.getConexion();
 			
 			st = conn.createStatement();
-			String query = "INSERT INTO Mascotas (Nombre, Raza, Genero, Especie, Peso, Chip, Id) values (?, ?, ?, ?, ?, ?)";
-			ps = conn.prepareStatement(query);			
+			String query = "INSERT INTO Mascotas (Nombre, Raza, Genero, Especie, Peso, Chip, Cliente_Cedula) values (?, ?, ?, ?, ?, ?, 1039290068)";
+			ps = conn.prepareStatement(query);	
 			ps.setString(1, pet.getName());
 			ps.setString(2, pet.getBreed());
 			ps.setString(3, pet.getGenre());
 			ps.setString(4, pet.getSpecies());
 			ps.setInt(5, pet.getWeight());
-			ps.setString(6, pet.getDni());
-			
+			ps.setInt(6, Integer.parseInt(pet.getDni()));
 			ps.executeUpdate();
 			System.out.println("Pet creada");
-			
-		} catch (SQLException e) {
-			ExceptionPet excepPet = new ExceptionPet();			
+		} catch (SQLException e){
+			ExceptionPet excepPet = new ExceptionPet();
+			excepPet.setMensajeUsuario("Error creado Pet");
+			excepPet.setMensajeTecnico("Error en createPet de la clase PetDAO (SQLException)");
 			excepPet.setExceptionOriginal(e);
-			try {
-				throw excepPet;
-			} catch (ExceptionPet e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+			throw excepPet;
 		} catch(Exception e){
-			ExceptionPet excepPet = new ExceptionPet();			
+			ExceptionPet excepPet = new ExceptionPet();
+			excepPet.setMensajeUsuario("Error creando Pet");
+			excepPet.setMensajeTecnico("Error en createPet de la clase PetDAO");
 			excepPet.setExceptionOriginal(e);
 			throw excepPet;
 		}finally{
@@ -70,7 +66,7 @@ public class PetDAO {
 		}
 		
 		ExceptionPet excepPet = new ExceptionPet();
-		excepPet.setMensajeUsuario("Pet creado con éxito");
+		excepPet.setMensajeUsuario("Usuario creado con éxito");
 		throw excepPet;
 	}
 
