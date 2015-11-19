@@ -1,0 +1,21 @@
+<?page title="My Pets" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<style src="style/new_pet_style.css"></style>
+	<vbox height="100%" width="100%" pack="start" align="center">
+		<label sclass="header">MY PETS</label>
+		<listbox id="lsxPet" mold="paging" pageSize="10">
+			<listhead>
+				<listheader label="NOMBRE" width="16%"></listheader>
+				<listheader label="GENERO" width="16%"></listheader>
+				<listheader label="PESO" width="16%"></listheader>
+				<listheader label="RAZA" width="16%"></listheader>
+				<listheader label="ESPECIE" width="16%"></listheader>
+				<listheader label="CHIP" width="16%"></listheader>
+			</listhead>
+		</listbox>
+		<hbox style="position: fixed; bottom: 10%; right: 10%;">
+			<button sclass="bigbtn btn" label="DELETE"></button>
+			<button sclass="bigbtn btn" label="ADD"></button>
+		</hbox>
+	</vbox>
+</zk>
