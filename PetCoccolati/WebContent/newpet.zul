@@ -1,31 +1,31 @@
 <?page title="new page title" contentType="text/html;charset=UTF-8"?>
 <zk>
 	<style src="style/new_pet_style.css"></style>
-	<vbox height="100%" width="100%" pack="center" align="center">
+	<vbox height="100%" width="100%" pack="center" align="center" apply="com.petcoccolati.controllers.NewPetCtl">
 		<label sclass="header">NEW PET</label>
 		<hbox style="margin-left:3%; margin-top:1%;">
 			<vbox style="margin-right:30px;">
 				<label sclass="sub_header">Name</label>
-				<textbox></textbox>
+				<textbox id="name"></textbox>
 				<label sclass="sub_header">Breed</label>
-				<textbox></textbox>
+				<textbox id="breed"></textbox>
 			</vbox>
 			<vbox style="margin-right:30px;">
 				<label sclass="sub_header">DNI</label>
-				<textbox></textbox>
+				<textbox id="dni"></textbox>
 				<label sclass="sub_header">Species</label>
-				<textbox></textbox>
+				<textbox id="species"></textbox>
 			</vbox>
 			<vbox style="margin-right:30px;">
 				<label sclass="sub_header">Gender</label>
-				<textbox></textbox>
+				<textbox id="genre"></textbox>
 				<label sclass="sub_header">Weight</label>
-				<textbox></textbox>
+				<textbox id="weight"></textbox>
 			</vbox>
 		</hbox>
 		<hbox style="position: fixed; bottom: 10%; right: 10%;">
 			<button sclass="bigbtn btn" label="CANCEL"></button>
-			<button sclass="bigbtn btn" label="ADD"></button>
+			<button sclass="bigbtn btn" id="add" label="ADD"></button>
 		</hbox>
 	</vbox>
 </zk>
