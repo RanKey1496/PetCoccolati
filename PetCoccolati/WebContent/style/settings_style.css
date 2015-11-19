@@ -1,0 +1,75 @@
+@CHARSET "ISO-8859-1";
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,400italic,300italic,500,500italic);
+
+		.header{
+			color: #EE3A43;
+			font-family: "Roboto";
+			font-weight: 100;
+			font-size: 120px;
+			margin-bottom: 10%;
+		}
+
+		.sub_header{
+			color: #F37868;	
+			font-family: "Roboto";
+			font-weight: 300;
+			font-size: 25px;
+		}
+		
+		.z-radio-cnt{
+			font-size:20px;
+			font-family: "Roboto"; 
+			font-weight: 400;
+		}
+		
+		.z-textbox{
+			font-family: "Roboto"; 
+			font-size: 25px;
+			font-weight: 100;
+			width:300px;
+			height:50px;
+			background-color:#F2F2F2;
+			border-style:none;
+			box-shadow: 0.3px 0.3px 0.3px #101010;
+		}
+		
+		.z-textbox:focus{
+		    background: #e5e5e5 none;
+		}
+		
+		.z-textbox:hover {
+			-webkit-box-shadow: 0px 0px 0 #1F4D69; 
+			-moz-box-shadow: 0px 0px 0 #1F4D69; 
+			background: #e5e5e5; 
+		}
+		
+		.btn {
+			margin-top: 5%;
+			background:#EE3A43; 
+			color:white;			
+			font-family: "Roboto"; 
+			font-size: 18px;
+			font-weight: 300;
+			text-decoration: none; 
+			position: relative;
+			-moz-box-shadow: 3px 3px 0 #9a9a9a; 
+			-webkit-transition: all 0.3s ease; 
+			-moz-transition: all 0.3s ease; 
+			padding: 5px;
+			border:none;
+			margin-bottom: 10px;
+		}
+		.btn:hover {
+			-webkit-box-shadow: 0px 0px 0 #1F4D69; 
+			-moz-box-shadow: 0px 0px 0 #1F4D69; 
+			background:#F37868; 
+			color:white;
+		}
+		.bigbtn {
+			-webkit-border-radius: 2em;
+			-moz-border-radius: 2em;
+			border-radius: 0em;
+			width: 110px;
+			box-shadow: 2px 2px 2px #101010;
+            height: 40px;
+		}
