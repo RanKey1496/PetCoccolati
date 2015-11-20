@@ -5,7 +5,7 @@ public class PersonaDTO {
 	int id;	
 	String first;
 	String last;
-	String phone;
+	int phone;
 	String email;
 	String password;
 	
@@ -13,7 +13,7 @@ public class PersonaDTO {
 		
 	}
 	
-	public PersonaDTO(int id, String first, String last, String phone, String email, String password){
+	public PersonaDTO(int id, String first, String last, int phone, String email, String password){
 		this.id = id;
 		this.first = first;
 		this.last = last;
@@ -46,11 +46,11 @@ public class PersonaDTO {
 		this.last = last;
 	}
 
-	public String getPhone() {
+	public int getPhone() {
 		return phone;
 	}
 
-	public void setPhone(String phone) {
+	public void setPhone(int phone) {
 		this.phone = phone;
 	}
 

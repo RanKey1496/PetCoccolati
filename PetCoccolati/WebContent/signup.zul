@@ -26,7 +26,7 @@
 				<hbox style="display: block; float: left;">
 					<label sclass="lbl" value="${labels.lblPhone}"></label>
 				</hbox>
-				<textbox id="txtPhone" width="100%" height="35px"></textbox>
+				<textbox id="txtPhone" width="100%" height="35px" ></textbox>
 				
 				<hbox style="display: block; float: left;">
 					<label sclass="lbl" value="${labels.lblEmail}"></label>

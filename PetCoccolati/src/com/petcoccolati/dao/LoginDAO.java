@@ -46,7 +46,7 @@ public class LoginDAO {
 				usuario.setId(rs.getInt("Cedula"));
 				usuario.setFirst(rs.getString("Nombre"));
 				usuario.setLast(rs.getString("Apellido"));
-				usuario.setPhone(rs.getString("Telefono"));
+				usuario.setPhone(rs.getInt("Telefono"));
 				usuario.setEmail(rs.getString("Email"));
 				usuario.setPassword(rs.getString("Contrasena"));
 				return usuario;

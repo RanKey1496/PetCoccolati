@@ -39,16 +39,28 @@ public class SigUpCtl extends GenericForwardComposer {
 	public void onCreate() {
 
 	}
+	
+	private static boolean isNumeric(String cadena){
+		try {
+			Integer.parseInt(cadena);
+			return true;
+		} catch (NumberFormatException nfe){
+			return false;
+		}
+	}
 
 	public void onClick$btnCreate(Event e) {
 		if (!("").equals(txtId.getText()) && !("").equals(txtFirst.getText()) && !("").equals(txtLast.getText())
 				&& !("").equals(txtPhone.getText()) && !("").equals(txtEmail.getText())
 				&& !("").equals(txtPassword.getText())) {
 			PersonaDTO persona = new PersonaDTO();
+			
 			persona.setId(Integer.parseInt(txtId.getText()));
+			
 			persona.setFirst(txtFirst.getText());
 			persona.setLast(txtLast.getText());
-			persona.setPhone(txtPhone.getText());
+			
+			persona.setPhone(Integer.parseInt(txtPhone.getText()));
 			persona.setEmail(txtEmail.getText());
 			persona.setPassword(txtPassword.getText());
 

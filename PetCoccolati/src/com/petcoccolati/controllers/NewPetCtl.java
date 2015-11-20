@@ -7,6 +7,7 @@ import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Button;
 import org.zkoss.zul.Label;
+import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Textbox;
 
 import com.petcoccolati.dto.PersonaDTO;
@@ -33,6 +34,10 @@ public class NewPetCtl extends GenericForwardComposer{
 	}
 	
 	public void onClick$add(Event e) throws ExceptionPet{
+		
+		if (!("").equals(dni.getText()) && !("").equals(name.getText()) && !("").equals(genre.getText())
+				&& !("").equals(breed.getText()) && !("").equals(species.getText())
+				&& !("").equals(weight.getText())) {
 		PetDTO pet = new PetDTO();
 		pet.setDni(Integer.parseInt(dni.getText()));
 		pet.setName(name.getText());
@@ -40,9 +45,16 @@ public class NewPetCtl extends GenericForwardComposer{
 		pet.setBreed(breed.getText());
 		pet.setSpecies(species.getText());
 		pet.setWeight(Integer.parseInt(weight.getText()));
+		try {
 		petNgc.crearPet(pet);
+		} catch (ExceptionPet e2) {
+			Messagebox.show(e2.getMensajeUsuario());
+			System.out.println(e2.getMensajeTecnico());
+		}
+	}else {
+		Messagebox.show("Por favor ingrese todos los campos", "Error", Messagebox.OK, Messagebox.ERROR);
 	}
-	
+	}
 	public void onCreate(){
 		
 	}
