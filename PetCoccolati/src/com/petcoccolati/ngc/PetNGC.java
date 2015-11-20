@@ -1,36 +1,38 @@
 package com.petcoccolati.ngc;
 
+import java.util.List;
+
 import com.petcoccolati.dao.PetDAO;
 import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.dto.PetDTO;
 import com.petcoccolati.util.ExceptionPet;
 
 public class PetNGC {
-	
-	private PetDAO petDao;	
+
+	private PetDAO petDao;
 	private static PetNGC petNGC;
-	
-	private PetNGC(){
+
+	private PetNGC() {
 		petDao = new PetDAO();
 	}
-	
-	public static PetNGC getIntance(){
-		if(petNGC == null){
+
+	public static PetNGC getIntance() {
+		if (petNGC == null) {
 			petNGC = new PetNGC();
 		}
 		return petNGC;
 	}
-	
+
 	public void crearPet(PetDTO pet) throws ExceptionPet {
-		try{
+		try {
 			petDao.createPet(pet);
-		}catch(ExceptionPet eWeb){
+		} catch (ExceptionPet eWeb) {
 			throw eWeb;
 		}
 	}
-	
-	public void listaPets(PersonaDTO persona) throws ExceptionPet{
-		petDao.listaPets(persona);
+
+	public List<PetDTO> listaPets() throws ExceptionPet {
+		return petDao.listaPets();
 	}
- 
+
 }

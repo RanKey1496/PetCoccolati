@@ -1,7 +1,7 @@
 <?page title="My Pets" contentType="text/html;charset=UTF-8"?>
 <zk>
 	<style src="style/new_pet_style.css"></style>
-	<vbox height="100%" width="100%" pack="start" align="center">
+	<vbox height="100%" width="100%" pack="start" align="center" apply="com.petcoccolati.controllers.MyPetsCtl">
 		<label value="${labels.lblMyPet}" sclass="header"></label>
 		<listbox id="lsxPet" mold="paging" pageSize="10">
 			<listhead>
