@@ -29,7 +29,7 @@ public class PetNGC {
 		}
 	}
 	
-	public void listaPets(PersonaDTO persona){
+	public void listaPets(PersonaDTO persona) throws ExceptionPet{
 		petDao.listaPets(persona);
 	}
  

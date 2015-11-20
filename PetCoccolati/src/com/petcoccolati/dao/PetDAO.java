@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.petcoccolati.bd.Conection;
@@ -73,7 +74,7 @@ public class PetDAO {
 		throw excepPet;
 	}
 
-	public List<PetDTO> listaPets(PersonaDTO persona) {			
+	public List<PetDTO> listaPets(PersonaDTO persona) throws ExceptionPet {			
 		
 		Statement st = null;
 		PreparedStatement ps = null;
@@ -92,16 +93,23 @@ public class PetDAO {
 			ps.setInt(1, persona.getId());	
 			
 			rs = ps.executeQuery();
+			
+			List<PetDTO> petList = new ArrayList<>();
+			
 			while(rs.next()){
-				PersonaDTO usuario = new PersonaDTO();
-				usuario.setId(rs.getInt("Cedula"));
-				usuario.setFirst(rs.getString("Nombre"));
-				usuario.setLast(rs.getString("Apellido"));
-				usuario.setPhone(rs.getString("Telefono"));
-				usuario.setEmail(rs.getString("Email"));
-				usuario.setPassword(rs.getString("Contrasena"));
-				return usuario;
+				PetDTO pet = new PetDTO();
+				pet.setId(rs.getInt("Id"));
+				pet.setName(rs.getString("Nombre"));
+				pet.setGenre(rs.getString("Genero"));
+				pet.setSpecies(rs.getString("Especie"));
+				pet.setDni(rs.getInt("Chip"));
+				pet.setWeight(rs.getInt("Peso"));
+				pet.setBreed(rs.getString("Raza"));
+				petList.add(pet);				
 			}
+			
+			return petList;
+			
 		} catch (SQLException e) {
 			ExceptionPet excepPet = new ExceptionPet();
 			excepPet.setMensajeUsuario("Error buscando persona");
@@ -122,7 +130,6 @@ public class PetDAO {
 		    } catch (Exception e) { /* ignored */ }
 			
 		}
-		return null;
 		
 	}
 
