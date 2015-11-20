@@ -2,15 +2,15 @@
 <zk>
 	<style src="style/new_pet_style.css"></style>
 	<vbox height="100%" width="100%" pack="start" align="center">
-		<label sclass="header">MY PETS</label>
+		<label value="${labels.lblMyPet}" sclass="header"></label>
 		<listbox id="lsxPet" mold="paging" pageSize="10">
 			<listhead>
-				<listheader label="NOMBRE" width="16%"></listheader>
-				<listheader label="GENERO" width="16%"></listheader>
-				<listheader label="PESO" width="16%"></listheader>
-				<listheader label="RAZA" width="16%"></listheader>
-				<listheader label="ESPECIE" width="16%"></listheader>
-				<listheader label="CHIP" width="16%"></listheader>
+				<listheader value="${labels.lblNombre}"  width="16%"></listheader>
+				<listheader value="${labels.lblGenero}"  width="16%"></listheader>
+				<listheader value="${labels.lblPeso}"  width="16%"></listheader>
+				<listheader value="${labels.lblRaza}"  width="16%"></listheader>
+				<listheader value="${labels.lblEspecie}"  width="16%"></listheader>
+				<listheader value="${labels.lblChip}"  width="16%"></listheader>
 			</listhead>
 		</listbox>
 		<hbox style="position: fixed; bottom: 10%; right: 10%;">
