@@ -8,7 +8,7 @@ public class PetDTO {
 	int weight;
 	String breed;
 	String species;
-	String dni;
+	int dni;
 	
 	public int getId() {
 		return id;
@@ -46,10 +46,10 @@ public class PetDTO {
 	public void setSpecies(String species) {
 		this.species = species;
 	}
-	public String getDni() {
+	public int getDni() {
 		return dni;
 	}
-	public void setDni(String dni) {
+	public void setDni(int dni) {
 		this.dni = dni;
 	}
 

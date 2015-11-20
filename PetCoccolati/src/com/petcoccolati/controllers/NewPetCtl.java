@@ -34,13 +34,13 @@ public class NewPetCtl extends GenericForwardComposer{
 	
 	public void onClick$add(Event e) throws ExceptionPet{
 		PetDTO pet = new PetDTO();
-		pet.setDni(dni.getText());
+		pet.setDni(Integer.parseInt(dni.getText()));
 		pet.setName(name.getText());
 		pet.setGenre(genre.getText());
 		pet.setBreed(breed.getText());
 		pet.setSpecies(species.getText());
 		pet.setWeight(Integer.parseInt(weight.getText()));
-		petNgc.crearPersona(pet);
+		petNgc.crearPet(pet);
 	}
 	
 	public void onCreate(){
