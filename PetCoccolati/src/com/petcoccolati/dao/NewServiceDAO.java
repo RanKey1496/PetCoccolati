@@ -8,20 +8,21 @@ import java.sql.Statement;
 
 import com.petcoccolati.bd.Conection;
 import com.petcoccolati.bd.PoolConection;
+import com.petcoccolati.dto.NewServiceDTO;
 import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.util.ExceptionPet;
 
-public class SignUpDAO {
-
+public class NewServiceDAO {
+	
 	private PoolConection pool;
 	private Conection conection;
 	
-	public SignUpDAO() {
+	public NewServiceDAO() {
 		conection = new Conection();
 		pool = new PoolConection();
 	}
 	
-	public void createPersona(PersonaDTO persona) throws ExceptionPet{
+	public void createServicio(NewServiceDTO service) throws ExceptionPet{
 		Statement st = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -34,21 +35,22 @@ public class SignUpDAO {
 			conn = conexion.getConexion();
 			
 			st = conn.createStatement();
-			String query = "INSERT INTO Clientes (Cedula, Nombre, Apellido, Telefono, Email, Contrasena) values (?, ?, ?, ?, ?, ?)";
+			String query = "INSERT INTO Servicios (Fecha_inicio, Fecha_fin, Tipo, Personal_Cedula, Mascota_Id) values (?, ?, ?, ?, ?)";
 			ps = conn.prepareStatement(query);
-			ps.setInt(1, persona.getId());
-			ps.setString(2, persona.getFirst());
-			ps.setString(3, persona.getLast());
-			ps.setInt(4, persona.getPhone());
-			ps.setString(5, persona.getEmail());
-			ps.setString(6, persona.getPassword());
-			ps.executeUpdate();
-			System.out.println("Persona creada");
+			
+			ps.setString(1, service.getFechaInicio());
+			ps.setString(2, service.getFechaFin());
+			ps.setString(3, service.getTipo());
+			ps.setInt(4, service.getPersonalCedula());
+			ps.setInt(5, service.getMascotaId());
+			System.out.println("Servicio Creado");
+			ps.executeUpdate();			
+			
 		} catch (SQLException e) {
 			ExceptionPet excepPet = new ExceptionPet();
+			e.printStackTrace();
 			excepPet.setMensajeUsuario("Error creado persona");
 			excepPet.setMensajeTecnico("Error en crearPersona de la clase SigUpDAO (SQLException)");
-			excepPet.setExceptionOriginal(e);
 			throw excepPet;
 		} catch(Exception e){
 			ExceptionPet excepPet = new ExceptionPet();
@@ -64,11 +66,7 @@ public class SignUpDAO {
 		    } catch (Exception e) { /* ignored */ }
 			
 		}
+		
 	}
 	
-	public void searchPersona(PersonaDTO personaDTO) throws ExceptionPet{
-		ExceptionPet excepWeb = new ExceptionPet();
-		excepWeb.setMensajeUsuario("La persosna ya existe");
-		throw excepWeb;
-	}
 }

@@ -81,10 +81,6 @@ public class PetDAO {
 				/* ignored */ }
 
 		}
-
-		ExceptionPet excepPet = new ExceptionPet();
-		excepPet.setMensajeUsuario("Pet creado con éxito");
-		throw excepPet;
 	}
 
 	public List<PetDTO> listaPets() throws ExceptionPet {

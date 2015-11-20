@@ -6,7 +6,7 @@
 		<hbox style="margin-left:3%; margin-top:1%;">
 			<vbox style="margin-right:30px;">
 				<label sclass="sub_header">Type</label>
-				<combobox style="margin-top:20px;" sclass="cmbService" readonly="true" value="Select...">
+				<combobox id="type" style="margin-top:20px;" sclass="cmbService" readonly="true" value="Select...">
 					<comboitem label="Peluquería" sclass="comboLink" />
 					<comboitem label="Guardería" sclass="comboLink" />
 					<comboitem label="Cita médica" sclass="comboLink" />
@@ -14,12 +14,12 @@
 			</vbox>
 			<vbox style="margin-right:30px;">
 				<label sclass="sub_header">Date</label>
-				<datebox style="margin-top:20px;" cols="12" format="yyyy/MM/dd" onCreate="self.value = new Date()" />
-            	<timebox style="margin-top:20px;" cols="12" format="a hh:mm:ss" onCreate="self.value = new Date()" />
+				<datebox style="margin-top:20px;" id="date" cols="12" format="yyyy/MM/dd" onCreate="self.value = new Date()" />
+            	<timebox style="margin-top:20px;" id="time" cols="12" format="a hh:mm:ss" onCreate="self.value = new Date()" />
 			</vbox>
 			<vbox style="margin-right:30px;">
 				<label sclass="sub_header">PET</label>
-				<combobox style="margin-top:20px;" sclass="cmbService" readonly="true" value="Select...">
+				<combobox id="pet" style="margin-top:20px;" sclass="cmbService" readonly="true" value="Select...">
 					<comboitem label="Mascota1" sclass="comboLink" />
 					<comboitem label="Mascota2" sclass="comboLink" />
 					<comboitem label="Mascota3" sclass="comboLink" />
@@ -35,7 +35,7 @@
 		</hbox>
 		<hbox style="position: fixed; bottom: 10%; right: 10%;">
 			<button sclass="bigbtn btn" label="CANCEL"></button>
-			<button sclass="bigbtn btn" label="REQUEST"></button>
+			<button id="request" sclass="bigbtn btn" label="REQUEST"></button>
 		</hbox>
 	</vbox>
 </zk>
