@@ -3,12 +3,12 @@
 <style src="style/home_style.css" />
 	<vbox style="height: 100%; width: 100%" pack="center" align="center" apply="com.petcoccolati.controllers.HomeCtl">
 		<hbox sclass="header">
-			<label sclass="welcome_label">BIENVENID@ </label>
+			<label value="${labels.lblHomeWelcome}" sclass="welcome_label"></label>
 			<label id="userLabel" sclass="welcome_label" style="font-weight: 600;"></label>
 		</hbox>
 		<vbox pack="center" align="center">
-			<label sclass="header_label">A la izquierda tienes la barra de navegacion.</label>
-			<label sclass="subheader_label">Puedes agregar nuevas mascotas, configurar el lenguaje, adquirir servicios y ver el historial de tu mascota</label>
+			<label value="${labels.lblHomeIzquierda}" sclass="header_label"></label>
+			<label value="${labels.lblHomeAgregar}" sclass="subheader_label"></label>
 		</vbox>
 	</vbox>
 </zk>

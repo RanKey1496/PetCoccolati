@@ -54,6 +54,12 @@ public class PetDAO {
 			excepPet.setMensajeTecnico("Error en createPet de la clase PetDAO (SQLException)");
 			excepPet.setExceptionOriginal(e);
 			throw excepPet;
+		} catch (NumberFormatException e){
+				ExceptionPet excepPet = new ExceptionPet();
+				excepPet.setMensajeUsuario("Error creado Pet");
+				excepPet.setMensajeTecnico("Error en createPet de la clase PetDAO (SQLException)");
+				excepPet.setExceptionOriginal(e);
+				throw excepPet;
 		} catch(Exception e){
 			ExceptionPet excepPet = new ExceptionPet();
 			excepPet.setMensajeUsuario("Error creando Pet");

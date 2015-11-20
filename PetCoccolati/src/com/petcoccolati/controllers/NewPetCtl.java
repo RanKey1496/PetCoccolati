@@ -47,9 +47,9 @@ public class NewPetCtl extends GenericForwardComposer{
 		pet.setWeight(Integer.parseInt(weight.getText()));
 		try {
 		petNgc.crearPet(pet);
-		} catch (ExceptionPet e2) {
-			Messagebox.show(e2.getMensajeUsuario());
-			System.out.println(e2.getMensajeTecnico());
+		} catch (NumberFormatException e2) {
+			Messagebox.show("Debe ingresar numeros en Weight y DNI");
+			e2.printStackTrace();
 		}
 	}else {
 		Messagebox.show("Por favor ingrese todos los campos", "Error", Messagebox.OK, Messagebox.ERROR);
