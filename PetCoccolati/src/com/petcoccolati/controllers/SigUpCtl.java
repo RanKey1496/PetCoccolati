@@ -32,34 +32,17 @@ public class SigUpCtl extends GenericForwardComposer {
 
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
-		btnCreate.setLabel(Labels.getLabel("lblCreateMyAccount"));
-		btnSignin.setLabel(Labels.getLabel("lblSignIn"));
 	}
 
 	public void onCreate() {
 
 	}
-	
-	private static boolean isNumeric(String cadena){
-		try {
-			Integer.parseInt(cadena);
-			return true;
-		} catch (NumberFormatException nfe){
-			return false;
-		}
-	}
 
 	public void onClick$btnCreate(Event e) {
-		if (!("").equals(txtId.getText()) && !("").equals(txtFirst.getText()) && !("").equals(txtLast.getText())
-				&& !("").equals(txtPhone.getText()) && !("").equals(txtEmail.getText())
-				&& !("").equals(txtPassword.getText())) {
 			PersonaDTO persona = new PersonaDTO();
-			
 			persona.setId(txtId.getText());
-			
 			persona.setFirst(txtFirst.getText());
 			persona.setLast(txtLast.getText());
-			
 			persona.setPhone(txtPhone.getText());
 			persona.setEmail(txtEmail.getText());
 			persona.setPassword(txtPassword.getText());
@@ -70,10 +53,6 @@ public class SigUpCtl extends GenericForwardComposer {
 				Messagebox.show(e2.getMensajeUsuario());
 				System.out.println(e2.getMensajeTecnico());
 			}
-		} else {
-			Messagebox.show("Por favor ingrese todos los campos", "Error", Messagebox.OK, Messagebox.ERROR);
-		}
-
 	}
 
 	public void onClick$btnSignin(Event e) {

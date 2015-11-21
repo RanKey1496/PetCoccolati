@@ -53,4 +53,8 @@ public class LoginCtl extends GenericForwardComposer{
 		}
 	}
 	
+	public void onClick$btnCreate(Event e) {
+		Executions.sendRedirect("signup.zul");
+	}
+	
 }
