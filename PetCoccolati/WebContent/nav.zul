@@ -1,27 +1,27 @@
 <?page title="new page title" contentType="text/html;charset=UTF-8"?>
 <zk xmlns:html="http://www.w3.org/1999/xhtml">
 	<style src="style/nav_style.css"></style>
-	<vbox height="100%" pack="center" align="start" sclass="container">	
+	<vbox height="100%" pack="center" align="start" sclass="container" apply="com.petcoccolati.controllers.PortalCtl">	
 	<image src="img/logoPetCoccolati.png"></image>	
 		<html:div class="backing">
 		<html:ul class="navbar" id="topnav">		
 			<html:li class="active">
-				<html:a>HOME</html:a>
+				<html:a><label id="lblHome">HOME</label></html:a>
 			</html:li>
 			
 			<html:li>
 
-				<html:a>PETS</html:a>
+				<html:a><label>PETS</label></html:a>
 
 				<html:ul class="menu-chapter">
 					<html:li>
 						<html:a href="#">
-							<html:span>MY PETS</html:span>
+							<label id="lblMyPets">MY PETS</label>
 						</html:a>
 					</html:li>
 					<html:li>
 						<html:a href="#">
-							<html:span>NEW PET</html:span>
+							<label id="lblNewPet">NEW PET</label>
 						</html:a>
 					</html:li>				
 
@@ -30,28 +30,28 @@
 			
 			<html:li>
 
-				<html:a>SERVICES</html:a>
+				<html:a><label>SERVICES</label></html:a>
 
 				<html:ul class="menu-home">
 					<html:li>
 						<html:a href="#">
-							<html:span>NEW SERVICE</html:span>
+							<label id="lblNewService">NEW SERVICE</label>
 						</html:a>
 					</html:li>
 					<html:li>
 						<html:a href="#">
-							<html:span>HISTORY</html:span>
+							<label id="lblHistory">HISTORY</label>
 						</html:a>
 					</html:li>					
 				</html:ul>
 			</html:li>
 			
 			<html:li>
-				<html:a>SETTINGS</html:a>
+				<html:a><label id="lblSettings">SETTINGS</label></html:a>
 			</html:li>
 			
 			<html:li>
-				<html:a style="font-weight: 400; margin-top: 50px;">LOG OUT</html:a>
+				<html:a style="font-weight: 400; margin-top: 50px;"><label id="lblLogOut">LOG OUT</label></html:a>
 			</html:li>
 			
 			</html:ul>

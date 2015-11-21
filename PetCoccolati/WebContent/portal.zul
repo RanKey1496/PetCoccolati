@@ -1,11 +1,11 @@
 <?page title="Portal" contentType="text/html;charset=UTF-8"?>
 <zk xmlns:html="http://www.w3.org/1999/xhtml">
-	<borderlayout width="100%" height="100%">
+	<borderlayout width="100%" height="100%" apply="com.petcoccolati.controllers.PortalCtl">
 		<west width ="20%" sclass="west" style="background-color: #F5F5F5;">
 			<include src = "nav.zul"></include>
 		</west>
 		<center>
-			<include src="newservice.zul"></include>
+			<include id="innerIncld" src="home.zul"></include>
 		</center>
 	</borderlayout>
 </zk>
