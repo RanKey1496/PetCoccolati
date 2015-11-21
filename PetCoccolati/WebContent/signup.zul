@@ -1,7 +1,6 @@
 <?page title="Sign Up" contentType="text/html;charset=UTF-8"?>
 <zk>
-	<style src="style/signup_style.css">
-	</style>
+	<style src="style/signup_style.css"></style>
 	<div align="center" style="margin-top: 3%;" apply="com.petcoccolati.controllers.SigUpCtl">
 		<vbox width="23%">
 			<vbox align="center" width="100%" style="background-color:#FFF;" sclass="container">
@@ -30,8 +29,7 @@
 				<label style="font-family: Roboto; font-weight: 300; margin-bottom: 15px; color: #424242" value="${labels.lblClickTermsOfService}"></label>
 				<hbox style="margin-top: 15px"></hbox>
 			</vbox>
-				<button id="btnSignin" style="margin-top: 3%" sclass="btn_login login_btn" width="100%" label="${labels.lblSignIn}">
-			</button>
+				<button id="btnSignin" style="margin-top: 3%" sclass="btn_login login_btn" width="100%" label="${labels.lblSignIn}"></button>
 		</vbox>
 	</div>	
 </zk>

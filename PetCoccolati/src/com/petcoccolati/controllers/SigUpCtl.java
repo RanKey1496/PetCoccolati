@@ -6,6 +6,7 @@ import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Button;
+import org.zkoss.zul.Intbox;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Textbox;
 
@@ -15,10 +16,10 @@ import com.petcoccolati.util.ExceptionPet;
 
 public class SigUpCtl extends GenericForwardComposer {
 
-	private Textbox txtId;
+	private Intbox txtId;
 	private Textbox txtFirst;
 	private Textbox txtLast;
-	private Textbox txtPhone;
+	private Intbox txtPhone;
 	private Textbox txtEmail;
 	private Textbox txtPassword;
 	private Button btnCreate;
