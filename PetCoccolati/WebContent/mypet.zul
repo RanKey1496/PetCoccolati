@@ -5,12 +5,12 @@
 		<label value="${labels.lblMyPet}" sclass="header"></label>
 		<listbox id="lsxPet" mold="paging" pageSize="10">
 			<listhead>
-				<listheader value="${labels.lblNombre}"  width="16%"></listheader>
-				<listheader value="${labels.lblGenero}"  width="16%"></listheader>
-				<listheader value="${labels.lblPeso}"  width="16%"></listheader>
-				<listheader value="${labels.lblRaza}"  width="16%"></listheader>
-				<listheader value="${labels.lblEspecie}"  width="16%"></listheader>
-				<listheader value="${labels.lblChip}"  width="16%"></listheader>
+				<listheader label="${labels.lblNombre}"  width="16%"></listheader>
+				<listheader label="${labels.lblGenero}"  width="16%"></listheader>
+				<listheader label="${labels.lblPeso}"  width="16%"></listheader>
+				<listheader label="${labels.lblRaza}"  width="16%"></listheader>
+				<listheader label="${labels.lblEspecie}"  width="16%"></listheader>
+				<listheader label="${labels.lblChip}"  width="16%"></listheader>
 			</listhead>
 		</listbox>
 		<hbox style="position: fixed; bottom: 10%; right: 10%;">
