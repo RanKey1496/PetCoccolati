@@ -2,10 +2,10 @@ package com.petcoccolati.dto;
 
 public class PersonaDTO {
 
-	int id;	
+	String id;	
 	String first;
 	String last;
-	int phone;
+	String phone;
 	String email;
 	String password;
 	
@@ -13,7 +13,7 @@ public class PersonaDTO {
 		
 	}
 	
-	public PersonaDTO(int id, String first, String last, int phone, String email, String password){
+	public PersonaDTO(String id, String first, String last, String phone, String email, String password){
 		this.id = id;
 		this.first = first;
 		this.last = last;
@@ -22,11 +22,11 @@ public class PersonaDTO {
 		this.password = password;
 	}
 	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -46,11 +46,11 @@ public class PersonaDTO {
 		this.last = last;
 	}
 
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 

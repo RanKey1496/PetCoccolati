@@ -39,7 +39,7 @@ public class NewPetCtl extends GenericForwardComposer{
 				&& !("").equals(breed.getText()) && !("").equals(species.getText())
 				&& !("").equals(weight.getText())) {
 		PetDTO pet = new PetDTO();
-		pet.setDni(Integer.parseInt(dni.getText()));
+		pet.setDni(dni.getText());
 		pet.setName(name.getText());
 		pet.setGenre(genre.getText());
 		pet.setBreed(breed.getText());

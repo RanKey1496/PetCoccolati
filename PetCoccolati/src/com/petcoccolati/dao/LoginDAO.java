@@ -43,10 +43,10 @@ public class LoginDAO {
 			rs = ps.executeQuery();
 			while(rs.next()){
 				PersonaDTO usuario = new PersonaDTO();
-				usuario.setId(rs.getInt("Cedula"));
+				usuario.setId(rs.getString("Cedula"));
 				usuario.setFirst(rs.getString("Nombre"));
 				usuario.setLast(rs.getString("Apellido"));
-				usuario.setPhone(rs.getInt("Telefono"));
+				usuario.setPhone(rs.getString("Telefono"));
 				usuario.setEmail(rs.getString("Email"));
 				usuario.setPassword(rs.getString("Contrasena"));
 				return usuario;

@@ -44,7 +44,7 @@ public class PetDAO {
 			ps.setString(3, pet.getGenre());
 			ps.setString(4, pet.getSpecies());
 			ps.setInt(5, pet.getWeight());
-			ps.setInt(6, pet.getDni());
+			ps.setString(6, pet.getDni());
 			System.out.println("Pet creada");
 			ps.executeUpdate();
 
@@ -110,7 +110,7 @@ public class PetDAO {
 				pet.setName(rs.getString("Nombre"));
 				pet.setGenre(rs.getString("Genero"));
 				pet.setSpecies(rs.getString("Especie"));
-				pet.setDni(rs.getInt("Chip"));
+				pet.setDni(rs.getString("Chip"));
 				pet.setWeight(rs.getInt("Peso"));
 				pet.setBreed(rs.getString("Raza"));
 				petList.add(pet);

@@ -55,12 +55,12 @@ public class SigUpCtl extends GenericForwardComposer {
 				&& !("").equals(txtPassword.getText())) {
 			PersonaDTO persona = new PersonaDTO();
 			
-			persona.setId(Integer.parseInt(txtId.getText()));
+			persona.setId(txtId.getText());
 			
 			persona.setFirst(txtFirst.getText());
 			persona.setLast(txtLast.getText());
 			
-			persona.setPhone(Integer.parseInt(txtPhone.getText()));
+			persona.setPhone(txtPhone.getText());
 			persona.setEmail(txtEmail.getText());
 			persona.setPassword(txtPassword.getText());
 

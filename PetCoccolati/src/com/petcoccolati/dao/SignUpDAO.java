@@ -36,10 +36,10 @@ public class SignUpDAO {
 			st = conn.createStatement();
 			String query = "INSERT INTO Clientes (Cedula, Nombre, Apellido, Telefono, Email, Contrasena) values (?, ?, ?, ?, ?, ?)";
 			ps = conn.prepareStatement(query);
-			ps.setInt(1, persona.getId());
+			ps.setString(1, persona.getId());
 			ps.setString(2, persona.getFirst());
 			ps.setString(3, persona.getLast());
-			ps.setInt(4, persona.getPhone());
+			ps.setString(4, persona.getPhone());
 			ps.setString(5, persona.getEmail());
 			ps.setString(6, persona.getPassword());
 			ps.executeUpdate();
