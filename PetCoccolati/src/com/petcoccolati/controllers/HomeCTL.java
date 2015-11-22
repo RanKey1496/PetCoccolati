@@ -8,7 +8,7 @@ import org.zkoss.zul.Label;
 
 import com.petcoccolati.dto.PersonaDTO;
 
-public class HomeCtl extends GenericForwardComposer{
+public class HomeCTL extends GenericForwardComposer{
 
 	private Label userLabel;
 	
@@ -16,11 +16,11 @@ public class HomeCtl extends GenericForwardComposer{
 		super.doAfterCompose(comp);
 	}
 	
-	public HomeCtl(){
+	public HomeCTL(){
 		
 	}
 	
-	public HomeCtl(PersonaDTO persona){
+	public HomeCTL(PersonaDTO persona){
 		
 	}
 	

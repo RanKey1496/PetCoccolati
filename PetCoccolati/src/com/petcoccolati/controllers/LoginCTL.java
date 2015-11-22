@@ -13,7 +13,7 @@ import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.ngc.LoginNGC;
 import com.petcoccolati.util.ExceptionPet;
 
-public class LoginCtl extends GenericForwardComposer{
+public class LoginCTL extends GenericForwardComposer{
 
 	private Textbox txtEmail;
 	private Textbox txtPassword;
@@ -22,7 +22,7 @@ public class LoginCtl extends GenericForwardComposer{
 	
 	private LoginNGC loginNGC;
 	
-	public LoginCtl(){
+	public LoginCTL(){
 		loginNGC = LoginNGC.getIntance();
 	}
 	

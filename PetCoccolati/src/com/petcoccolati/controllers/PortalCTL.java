@@ -6,7 +6,7 @@ import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Include;
 
-public class PortalCtl extends GenericForwardComposer implements PortalIntCtl{
+public class PortalCTL extends GenericForwardComposer implements PortalIntCTL{
 	
 	private Include innerIncld;
 	
@@ -14,7 +14,7 @@ public class PortalCtl extends GenericForwardComposer implements PortalIntCtl{
 		super.doAfterCompose(comp);
 	}
 	
-	public PortalCtl(){
+	public PortalCTL(){
 		
 	}
 	

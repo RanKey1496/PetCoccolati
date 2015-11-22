@@ -15,7 +15,7 @@ import com.petcoccolati.dto.PetDTO;
 import com.petcoccolati.ngc.PetNGC;
 import com.petcoccolati.util.ExceptionPet;
 
-public class NewPetCtl extends GenericForwardComposer{
+public class NewPetCTL extends GenericForwardComposer{
 	
 	private Textbox name, dni, breed, species, genre, weight;
 	private Button add;
@@ -25,11 +25,11 @@ public class NewPetCtl extends GenericForwardComposer{
 		super.doAfterCompose(comp);
 	}
 	
-	public NewPetCtl(){
+	public NewPetCTL(){
 		petNgc = PetNGC.getIntance();
 	}
 	
-	public NewPetCtl(PetDTO pet){
+	public NewPetCTL(PetDTO pet){
 		
 	}
 	

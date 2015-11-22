@@ -18,7 +18,7 @@ import com.petcoccolati.dto.PetDTO;
 import com.petcoccolati.ngc.PetNGC;
 import com.petcoccolati.util.ExceptionPet;
 
-public class MyPetsCtl extends GenericForwardComposer implements ListitemRenderer {
+public class MyPetsCTL extends GenericForwardComposer implements ListitemRenderer {
 
 	private Listbox lsxPet;
 
@@ -28,7 +28,7 @@ public class MyPetsCtl extends GenericForwardComposer implements ListitemRendere
 		super.doAfterCompose(comp);
 	}
 
-	public MyPetsCtl() {
+	public MyPetsCTL() {
 		petNGC = PetNGC.getIntance();
 	}
 

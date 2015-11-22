@@ -14,7 +14,7 @@ import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.ngc.SignUpNGC;
 import com.petcoccolati.util.ExceptionPet;
 
-public class SigUpCtl extends GenericForwardComposer {
+public class SignUpCTL extends GenericForwardComposer {
 
 	private Intbox txtId;
 	private Textbox txtFirst;
@@ -27,7 +27,7 @@ public class SigUpCtl extends GenericForwardComposer {
 
 	private SignUpNGC signupNgc;
 
-	public SigUpCtl() {
+	public SignUpCTL() {
 		signupNgc = SignUpNGC.getIntance();
 	}
 

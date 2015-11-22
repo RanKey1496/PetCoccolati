@@ -18,7 +18,7 @@ import com.petcoccolati.util.ExceptionPet;
 
 import javafx.scene.control.ComboBox;
 
-public class NewServiceCtl extends GenericForwardComposer{
+public class NewServiceCTL extends GenericForwardComposer{
   	
 	Combobox type, pet;
 	Datebox date;
@@ -26,7 +26,7 @@ public class NewServiceCtl extends GenericForwardComposer{
 	
 	NewServiceNGC newServiceNgc;
 	
-	public NewServiceCtl(){
+	public NewServiceCTL(){
 		newServiceNgc = NewServiceNGC.getInstance();
 	}
 	

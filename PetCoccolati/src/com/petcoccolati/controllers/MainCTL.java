@@ -13,7 +13,7 @@ import org.zkoss.zul.Listitem;
 import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Window;
 
-public class MainCtl extends GenericForwardComposer implements ListitemRenderer{
+public class MainCTL extends GenericForwardComposer implements ListitemRenderer{
 
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
