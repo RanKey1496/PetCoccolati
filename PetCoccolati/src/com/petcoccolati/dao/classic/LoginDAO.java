@@ -1,4 +1,4 @@
-package com.petcoccolati.dao;
+package com.petcoccolati.dao.classic;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,21 +8,21 @@ import java.sql.Statement;
 
 import com.petcoccolati.bd.Conection;
 import com.petcoccolati.bd.PoolConection;
-import com.petcoccolati.dto.NewServiceDTO;
+import com.petcoccolati.dto.LoginDTO;
 import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.util.ExceptionPet;
 
-public class NewServiceDAO {
-	
+public class LoginDAO {
+
 	private PoolConection pool;
 	private Conection conection;
 	
-	public NewServiceDAO() {
+	public LoginDAO() {
 		conection = new Conection();
 		pool = new PoolConection();
 	}
 	
-	public void createServicio(NewServiceDTO service) throws ExceptionPet{
+	public PersonaDTO searchPersona(LoginDTO persona) throws ExceptionPet{
 		Statement st = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -35,27 +35,32 @@ public class NewServiceDAO {
 			conn = conexion.getConexion();
 			
 			st = conn.createStatement();
-			String query = "INSERT INTO Servicios (Fecha_inicio, Fecha_fin, Tipo, Personal_Cedula, Mascota_Id) values (?, ?, ?, ?, ?)";
+			String query = "SELECT * FROM Clientes WHERE Email=? AND Contrasena=?";
 			ps = conn.prepareStatement(query);
+			ps.setString(1, persona.getEmail());
+			ps.setString(2, persona.getPassword());
 			
-			ps.setString(1, service.getFechaInicio());
-			ps.setString(2, service.getFechaFin());
-			ps.setString(3, service.getTipo());
-			ps.setInt(4, service.getPersonalCedula());
-			ps.setInt(5, service.getMascotaId());
-			System.out.println("Servicio Creado");
-			ps.executeUpdate();			
-			
+			rs = ps.executeQuery();
+			while(rs.next()){
+				PersonaDTO usuario = new PersonaDTO();
+				usuario.setId(rs.getString("Cedula"));
+				usuario.setFirst(rs.getString("Nombre"));
+				usuario.setLast(rs.getString("Apellido"));
+				usuario.setPhone(rs.getString("Telefono"));
+				usuario.setEmail(rs.getString("Email"));
+				usuario.setPassword(rs.getString("Contrasena"));
+				return usuario;
+			}
 		} catch (SQLException e) {
 			ExceptionPet excepPet = new ExceptionPet();
-			e.printStackTrace();
-			excepPet.setMensajeUsuario("Error creado persona");
-			excepPet.setMensajeTecnico("Error en crearPersona de la clase SigUpDAO (SQLException)");
+			excepPet.setMensajeUsuario("Error buscando persona");
+			excepPet.setMensajeTecnico("Error en searchPersona (SQLException)");
+			excepPet.setExceptionOriginal(e);
 			throw excepPet;
 		} catch(Exception e){
 			ExceptionPet excepPet = new ExceptionPet();
-			excepPet.setMensajeUsuario("Error creado persona");
-			excepPet.setMensajeTecnico("Error en crearPersona de la clase SigUpDAO");
+			excepPet.setMensajeUsuario("Error buscando persona");
+			excepPet.setMensajeTecnico("Error en searchPersona de la clase LoginDAO");
 			excepPet.setExceptionOriginal(e);
 			throw excepPet;
 		}finally{
@@ -66,7 +71,6 @@ public class NewServiceDAO {
 		    } catch (Exception e) { /* ignored */ }
 			
 		}
-		
+		return null;
 	}
-	
 }

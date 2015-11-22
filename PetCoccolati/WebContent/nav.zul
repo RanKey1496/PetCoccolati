@@ -1,7 +1,7 @@
 <?page title="new page title" contentType="text/html;charset=UTF-8"?>
 <zk xmlns:html="http://www.w3.org/1999/xhtml">
 	<style src="style/nav_style.css"></style>
-	<vbox height="100%" pack="center" align="start" sclass="container" apply="com.petcoccolati.controllers.PortalCtl">	
+	<vbox height="100%" pack="center" align="start" sclass="container" apply="com.petcoccolati.controllers.PortalCTL">	
 	<image src="img/logoPetCoccolati.png"></image>	
 		<html:div class="backing">
 		<html:ul class="navbar" id="topnav">		

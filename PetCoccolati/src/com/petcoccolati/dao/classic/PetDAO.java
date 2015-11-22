@@ -1,4 +1,4 @@
-package com.petcoccolati.dao;
+package com.petcoccolati.dao.classic;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

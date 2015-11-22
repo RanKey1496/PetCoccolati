@@ -2,7 +2,7 @@ package com.petcoccolati.ngc;
 
 import java.util.List;
 
-import com.petcoccolati.dao.PetDAO;
+import com.petcoccolati.dao.classic.PetDAO;
 import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.dto.PetDTO;
 import com.petcoccolati.util.ExceptionPet;

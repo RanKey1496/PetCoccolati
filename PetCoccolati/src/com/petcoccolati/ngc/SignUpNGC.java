@@ -1,6 +1,6 @@
 package com.petcoccolati.ngc;
 
-import com.petcoccolati.dao.SignUpDAO;
+import com.petcoccolati.dao.classic.SignUpDAO;
 import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.util.ExceptionPet;
 

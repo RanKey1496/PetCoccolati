@@ -1,7 +1,7 @@
 <?page title="New Service" contentType="text/html;charset=UTF-8"?>
 <zk>
 	<style src="style/new_service_style.css"></style>
-	<vbox height="100%" width="100%" pack="center" align="center" apply="com.petcoccolati.controllers.NewServiceCtl">
+	<vbox height="100%" width="100%" pack="center" align="center" apply="com.petcoccolati.controllers.NewServiceCTL">
 		<label sclass="header">NEW SERVICE</label>
 		<hbox style="margin-left:3%; margin-top:1%;">
 			<vbox style="margin-right:30px;">

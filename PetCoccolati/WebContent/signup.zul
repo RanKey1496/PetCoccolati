@@ -1,7 +1,7 @@
 <?page title="Sign Up" contentType="text/html;charset=UTF-8"?>
 <zk>
 	<style src="style/signup_style.css"></style>
-	<div align="center" style="margin-top: 3%;" apply="com.petcoccolati.controllers.SigUpCtl">
+	<div align="center" style="margin-top: 3%;" apply="com.petcoccolati.controllers.SignUpCTL">
 		<vbox width="23%">
 			<vbox align="center" width="100%" style="background-color:#FFF;" sclass="container">
 				<image src="img/logoPetCoccolati.png" width="175px;" height="175px;"></image>

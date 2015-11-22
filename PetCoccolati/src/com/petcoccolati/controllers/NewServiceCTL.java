@@ -24,10 +24,14 @@ public class NewServiceCTL extends GenericForwardComposer{
 	Datebox date;
 	Timebox time;
 	
-	NewServiceNGC newServiceNgc;
+	private NewServiceNGC newServiceNgc;
 	
 	public NewServiceCTL(){
-		newServiceNgc = NewServiceNGC.getInstance();
+		//newServiceNgc = NewServiceNGC.getInstance();
+	}
+	
+	public void setNewServiceNGC(NewServiceNGC newServiceNgc){
+		this.newServiceNgc = newServiceNgc;
 	}
 	
   	public void doAfterCompose(Component comp) throws Exception {

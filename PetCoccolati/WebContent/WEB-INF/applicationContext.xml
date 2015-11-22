@@ -13,26 +13,18 @@
 
 	<!-- BEANS PARA LOS CONTROLADORES -->
 
-	<bean id="beanLoginCtl" class="com.petcoccolati.ngc.LoginCTL" scope="prototype">
-		<property name="loginCtl" ref="beanLoginNgc"></property>
+	<bean id="beanNewServiceCtl" class="com.petcoccolati.ngc.LoginCTL" scope="prototype">
+		<property name="newServiceNgc" ref="beanNewServiceNgc"></property>
 	</bean>
 
 	<!-- BEANS PARA LOS NEGOCIOS -->
 	
-	<bean id="beanLoginNgc" class="com.petcoccolati.ngc.LoginNGC" scope="singleton">
-		<property name="loginNgc" ref="beanLoginDao"></property>
-	</bean>
 	<bean id="beanNewServiceNgc" class="com.petcoccolati.ngc.NewServiceNGC" scope="singleton">
-		<property name="newServiceNgc" ref="beanNewServiceDao"></property>
-	</bean>
-	<bean id="beanPetNgc" class="com.petcoccolati.ngc.PetNGC" scope="singleton">
-		<property name="petNgc" ref="beanPetDao"></property>
-	</bean>
-	<bean id="beanSignUpNgc" class="com.petcoccolati.ngc.SignUpNGC" scope="singleton">
-		<property name="signUpNgc" ref="beanSignUpDao"></property>
+		<property name="newServiceDao" ref="beanNewServiceDao"></property>
 	</bean>
 	
 	<!-- BEANS PARA LA PERSISTENCIA -->
-
+	<bean id="beanNewServiceDao" class="com.petcoccolati.dao.classic.NewServiceDAO" scope="prototype">
+	</bean>
 
 </beans>

@@ -1,4 +1,4 @@
-package com.petcoccolati.dao;
+package com.petcoccolati.dao.classic;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,21 +8,20 @@ import java.sql.Statement;
 
 import com.petcoccolati.bd.Conection;
 import com.petcoccolati.bd.PoolConection;
-import com.petcoccolati.dto.LoginDTO;
 import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.util.ExceptionPet;
 
-public class LoginDAO {
+public class SignUpDAO {
 
 	private PoolConection pool;
 	private Conection conection;
 	
-	public LoginDAO() {
+	public SignUpDAO() {
 		conection = new Conection();
 		pool = new PoolConection();
 	}
 	
-	public PersonaDTO searchPersona(LoginDTO persona) throws ExceptionPet{
+	public void createPersona(PersonaDTO persona) throws ExceptionPet{
 		Statement st = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -35,32 +34,26 @@ public class LoginDAO {
 			conn = conexion.getConexion();
 			
 			st = conn.createStatement();
-			String query = "SELECT * FROM Clientes WHERE Email=? AND Contrasena=?";
+			String query = "INSERT INTO Clientes (Cedula, Nombre, Apellido, Telefono, Email, Contrasena) values (?, ?, ?, ?, ?, ?)";
 			ps = conn.prepareStatement(query);
-			ps.setString(1, persona.getEmail());
-			ps.setString(2, persona.getPassword());
-			
-			rs = ps.executeQuery();
-			while(rs.next()){
-				PersonaDTO usuario = new PersonaDTO();
-				usuario.setId(rs.getString("Cedula"));
-				usuario.setFirst(rs.getString("Nombre"));
-				usuario.setLast(rs.getString("Apellido"));
-				usuario.setPhone(rs.getString("Telefono"));
-				usuario.setEmail(rs.getString("Email"));
-				usuario.setPassword(rs.getString("Contrasena"));
-				return usuario;
-			}
+			ps.setString(1, persona.getId());
+			ps.setString(2, persona.getFirst());
+			ps.setString(3, persona.getLast());
+			ps.setString(4, persona.getPhone());
+			ps.setString(5, persona.getEmail());
+			ps.setString(6, persona.getPassword());
+			ps.executeUpdate();
+			System.out.println("Persona creada");
 		} catch (SQLException e) {
 			ExceptionPet excepPet = new ExceptionPet();
-			excepPet.setMensajeUsuario("Error buscando persona");
-			excepPet.setMensajeTecnico("Error en searchPersona (SQLException)");
+			excepPet.setMensajeUsuario("Error creado persona");
+			excepPet.setMensajeTecnico("Error en crearPersona de la clase SigUpDAO (SQLException)");
 			excepPet.setExceptionOriginal(e);
 			throw excepPet;
 		} catch(Exception e){
 			ExceptionPet excepPet = new ExceptionPet();
-			excepPet.setMensajeUsuario("Error buscando persona");
-			excepPet.setMensajeTecnico("Error en searchPersona de la clase LoginDAO");
+			excepPet.setMensajeUsuario("Error creado persona");
+			excepPet.setMensajeTecnico("Error en crearPersona de la clase SigUpDAO");
 			excepPet.setExceptionOriginal(e);
 			throw excepPet;
 		}finally{
@@ -71,6 +64,11 @@ public class LoginDAO {
 		    } catch (Exception e) { /* ignored */ }
 			
 		}
-		return null;
+	}
+	
+	public void searchPersona(PersonaDTO personaDTO) throws ExceptionPet{
+		ExceptionPet excepWeb = new ExceptionPet();
+		excepWeb.setMensajeUsuario("La persosna ya existe");
+		throw excepWeb;
 	}
 }
