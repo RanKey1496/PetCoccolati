@@ -12,6 +12,10 @@
 
 
 	<!-- BEANS PARA LOS CONTROLADORES -->
+	
+	<bean id = "LoginCTL" class="com.petcoccolati.controllets.LoginCTL" scope="prototype">
+		<property name="loginNGC" ref="loginNGC"></property>
+	</bean>
 
 	<bean id="NewPetCTL" class="com.petcoccolati.controllers.NewPetCTL" scope="prototype">
 		<property name="petNGC" ref="petNGC"></property>
@@ -31,6 +35,10 @@
 
 	<!-- BEANS PARA LOS NEGOCIOS -->
 	
+	<bean id="loginNGC" class="com.petcoccolati.ngc.PetNGC">
+		<property name="loginDAO" ref="loginDAO"></property>
+	</bean>
+	
 	<bean id="petNGC" class="com.petcoccolati.ngc.PetNGC">
 		<property name="petDAO" ref="petDAO"></property>
 	</bean>
@@ -44,6 +52,9 @@
 	</bean>
 	
 	<!-- BEANS PARA LA PERSISTENCIA -->
+	
+	<bean id="loginDAO" class="com.petcoccolati.dao.classic.LoginDAO"></bean>
+	
 	<bean id="petDAO" class="com.petcoccolati.dao.classic.PetDAO">
 	</bean>
 	

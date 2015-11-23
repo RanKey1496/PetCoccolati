@@ -8,11 +8,12 @@ import java.sql.Statement;
 
 import com.petcoccolati.bd.Conection;
 import com.petcoccolati.bd.PoolConection;
+import com.petcoccolati.dao.LoginDAOInt;
 import com.petcoccolati.dto.LoginDTO;
 import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.util.ExceptionPet;
 
-public class LoginDAO {
+public class LoginDAO implements LoginDAOInt {
 
 	private PoolConection pool;
 	private Conection conection;
@@ -73,4 +74,5 @@ public class LoginDAO {
 		}
 		return null;
 	}
+
 }

@@ -18,8 +18,6 @@ import com.petcoccolati.dto.NewServiceDTO;
 import com.petcoccolati.ngc.NewServiceNGC;
 import com.petcoccolati.util.ExceptionPet;
 
-import javafx.scene.control.ComboBox;
-
 public class NewServiceCTL extends GenericForwardComposer{
   	
 	Combobox type, pet;

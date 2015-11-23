@@ -11,6 +11,7 @@ import org.zkoss.zul.Textbox;
 import com.petcoccolati.dto.LoginDTO;
 import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.ngc.LoginNGC;
+import com.petcoccolati.ngc.NewServiceNGC;
 import com.petcoccolati.util.ExceptionPet;
 
 public class LoginCTL extends GenericForwardComposer{
@@ -23,7 +24,11 @@ public class LoginCTL extends GenericForwardComposer{
 	private LoginNGC loginNGC;
 	
 	public LoginCTL(){
-		loginNGC = LoginNGC.getIntance();
+		
+	}
+	
+	public void setLoginNGC(LoginNGC loginNGC){
+		this.loginNGC = loginNGC;
 	}
 	
 	public void doAfterCompose(Component comp) throws Exception {
