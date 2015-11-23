@@ -13,7 +13,7 @@
 
 	<!-- BEANS PARA LOS CONTROLADORES -->
 	
-	<bean id = "LoginCTL" class="com.petcoccolati.controllets.LoginCTL" scope="prototype">
+	<bean id = "LoginCTL" class="com.petcoccolati.controllers.LoginCTL" scope="prototype">
 		<property name="loginNGC" ref="loginNGC"></property>
 	</bean>
 
@@ -35,7 +35,7 @@
 
 	<!-- BEANS PARA LOS NEGOCIOS -->
 	
-	<bean id="loginNGC" class="com.petcoccolati.ngc.PetNGC">
+	<bean id="loginNGC" class="com.petcoccolati.ngc.LoginNGC">
 		<property name="loginDAO" ref="loginDAO"></property>
 	</bean>
 	
