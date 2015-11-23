@@ -8,20 +8,25 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.petcoccolati.bd.Conection;
 import com.petcoccolati.bd.PoolConection;
+import com.petcoccolati.dao.PetDAOInt;
 import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.dto.PetDTO;
 import com.petcoccolati.util.ExceptionPet;
 
-public class PetDAO {
+public class PetDAO implements PetDAOInt{
 
 	private PoolConection pool;
 	private Conection conection;
-
+	private static final Logger logger = Logger.getLogger(PetDAO.class);
+	
 	public PetDAO() {
 		conection = new Conection();
 		pool = new PoolConection();
+		logger.info("Se creó un PetDAO");
 	}
 
 	public void createPet(PetDTO pet) throws ExceptionPet {
@@ -45,8 +50,8 @@ public class PetDAO {
 			ps.setString(4, pet.getSpecies());
 			ps.setInt(5, pet.getWeight());
 			ps.setString(6, pet.getDni());
-			System.out.println("Pet creada");
 			ps.executeUpdate();
+			logger.info("Se Pet creada");
 
 		} catch (SQLException e) {
 			ExceptionPet excepPet = new ExceptionPet();
@@ -116,6 +121,7 @@ public class PetDAO {
 				petList.add(pet);
 			}
 
+			logger.info("Retornó la lista de Pets");
 			return petList;
 
 		} catch (SQLException e) {

@@ -29,7 +29,7 @@ public class MyPetsCTL extends GenericForwardComposer implements ListitemRendere
 	}
 
 	public MyPetsCTL() {
-		petNGC = PetNGC.getIntance();
+		//petNGC = PetNGC.getIntance();
 	}
 
 	public void onCreate() {

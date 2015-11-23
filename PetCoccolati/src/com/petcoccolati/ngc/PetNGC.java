@@ -2,6 +2,9 @@ package com.petcoccolati.ngc;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
+import com.petcoccolati.dao.PetDAOInt;
 import com.petcoccolati.dao.classic.PetDAO;
 import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.dto.PetDTO;
@@ -9,30 +12,29 @@ import com.petcoccolati.util.ExceptionPet;
 
 public class PetNGC {
 
-	private PetDAO petDao;
-	private static PetNGC petNGC;
-
+	private PetDAOInt petDAO;
+	private static final Logger logger = Logger.getLogger(PetNGC.class);
+	
 	private PetNGC() {
-		petDao = new PetDAO();
+		logger.info("Se creó PetNGC");
 	}
-
-	public static PetNGC getIntance() {
-		if (petNGC == null) {
-			petNGC = new PetNGC();
-		}
-		return petNGC;
+	
+	public void setPetDAO(PetDAOInt petDao){
+		this.petDAO = petDao;
 	}
 
 	public void crearPet(PetDTO pet) throws ExceptionPet {
 		try {
-			petDao.createPet(pet);
-		} catch (ExceptionPet eWeb) {
-			throw eWeb;
+			petDAO.createPet(pet);
+			logger.info("Entro a crearPet PetNGC");
+		} catch (ExceptionPet ePet) {
+			throw ePet;
 		}
 	}
 
 	public List<PetDTO> listaPets() throws ExceptionPet {
-		return petDao.listaPets();
+		logger.info("Entro a listaPets PetNGC");
+		return petDAO.listaPets();
 	}
 
 }

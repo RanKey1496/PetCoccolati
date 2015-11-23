@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+        
+    <appender name="ARCHIVO" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="E:\\PetCoccolati.log"/>
+        <param name="MaxFileSize" value="100Mb"/>
+        <param name="MaxBackupIndex" value="5"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d{yyyy-MM-dd HH:mm:ss.SSS} - %p %C{1} | %m%n"/>
+        </layout>
+    </appender>
+    
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">        
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d{yyyy-MM-dd HH:mm:ss} - %p %C{1} | %m%n"/>
+        </layout>
+    </appender>
+    
+    <!--                          -->
+    <!-- Declare the SMTPAppender -->
+    <!--                          -->
+    <!--
+    <appender name="EMAIL" class="org.apache.log4j.net.SMTPAppender">
+        <param name="BufferSize" value="512" />
+        <param name="SMTPHost" value="smtp.mail.yahoo.com" />
+        <param name="From" value="whoever@wherever.com" />
+        <param name="To" value="whoever@wherever.com" />
+        <param name="Subject"
+            value="[SMTPAppender] Application message" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                value="[%d{ISO8601}]%n%n%-5p%n%n%c%n%n%m%n%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="FATAL" />
+            <param name="LevelMax" value="FATAL" />
+        </filter>
+    </appender>
+     -->
+    
+<!--     ALL	All levels including custom levels. -->
+<!-- DEBUG	Designates fine-grained informational events that are most useful to debug an application. -->
+<!-- ERROR	Designates error events that might still allow the application to continue running. -->
+<!-- FATAL	Designates very severe error events that will presumably lead the application to abort. -->
+<!-- INFO	Designates informational messages that highlight the progress of the application at coarse-grained level. -->
+<!-- OFF	The highest possible rank and is intended to turn off logging. -->
+<!-- TRACE	Designates finer-grained informational events than the DEBUG. -->
+<!-- WARN	Designates potentially harmful situations. -->
+    
+<!-- 	<logger  name="com.udem.devweb.ctl"> -->
+<!-- 		<level  value="ERROR"/> -->
+<!-- 	</logger> -->
+	
+<!-- 	<logger  name="com.udem.devweb.ngc"> -->
+<!-- 		<level  value="ERROR"/> -->
+<!-- 	</logger> -->
+	
+<!-- 	<logger  name="com.udem.devweb.dao"> -->
+<!-- 		<level  value="ERROR"/> -->
+<!-- 	</logger> -->
+	
+	<root>
+		<level value="INFO"></level>
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="ARCHIVO" />
+	</root>
+
+   
+    
+</log4j:configuration>

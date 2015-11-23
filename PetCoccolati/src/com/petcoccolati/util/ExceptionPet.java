@@ -1,11 +1,15 @@
 package com.petcoccolati.util;
 
+import org.apache.log4j.Logger;
+
 public class ExceptionPet extends Exception{
 
 	private String mensajeUsuario;
 	private String mensajeTecnico;
 	private Exception exceptionOriginal;
 	private String idException;
+	private static final Logger logger = Logger.getLogger(ExceptionPet.class);
+	
 	public String getMensajeUsuario() {
 		return mensajeUsuario;
 	}
@@ -30,4 +34,7 @@ public class ExceptionPet extends Exception{
 	public void setIdException(String idException) {
 		this.idException = idException;
 	}	
+	public void pintarErrorLog(String mensajeTecnico2) {
+		logger.error(mensajeTecnico2);
+	}
 }
