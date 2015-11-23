@@ -34,7 +34,6 @@ public class NewPetCTL extends GenericForwardComposer{
 	}
 	
 	public void setPetNGC(PetNGC petNgc){
-		logger.info(petNgc.toString());
 		this.petNGC = petNgc;
 	}
 	

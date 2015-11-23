@@ -1,5 +1,6 @@
 package com.petcoccolati.controllers;
 
+import org.apache.log4j.Logger;
 import org.zkoss.util.resource.Labels;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Executions;
@@ -27,12 +28,18 @@ public class SignUpCTL extends GenericForwardComposer {
 
 	private SignUpNGC signupNgc;
 
+	private static final Logger logger = Logger.getLogger(SignUpCTL.class);
+	
 	public SignUpCTL() {
-		signupNgc = SignUpNGC.getIntance();
+	}
+	
+	public void setSignupNgc(SignUpNGC sigupNgc){
+		this.signupNgc = sigupNgc;
 	}
 
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
+		logger.info("Se creó SignUpCTL");
 	}
 
 	public void onCreate() {
@@ -50,6 +57,7 @@ public class SignUpCTL extends GenericForwardComposer {
 
 			try {
 				signupNgc.createPersona(persona);
+				logger.info("Se creó una Persona");
 			} catch (ExceptionPet e2) {
 				Messagebox.show(e2.getMensajeUsuario());
 				System.out.println(e2.getMensajeTecnico());

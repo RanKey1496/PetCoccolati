@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.apache.log4j.Logger;
+
 import com.petcoccolati.bd.Conection;
 import com.petcoccolati.bd.PoolConection;
 import com.petcoccolati.dao.NewServiceDAOInt;
@@ -18,9 +20,12 @@ public class NewServiceDAO implements NewServiceDAOInt{
 	private PoolConection pool;
 	private Conection conection;
 	
+	private static final Logger logger = Logger.getLogger(NewServiceDAO.class);
+	
 	public NewServiceDAO() {
 		conection = new Conection();
 		pool = new PoolConection();
+		logger.info("Se creó un NewServiceDAO");
 	}
 	
 	public void createServicio(NewServiceDTO service) throws ExceptionPet{
@@ -44,7 +49,7 @@ public class NewServiceDAO implements NewServiceDAOInt{
 			ps.setString(3, service.getTipo());
 			ps.setInt(4, service.getPersonalCedula());
 			ps.setInt(5, service.getMascotaId());
-			System.out.println("Servicio Creado");
+			logger.info("Servicio creado");
 			ps.executeUpdate();			
 			
 		} catch (SQLException e) {

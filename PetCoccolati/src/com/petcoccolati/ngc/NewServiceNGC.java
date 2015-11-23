@@ -1,5 +1,7 @@
 package com.petcoccolati.ngc;
 
+import org.apache.log4j.Logger;
+
 import com.petcoccolati.dao.NewServiceDAOInt;
 import com.petcoccolati.dao.classic.NewServiceDAO;
 import com.petcoccolati.dto.NewServiceDTO;
@@ -8,25 +10,23 @@ import com.petcoccolati.util.ExceptionPet;
 public class NewServiceNGC {
 	
 	private NewServiceDAOInt newServiceDao;
-	public static NewServiceNGC newServiceNgc;
+	private static final Logger logger = Logger.getLogger(NewServiceNGC.class);
 	
 	public void setNewServiceDao(NewServiceDAOInt newServiceDao){
 		this.newServiceDao = newServiceDao;
 	}
 	
 	public NewServiceNGC(){
-		//newServiceDao = new NewServiceDAO();
+		logger.info("Se creó NewServiceNGC");
 	}
-	
-	/*public static NewServiceNGC getInstance(){
-		if (newServiceNgc == null) {
-			newServiceNgc = new NewServiceNGC();
-		}
-		return newServiceNgc;		
-	}*/
 
 	public void crearServicio(NewServiceDTO newServiceDTO) throws ExceptionPet {
-		newServiceDao.createServicio(newServiceDTO);		
+		try {
+			newServiceDao.createServicio(newServiceDTO);
+			logger.info("Entro a crearServicio NewServiceNGC");
+		} catch (ExceptionPet e) {
+			throw e;
+		}
 	}
 
 }

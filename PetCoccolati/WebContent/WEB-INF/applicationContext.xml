@@ -16,6 +16,18 @@
 	<bean id="NewPetCTL" class="com.petcoccolati.controllers.NewPetCTL" scope="prototype">
 		<property name="petNGC" ref="petNGC"></property>
 	</bean>
+	
+	<bean id="MyPetsCTL" class="com.petcoccolati.controllers.MyPetsCTL" scope="prototype">
+		<property name="petNGC" ref="petNGC"></property>
+	</bean>
+	
+	<bean id="NewServiceCTL" class="com.petcoccolati.controllers.NewServiceCTL" scope="prototype">
+		<property name="newServiceNgc" ref="newServiceNgc"></property>
+	</bean>
+	
+	<bean id="SignUpCTL" class="com.petcoccolati.controllers.SignUpCTL" scope="prototype">
+		<property name="signupNgc" ref="signupNgc"></property>
+	</bean>
 
 	<!-- BEANS PARA LOS NEGOCIOS -->
 	
@@ -23,8 +35,22 @@
 		<property name="petDAO" ref="petDAO"></property>
 	</bean>
 	
+	<bean id="newServiceNgc" class="com.petcoccolati.ngc.NewServiceNGC">
+		<property name="newServiceDao" ref="newServiceDao"></property>
+	</bean>
+	
+	<bean id="signupNgc" class="com.petcoccolati.ngc.SignUpNGC">
+		<property name="signupDAO" ref="signupDAO"></property>
+	</bean>
+	
 	<!-- BEANS PARA LA PERSISTENCIA -->
 	<bean id="petDAO" class="com.petcoccolati.dao.classic.PetDAO">
+	</bean>
+	
+	<bean id="newServiceDao" class="com.petcoccolati.dao.classic.NewServiceDAO">
+	</bean>
+	
+	<bean id="signupDAO" class="com.petcoccolati.dao.classic.SignUpDAO">
 	</bean>
 
 </beans>

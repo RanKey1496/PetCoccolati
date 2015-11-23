@@ -2,6 +2,7 @@ package com.petcoccolati.controllers;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Execution;
 import org.zkoss.zk.ui.Executions;
@@ -21,15 +22,19 @@ import com.petcoccolati.util.ExceptionPet;
 public class MyPetsCTL extends GenericForwardComposer implements ListitemRenderer {
 
 	private Listbox lsxPet;
-
+	private static final Logger logger = Logger.getLogger(MyPetsCTL.class);
 	private PetNGC petNGC;
 
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
+		logger.info("Se creó MyPetsCTL");
 	}
 
 	public MyPetsCTL() {
-		//petNGC = PetNGC.getIntance();
+	}
+	
+	public void setPetNGC(PetNGC petNgc){
+		this.petNGC = petNgc;
 	}
 
 	public void onCreate() {
@@ -41,7 +46,6 @@ public class MyPetsCTL extends GenericForwardComposer implements ListitemRendere
 		try {
 			listaPet = petNGC.listaPets();
 		} catch (ExceptionPet e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		ListModel model = new ListModelList(listaPet);

@@ -27,7 +27,7 @@ public class Conection {
 			Class.forName("com.mysql.jdbc.Driver");
 			connection = (Connection) DriverManager.getConnection(url, user, password);
 			if (connection != null) {
-				System.out.println("Conexi-n a base de datos " + url + " . . . Ok");
+				System.out.println("Conexion a base de datos " + url + " . . . Ok");
 			}
 		} catch (SQLException ex) {
 			System.out.println("Hubo un problema al intentar conecarse a la base de datos" + url);

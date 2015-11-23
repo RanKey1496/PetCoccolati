@@ -6,19 +6,25 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.apache.log4j.Logger;
+
 import com.petcoccolati.bd.Conection;
 import com.petcoccolati.bd.PoolConection;
+import com.petcoccolati.dao.SignUpDAOInt;
 import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.util.ExceptionPet;
 
-public class SignUpDAO {
+public class SignUpDAO implements SignUpDAOInt{
 
 	private PoolConection pool;
 	private Conection conection;
 	
+	private static final Logger logger = Logger.getLogger(SignUpDAO.class);
+	
 	public SignUpDAO() {
 		conection = new Conection();
 		pool = new PoolConection();
+		logger.info("Se creó un SignUpDAO");
 	}
 	
 	public void createPersona(PersonaDTO persona) throws ExceptionPet{
@@ -43,7 +49,7 @@ public class SignUpDAO {
 			ps.setString(5, persona.getEmail());
 			ps.setString(6, persona.getPassword());
 			ps.executeUpdate();
-			System.out.println("Persona creada");
+			logger.info("Persona creada");
 		} catch (SQLException e) {
 			ExceptionPet excepPet = new ExceptionPet();
 			excepPet.setMensajeUsuario("Error creado persona");
