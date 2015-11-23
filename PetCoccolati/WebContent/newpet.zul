@@ -3,30 +3,30 @@
 <zk>
 	<style src="style/new_pet_style.css"></style>
 	<vbox height="100%" width="100%" pack="center" align="center" apply="${NewPetCTL}">
-		<label sclass="header">NEW PET</label>
+		<label sclass="header" value="${labels.lblNewPet}"></label>
 		<hbox style="margin-left:3%; margin-top:1%;">
 			<vbox style="margin-right:30px;">
-				<label sclass="sub_header">Name</label>
-				<textbox id="name"></textbox>
-				<label sclass="sub_header">Breed</label>
-				<textbox id="breed"></textbox>
+				<label sclass="sub_header" value="${labels.lblNamePet}"></label>
+				<textbox id="name" constraint="no empty"></textbox>
+				<label sclass="sub_header"value="${labels.lblBreed}"></label>
+				<textbox id="breed" constraint="no empty"></textbox>
 			</vbox>
 			<vbox style="margin-right:30px;">
-				<label sclass="sub_header">DNI</label>
-				<textbox id="dni"></textbox>
-				<label sclass="sub_header">Species</label>
-				<textbox id="species"></textbox>
+				<label sclass="sub_header" value="${labels.lblDNI}"></label>
+				<textbox id="dni" constraint="no negative,no zero, no empty" ></textbox>
+				<label sclass="sub_header" value="${labels.lblSpecies}"></label>
+				<textbox id="species" constraint="no empty"></textbox>
 			</vbox>
 			<vbox style="margin-right:30px;">
-				<label sclass="sub_header">Gender</label>
-				<textbox id="genre"></textbox>
-				<label sclass="sub_header">Weight</label>
-				<textbox id="weight"></textbox>
+				<label sclass="sub_header" value="${labels.lblGender}"></label>
+				<textbox id="genre" constraint="no empty"></textbox>
+				<label sclass="sub_header" value="${labels.lblWeight}"></label>
+				<textbox id="weight" constraint="no negative,no zero, no empty"></textbox>
 			</vbox>
 		</hbox>
 		<hbox style="position: fixed; bottom: 10%; right: 10%;">
-			<button sclass="bigbtn btn" label="CANCEL"></button>
-			<button sclass="bigbtn btn" id="add" label="ADD"></button>
+			<button sclass="bigbtn btn" label="${labels.lblCancel}"></button>
+			<button sclass="bigbtn btn" id="add" label="${labels.lblAdd}"></button>
 		</hbox>
 	</vbox>
 </zk>

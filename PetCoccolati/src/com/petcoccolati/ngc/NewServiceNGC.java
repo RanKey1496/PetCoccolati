@@ -1,5 +1,7 @@
 package com.petcoccolati.ngc;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 
 import com.petcoccolati.dao.NewServiceDAOInt;
@@ -28,5 +30,8 @@ public class NewServiceNGC {
 			throw e;
 		}
 	}
-
+	
+	public List<NewServiceDTO> listaServicios(int petId) throws ExceptionPet{
+		return newServiceDao.listaServicios(petId);		
+	}
 }

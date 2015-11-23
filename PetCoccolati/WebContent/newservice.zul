@@ -3,40 +3,40 @@
 <zk>
 	<style src="style/new_service_style.css"></style>
 	<vbox height="100%" width="100%" pack="center" align="center" apply="${NewServiceCTL}">
-		<label sclass="header">NEW SERVICE</label>
+		<label sclass="header" value="${labels.lblNewService}"></label>
 		<hbox style="margin-left:3%; margin-top:1%;">
 			<vbox style="margin-right:30px;">
-				<label sclass="sub_header">Type</label>
+				<label sclass="sub_header" value="${labels.lblType}"></label>
 				<combobox id="type" style="margin-top:20px;" sclass="cmbService" readonly="true" value="Select...">
-					<comboitem label="Peluquería" sclass="comboLink" />
-					<comboitem label="Guardería" sclass="comboLink" />
-					<comboitem label="Cita médica" sclass="comboLink" />
+					<comboitem label="${labels.lblPeluqueria}" sclass="comboLink" />
+					<comboitem label="${labels.lblGuarderia}" sclass="comboLink" />
+					<comboitem label="${labels.lblCitaMedica}" sclass="comboLink" />
 				</combobox>
 			</vbox>
 			<vbox style="margin-right:30px;">
-				<label sclass="sub_header">Date</label>
+				<label sclass="sub_header" value="${labels.lblDate}"></label>
 				<datebox style="margin-top:20px;" id="date" cols="12" format="yyyy/MM/dd" onCreate="self.value = new Date()" />
             	<timebox style="margin-top:20px;" id="time" cols="12" format="a hh:mm:ss" onCreate="self.value = new Date()" />
 			</vbox>
 			<vbox style="margin-right:30px;">
-				<label sclass="sub_header">PET</label>
+				<label sclass="sub_header" value="${labels.lblPet}"></label>
 				<combobox id="pet" style="margin-top:20px;" sclass="cmbService" readonly="true" value="Select...">
-					<comboitem label="Mascota1" sclass="comboLink" />
-					<comboitem label="Mascota2" sclass="comboLink" />
-					<comboitem label="Mascota3" sclass="comboLink" />
+					<comboitem label="${labels.lblmascota1}" sclass="comboLink" />
+					<comboitem label="${labels.lblmascota2}" sclass="comboLink" />
+					<comboitem label="${labels.lblmascota3}" sclass="comboLink" />
 				</combobox>
 			</vbox>
 			<vbox style="margin-right:30px;">
-				<label sclass="sub_header">PICK UP PET?</label>
+				<label sclass="sub_header" value="${labels.lblPickUpPet}"></label>
 				<radiogroup orient="vertical">
-					<radio selected="true" label="YES"></radio>
-					<radio label="NO"></radio>
+					<radio selected="true" label="${labels.lblYes}"></radio>
+					<radio label="${labels.lblNo}"></radio>
 				</radiogroup>
 			</vbox>
 		</hbox>
 		<hbox style="position: fixed; bottom: 10%; right: 10%;">
-			<button sclass="bigbtn btn" label="CANCEL"></button>
-			<button id="request" sclass="bigbtn btn" label="REQUEST"></button>
+			<button sclass="bigbtn btn" label="${labels.lblCancel}"></button>
+			<button id="request" sclass="bigbtn btn" label="${labels.lblRequest}"></button>
 		</hbox>
 	</vbox>
 </zk>

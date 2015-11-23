@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 
@@ -74,5 +75,59 @@ public class NewServiceDAO implements NewServiceDAOInt{
 		}
 		
 	}
+
+	@Override
+	public List<NewServiceDTO> listaServicios(int petId) throws ExceptionPet {
+		Statement st = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		Conection conexion = null;
+		
+		Connection conn = null;
+		try {
+			conexion = pool.getConexion();
+			System.out.println(conexion.toString());
+			conn = conexion.getConexion();
+			
+			st = conn.createStatement();
+			String query = "SELECT * FROM Servicios WHERE Mascota_Id=?";
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, petId);
+						
+			rs = ps.executeQuery();
+			while(rs.next()){
+				PersonaDTO usuario = new PersonaDTO();
+				usuario.setId(rs.getString("Cedula"));
+				usuario.setFirst(rs.getString("Nombre"));
+				usuario.setLast(rs.getString("Apellido"));
+				usuario.setPhone(rs.getString("Telefono"));
+				usuario.setEmail(rs.getString("Email"));
+				usuario.setPassword(rs.getString("Contrasena"));
+				return usuario;
+			}
+		} catch (SQLException e) {
+			ExceptionPet excepPet = new ExceptionPet();
+			excepPet.setMensajeUsuario("Error buscando persona");
+			excepPet.setMensajeTecnico("Error en searchPersona (SQLException)");
+			excepPet.setExceptionOriginal(e);
+			throw excepPet;
+		} catch(Exception e){
+			ExceptionPet excepPet = new ExceptionPet();
+			excepPet.setMensajeUsuario("Error buscando persona");
+			excepPet.setMensajeTecnico("Error en searchPersona de la clase LoginDAO");
+			excepPet.setExceptionOriginal(e);
+			throw excepPet;
+		}finally{
+			try { rs.close(); } catch (Exception e) { /* ignored */ }
+		    try { st.close(); } catch (Exception e) { /* ignored */ }
+		    try {
+		    	pool.liberarConexion(conexion);
+		    } catch (Exception e) { /* ignored */ }
+			
+		}
+		return null;
+		return null;
+	}
+
 	
 }

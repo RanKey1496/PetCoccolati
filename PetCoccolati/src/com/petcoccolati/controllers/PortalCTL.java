@@ -31,12 +31,12 @@ public class PortalCTL extends GenericForwardComposer implements PortalIntCTL{
 		innerIncld.setSrc("newservice.zul");
 	}
 	public void onClick$lblHistory(Event e) {
-		innerIncld.setSrc("home.zul");
+		innerIncld.setSrc("history.zul");
 	}
 	public void onClick$lblSettings(Event e) {
 		innerIncld.setSrc("settings.zul");
 	}
 	public void onClick$lblLogOut(Event e) {
 		Executions.sendRedirect("index.zul");
-	}
+	}	
 }
