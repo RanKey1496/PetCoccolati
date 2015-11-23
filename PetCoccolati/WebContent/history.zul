@@ -1,21 +1,17 @@
 <?page title="History" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
 <zk>
 	<style src="style/new_pet_style.css"></style>
-	<vbox height="100%" width="100%" pack="start" align="center">
-		<label value="${labels.lblMyPet}" sclass="header"></label>
-		<listbox id="lsxPet" mold="paging" pageSize="10">
+	<vbox height="100%" width="100%" pack="start" align="center" apply="${HistoryCTL}">
+		<label value="${labels.lblHistorialTitulo}" sclass="header"></label>
+		<listbox id="lbHistory" mold="paging" pageSize="10">
 			<listhead>
-				<listheader label="${labels.lblNombre}"  width="16%"></listheader>
-				<listheader label="${labels.lblGenero}"  width="16%"></listheader>
-				<listheader label="${labels.lblPeso}"  width="16%"></listheader>
-				<listheader label="${labels.lblRaza}"  width="16%"></listheader>
-				<listheader label="${labels.lblEspecie}"  width="16%"></listheader>
-				<listheader label="${labels.lblChip}"  width="16%"></listheader>
+				<listheader label="${labels.lblTipoServicio}"  width="16%"></listheader>
+				<listheader label="${labels.lblFechaInicio}"  width="16%"></listheader>
+				<listheader label="${labels.lblFechaFin}"  width="16%"></listheader>
+				<listheader label="${labels.lblMascotaServicio}"  width="16%"></listheader>
+				<listheader label="${labels.lblPersonalServicio}"  width="16%"></listheader>				
 			</listhead>
-		</listbox>
-		<hbox style="position: fixed; bottom: 10%; right: 10%;">
-			<button sclass="bigbtn btn" label="${labels.btnDelete}"></button>
-			<button sclass="bigbtn btn" label="${labels.btnAdd}"></button>
-		</hbox>
+		</listbox>		
 	</vbox>
 </zk>

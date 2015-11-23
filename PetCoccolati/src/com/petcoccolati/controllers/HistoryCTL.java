@@ -12,9 +12,11 @@ import org.zkoss.zul.Listcell;
 import org.zkoss.zul.Listitem;
 import org.zkoss.zul.ListitemRenderer;
 
+import com.petcoccolati.dao.classic.NewServiceDAO;
 import com.petcoccolati.dto.NewServiceDTO;
 import com.petcoccolati.dto.PetDTO;
 import com.petcoccolati.ngc.HistoryNGC;
+import com.petcoccolati.ngc.NewServiceNGC;
 import com.petcoccolati.ngc.PetNGC;
 import com.petcoccolati.util.ExceptionPet;
 
@@ -22,7 +24,7 @@ public class HistoryCTL extends GenericForwardComposer implements ListitemRender
 
 	private Listbox lbHistory;
 	private static final Logger logger = Logger.getLogger(MyPetsCTL.class);
-	private HistoryNGC historyNGC;
+	private NewServiceNGC newServiceNgc;
 
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
@@ -32,8 +34,8 @@ public class HistoryCTL extends GenericForwardComposer implements ListitemRender
 	public HistoryCTL() {
 	}
 	
-	public void setHistoryNGC(HistoryNGC historyNGC){
-		this.historyNGC = historyNGC;
+	public void setNewServiceNgc(NewServiceNGC newServiceNgc){
+		this.newServiceNgc = newServiceNgc;
 	}
 
 	public void onCreate() {
@@ -43,7 +45,7 @@ public class HistoryCTL extends GenericForwardComposer implements ListitemRender
 	private void definirModelo() {
 		List<NewServiceDTO> historyList = null;
 		try {
-			historyList = historyNGC.listaPets();
+			historyList = newServiceNgc.listaServicios(5);
 		} catch (ExceptionPet e) {
 			e.printStackTrace();
 		}
@@ -54,19 +56,19 @@ public class HistoryCTL extends GenericForwardComposer implements ListitemRender
 
 	@Override
 	public void render(Listitem arg0, Object arg1, int arg2) throws Exception {
-		PetDTO pet = (PetDTO) arg1;
-		Listcell lcNombre = new Listcell(pet.getName());
-		Listcell lcGenero = new Listcell(pet.getGenre());
-		Listcell lcPeso = new Listcell(String.valueOf(pet.getWeight()));
-		Listcell lcRaza = new Listcell(pet.getBreed());
-		Listcell lcEspecie = new Listcell(pet.getSpecies());
-		Listcell lcDNI = new Listcell(String.valueOf(pet.getDni()));
-		arg0.appendChild(lcNombre);
-		arg0.appendChild(lcGenero);
-		arg0.appendChild(lcPeso);
-		arg0.appendChild(lcRaza);
-		arg0.appendChild(lcEspecie);
-		arg0.appendChild(lcDNI);
+		NewServiceDTO service = (NewServiceDTO) arg1;		
+		Listcell lcTipo = new Listcell(service.getTipo());
+		Listcell lcFechaI = new Listcell(service.getFechaInicio());
+		Listcell lcFechaF = new Listcell(service.getFechaFin());
+		Listcell lcMascota = new Listcell(String.valueOf(service.getMascotaId()));
+		Listcell lcPersonal = new Listcell(String.valueOf(service.getPersonalCedula()));
+		
+		arg0.appendChild(lcTipo);
+		arg0.appendChild(lcFechaI);
+		arg0.appendChild(lcFechaF);
+		arg0.appendChild(lcMascota);
+		arg0.appendChild(lcPersonal);
+		
 	}
 
 }

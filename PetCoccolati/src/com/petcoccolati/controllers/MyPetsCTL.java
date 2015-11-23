@@ -22,12 +22,10 @@ import com.petcoccolati.util.ExceptionPet;
 public class MyPetsCTL extends GenericForwardComposer implements ListitemRenderer {
 
 	private Listbox lsxPet;
-	private static final Logger logger = Logger.getLogger(MyPetsCTL.class);
 	private PetNGC petNGC;
 
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
-		logger.info("Se creó MyPetsCTL");
 	}
 
 	public MyPetsCTL() {

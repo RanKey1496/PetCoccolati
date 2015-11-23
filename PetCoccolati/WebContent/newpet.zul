@@ -8,7 +8,7 @@
 			<vbox style="margin-right:30px;">
 				<label sclass="sub_header" value="${labels.lblNamePet}"></label>
 				<textbox id="name" constraint="no empty"></textbox>
-				<label sclass="sub_header"value="${labels.lblBreed}"></label>
+				<label sclass="sub_header" value="${labels.lblBreed}"></label>
 				<textbox id="breed" constraint="no empty"></textbox>
 			</vbox>
 			<vbox style="margin-right:30px;">

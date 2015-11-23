@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -19,6 +20,7 @@ import com.petcoccolati.util.ExceptionPet;
 public class NewServiceDAO implements NewServiceDAOInt{
 	
 	private PoolConection pool;
+	List<NewServiceDTO> serviceList = new ArrayList<>();
 	private Conection conection;
 	
 	private static final Logger logger = Logger.getLogger(NewServiceDAO.class);
@@ -78,6 +80,7 @@ public class NewServiceDAO implements NewServiceDAOInt{
 
 	@Override
 	public List<NewServiceDTO> listaServicios(int petId) throws ExceptionPet {
+			
 		Statement st = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -93,17 +96,19 @@ public class NewServiceDAO implements NewServiceDAOInt{
 			String query = "SELECT * FROM Servicios WHERE Mascota_Id=?";
 			ps = conn.prepareStatement(query);
 			ps.setInt(1, petId);
-						
+	
 			rs = ps.executeQuery();
 			while(rs.next()){
-				PersonaDTO usuario = new PersonaDTO();
-				usuario.setId(rs.getString("Cedula"));
-				usuario.setFirst(rs.getString("Nombre"));
-				usuario.setLast(rs.getString("Apellido"));
-				usuario.setPhone(rs.getString("Telefono"));
-				usuario.setEmail(rs.getString("Email"));
-				usuario.setPassword(rs.getString("Contrasena"));
-				return usuario;
+				
+				NewServiceDTO service = new NewServiceDTO();
+				
+				service.setMascotaId((Integer.valueOf(rs.getString("Mascota_Id"))));
+				service.setFechaInicio(rs.getString("Fecha_inicio"));
+				service.setFechaFin(rs.getString("Fecha_fin"));
+				service.setPersonalCedula(Integer.valueOf(rs.getString("Personal_Cedula")));
+				service.setTipo(rs.getString("Tipo"));
+				
+				serviceList.add(service);
 			}
 		} catch (SQLException e) {
 			ExceptionPet excepPet = new ExceptionPet();
@@ -125,8 +130,7 @@ public class NewServiceDAO implements NewServiceDAOInt{
 		    } catch (Exception e) { /* ignored */ }
 			
 		}
-		return null;
-		return null;
+		return serviceList;
 	}
 
 	

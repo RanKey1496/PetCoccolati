@@ -13,6 +13,10 @@
 
 	<!-- BEANS PARA LOS CONTROLADORES -->
 	
+	<bean id="HistoryCTL" class="com.petcoccolati.controllers.HistoryCTL"> 
+		<property name="newServiceNgc" ref="newServiceNgc"></property>
+	</bean>
+	
 	<bean id = "LoginCTL" class="com.petcoccolati.controllers.LoginCTL" scope="prototype">
 		<property name="loginNGC" ref="loginNGC"></property>
 	</bean>
