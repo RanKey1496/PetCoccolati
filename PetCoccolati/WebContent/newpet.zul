@@ -1,7 +1,8 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
 <?page title="new page title" contentType="text/html;charset=UTF-8"?>
 <zk>
 	<style src="style/new_pet_style.css"></style>
-	<vbox height="100%" width="100%" pack="center" align="center" apply="com.petcoccolati.controllers.NewPetCTL">
+	<vbox height="100%" width="100%" pack="center" align="center" apply="${NewPetCTL}">
 		<label sclass="header">NEW PET</label>
 		<hbox style="margin-left:3%; margin-top:1%;">
 			<vbox style="margin-right:30px;">

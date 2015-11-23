@@ -21,7 +21,7 @@ public class NewPetCTL extends GenericForwardComposer{
 	
 	private Textbox name, dni, breed, species, genre, weight;
 	private Button add;
-	private static PetNGC petNGC;
+	private PetNGC petNGC;
 	
 	private static final Logger logger = Logger.getLogger(NewPetCTL.class);
 	

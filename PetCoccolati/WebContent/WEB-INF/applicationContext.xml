@@ -13,7 +13,7 @@
 
 	<!-- BEANS PARA LOS CONTROLADORES -->
 
-	<bean id="NewPetCTL" class="com.petcoccolati.controllers.NewPetCTL">
+	<bean id="NewPetCTL" class="com.petcoccolati.controllers.NewPetCTL" scope="prototype">
 		<property name="petNGC" ref="petNGC"></property>
 	</bean>
 
