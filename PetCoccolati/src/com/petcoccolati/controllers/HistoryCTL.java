@@ -23,12 +23,12 @@ import com.petcoccolati.util.ExceptionPet;
 public class HistoryCTL extends GenericForwardComposer implements ListitemRenderer{
 
 	private Listbox lbHistory;
-	private static final Logger logger = Logger.getLogger(MyPetsCTL.class);
+	private static final Logger logger = Logger.getLogger(HistoryCTL.class);
 	private NewServiceNGC newServiceNgc;
 
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
-		logger.info("Se creó MyPetsCTL");
+		logger.info("Se creó HistoryCTL");
 	}
 
 	public HistoryCTL() {
@@ -68,7 +68,6 @@ public class HistoryCTL extends GenericForwardComposer implements ListitemRender
 		arg0.appendChild(lcFechaF);
 		arg0.appendChild(lcMascota);
 		arg0.appendChild(lcPersonal);
-		
 	}
 
 }

@@ -107,9 +107,9 @@ public class NewServiceDAO implements NewServiceDAOInt{
 				service.setFechaFin(rs.getString("Fecha_fin"));
 				service.setPersonalCedula(Integer.valueOf(rs.getString("Personal_Cedula")));
 				service.setTipo(rs.getString("Tipo"));
-				
 				serviceList.add(service);
 			}
+			logger.info("Lista de servicios cargada");
 		} catch (SQLException e) {
 			ExceptionPet excepPet = new ExceptionPet();
 			excepPet.setMensajeUsuario("Error buscando persona");
