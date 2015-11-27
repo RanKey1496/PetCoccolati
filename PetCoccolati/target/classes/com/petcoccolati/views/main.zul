@@ -8,17 +8,12 @@
 			<image style="margin-right:250px"
 				src="img/logoPetCoccolati.png" width="70px" height="70px">
 			</image>
-			<button style="margin-left:250px" label="Services"
-				class="btn-headers bigbtn">
-			</button>
-			<button label="Contact" class="btn-headers bigbtn"></button>
-			<button label="About" class="btn-headers bigbtn"></button>
-			<button id="btnLogin" label="LOGIN" class="btn-headers-session bigbtn">
+			<button id="btnLogin" label="${labels.lblLogin}" class="btn-headers-session bigbtn">
 				<attribute name="onClick">
 					Executions.sendRedirect("login.zul");
 				</attribute>
 			</button>
-			<button id="btnSignup" label="SIGN UP" class="btn-headers-session bigbtn">
+			<button id="btnSignup" label="${labels.lblSingUp}" class="btn-headers-session bigbtn">
 				<attribute name="onClick">
 					Executions.sendRedirect("signup.zul");
 				</attribute>
@@ -33,30 +28,30 @@
 			<hbox width="100%" pack="center">
 				<vbox pack="center" align="center" sclass="feature">
 					<image src="img/icons/history.png"></image>
-					<label sclass="label_title">Historial</label>
-					<label  sclass="label_description">Siempre sabrás que servicios has contratado. Tendremos un historial a tu disposición para que puedas ver todos los servicios que ha recibido tu amigo.</label>
+					<label sclass="label_title" value="${labels.lblHistorial}"></label>
+					<label  sclass="label_description" value="${labels.lblHistorialDescripcion}"></label>
 				</vbox>
 				<vbox pack="center" align="center" sclass="feature">
 					<image src="img/icons/home.png"></image>
-					<label sclass="label_title">Domicilio</label>
-					<label  sclass="label_description">¡Tambien lo hacemos a domicilio! Pet Coccolati ofrece servicios en la comodidad de tu hogar para que tu y tu mejor amigo esten felices y tranquilos.</label>
+					<label sclass="label_title" value="${labels.lblDomicilio}"></label>
+					<label  sclass="label_description" value="${labels.lblDomicilioDescripcion}"></label>
 				</vbox>
 				<vbox pack="center" align="center" sclass="feature">
 					<image src="img/icons/hospital.png"></image>
-					<label sclass="label_title">Servicio 24h</label>
-					<label  sclass="label_description">Sabemos que los accidentes pasan en los momentos mas inesperados, por eso, Pet Coccolati presta un servicio de urgencias las 24 horas para que lo uses cuando sea necesario</label>
+					<label sclass="label_title" value="${labels.lblServicio24h}"></label>
+					<label  sclass="label_description" value="${labels.lblServicio24hDescripcion}"></label>
 				</vbox>
 			</hbox>
 			<hbox width="100%" align="center" pack="center">
 				<vbox pack="center" align="center" sclass="feature">
 					<image src="img/icons/medical.png"></image>
-					<label sclass="label_title">Personal Calificado</label>
-					<label  sclass="label_description">¡Tenemos el mejor personal! Los veterinarios de Pet Coccolati son personas apasionadas y profesionales que siempre garantizaran el mejor cuidado y una atencion personalizada para tu mascota</label>
+					<label sclass="label_title" value="${labels.lblPersonalCalificado}"></label>
+					<label  sclass="label_description" value="${labels.lblPersonalCalificadoDescripcion}"></label>
 				</vbox>
 				<vbox pack="center" align="center" sclass="feature">
 					<image src="img/icons/shop.png"></image>
-					<label sclass="label_title">Shopping</label>
-					<label  sclass="label_description">Puedes adquirir productos por medio de nuestra tienda virtual. Alli veras una gran variedad de articulos para ti y tu amigo. ¡No te podras resistir!</label>
+					<label sclass="label_title" value="${labels.lblShopping}"></label>
+					<label  sclass="label_description" value="${labels.lblShoppingDescripcion}"></label>
 				</vbox>
 			</hbox>
 		</vbox>
@@ -64,16 +59,16 @@
 	<hbox sclass = "links" pack="center" align="center">
 		<hbox height="100%" width="50%" pack="center" align="center">
 			<vbox height = "100%" width="100%" pack="center" align="center">
-				<label sclass = "service_title">NUESTROS SERVICIOS</label>
-				<button style = "margin-top: 5%;" sclass = "btn-categories" label="Peluqueria"></button>
-				<button sclass = "btn-categories" label="Guarderia"></button>
-				<button sclass = "btn-categories" label="Hospital"></button>
-				<button sclass = "btn-categories" label="Tienda"></button>
+				<label sclass = "service_title" value="${labels.lblTituloServicios}"></label>
+				<button style = "margin-top: 5%;" sclass = "btn-categories" label="${labels.lblPeluqueria}"></button>
+				<button sclass = "btn-categories" label="${labels.lblGuarderia}"></button>
+				<button sclass = "btn-categories" label="${labels.lblHospital}"></button>
+				<button sclass = "btn-categories" label="${labels.lblTienda}"></button>
 			</vbox>
 		</hbox>
 		<hbox style = "margin-left: 30%;" height="100%" width="50%" pack="center" align="center">
 			<vbox height="100%" width="50%" pack="center" align="start">
-				<label sclass = "service_title">CONECTATE</label>
+				<label sclass = "service_title" value="${labels.lblConectate}"></label>
 				<hbox  style = "margin-top: 5%;" align="start">
 					<image src="img/icons/phone.png"></image>
 					<label style = "font-family: Roboto; color: #DDDDDD; font-size: 18px; margin-left: 5%;">+57 301 000 0000</label>
