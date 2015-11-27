@@ -31,7 +31,7 @@ public class NewServiceNGC {
 		}
 	}
 	
-	public List<NewServiceDTO> listaServicios(int petId) throws ExceptionPet{
-		return newServiceDao.listaServicios(petId);		
+	public List<NewServiceDTO> listaServicios(String cedula) throws ExceptionPet{
+		return newServiceDao.listaServicios(cedula);		
 	}
 }

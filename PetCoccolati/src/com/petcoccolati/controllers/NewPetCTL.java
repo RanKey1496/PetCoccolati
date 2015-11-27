@@ -22,6 +22,7 @@ public class NewPetCTL extends GenericForwardComposer{
 	private Textbox name, dni, breed, species, genre, weight;
 	private Button add;
 	private PetNGC petNGC;
+	private PersonaDTO usuario;
 	
 	private static final Logger logger = Logger.getLogger(NewPetCTL.class);
 	
@@ -31,6 +32,10 @@ public class NewPetCTL extends GenericForwardComposer{
 	}
 	
 	public NewPetCTL(){
+	}
+	
+	public void onCreate(){
+		usuario = (PersonaDTO) Executions.getCurrent().getSession().getAttribute("Usuario");
 	}
 	
 	public void setPetNGC(PetNGC petNgc){
@@ -45,6 +50,7 @@ public class NewPetCTL extends GenericForwardComposer{
 		pet.setBreed(breed.getText());
 		pet.setSpecies(species.getText());
 		pet.setWeight(Integer.parseInt(weight.getText()));
+		pet.setCedula(usuario.getId());
 		try {
 			petNGC.crearPet(pet);
 			logger.info("Se añadió una mascota");
@@ -54,8 +60,5 @@ public class NewPetCTL extends GenericForwardComposer{
 			Messagebox.show(e1.getMensajeUsuario());
 			e1.pintarErrorLog(e1.getMensajeTecnico());
 		}
-	}
-	public void onCreate(){
-		
 	}
 }

@@ -8,11 +8,6 @@
 			<image style="margin-right:250px"
 				src="img/logoPetCoccolati.png" width="70px" height="70px">
 			</image>
-			<button style="margin-left:250px" label="Services"
-				class="btn-headers bigbtn">
-			</button>
-			<button label="Contact" class="btn-headers bigbtn"></button>
-			<button label="About" class="btn-headers bigbtn"></button>
 			<button id="btnLogin" label="LOGIN" class="btn-headers-session bigbtn">
 				<attribute name="onClick">
 					Executions.sendRedirect("login.zul");

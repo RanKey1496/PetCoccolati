@@ -72,9 +72,53 @@ public class SignUpDAO implements SignUpDAOInt{
 		}
 	}
 	
-	public void searchPersona(PersonaDTO personaDTO) throws ExceptionPet{
+	public void searchPersona(PersonaDTO persona) throws ExceptionPet{
 		ExceptionPet excepWeb = new ExceptionPet();
 		excepWeb.setMensajeUsuario("La persosna ya existe");
 		throw excepWeb;
 	}
+
+	public void updatePersona(PersonaDTO persona) throws ExceptionPet{
+		Statement st = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		Conection conexion = null;
+		
+		Connection conn = null;
+		try {
+			conexion = pool.getConexion();
+			System.out.println(conexion.toString());
+			conn = conexion.getConexion();
+			
+			st = conn.createStatement();
+			String query = ("UPDATE Clientes SET Nombre=?, Contrasena=?, Email=? WHERE Clientes.Cedula = ?");
+			ps = conn.prepareStatement(query);
+			ps.setString(1, persona.getFirst());
+			ps.setString(2, persona.getPassword());
+			ps.setString(3, persona.getEmail());
+			ps.setString(4, persona.getId());
+			ps.executeUpdate();
+			logger.info("Persona actualizada");
+		} catch (SQLException e) {
+			ExceptionPet excepPet = new ExceptionPet();
+			excepPet.setMensajeUsuario("Error actualizando persona");
+			excepPet.setMensajeTecnico("Error en updatePersona de la clase SigUpDAO (SQLException)");
+			excepPet.setExceptionOriginal(e);
+			throw excepPet;
+		} catch(Exception e){
+			ExceptionPet excepPet = new ExceptionPet();
+			excepPet.setMensajeUsuario("Error actualizando persona");
+			excepPet.setMensajeTecnico("Error en updatePersona de la clase SigUpDAO");
+			excepPet.setExceptionOriginal(e);
+			throw excepPet;
+		}finally{
+			try { rs.close(); } catch (Exception e) { /* ignored */ }
+		    try { st.close(); } catch (Exception e) { /* ignored */ }
+		    try {
+		    	pool.liberarConexion(conexion);
+		    } catch (Exception e) { /* ignored */ }
+			
+		}
+	}
+	
 }

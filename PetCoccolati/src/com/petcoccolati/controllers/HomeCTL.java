@@ -25,10 +25,8 @@ public class HomeCTL extends GenericForwardComposer{
 	}
 	
 	public void onCreate(){
-		Execution execution = Executions.getCurrent();
-		String name = execution.getParameter("Nombre");
-		System.out.println(name);
-		userLabel.setValue(name);
+		PersonaDTO usuario = (PersonaDTO) Executions.getCurrent().getSession().getAttribute("Usuario");
+		userLabel.setValue(usuario.getFirst());
 	}
 	
 }

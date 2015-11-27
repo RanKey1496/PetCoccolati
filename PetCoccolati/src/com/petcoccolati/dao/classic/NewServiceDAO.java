@@ -79,7 +79,7 @@ public class NewServiceDAO implements NewServiceDAOInt{
 	}
 
 	@Override
-	public List<NewServiceDTO> listaServicios(int petId) throws ExceptionPet {
+	public List<NewServiceDTO> listaServicios(String cedula) throws ExceptionPet {
 			
 		Statement st = null;
 		PreparedStatement ps = null;
@@ -93,9 +93,9 @@ public class NewServiceDAO implements NewServiceDAOInt{
 			conn = conexion.getConexion();
 			
 			st = conn.createStatement();
-			String query = "SELECT * FROM Servicios WHERE Mascota_Id=?";
+			String query = "SELECT * FROM Servicios, (SELECT Id FROM Mascotas JOIN Clientes WHERE Mascotas.Cliente_Cedula = Clientes.Cedula AND Clientes.Cedula = ?) AS A WHERE Servicios.Mascota_Id = A.Id";
 			ps = conn.prepareStatement(query);
-			ps.setInt(1, petId);
+			ps.setString(1, cedula);
 	
 			rs = ps.executeQuery();
 			while(rs.next()){

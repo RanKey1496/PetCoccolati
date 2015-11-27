@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.ListModel;
 import org.zkoss.zul.ListModelList;
@@ -14,6 +15,7 @@ import org.zkoss.zul.ListitemRenderer;
 
 import com.petcoccolati.dao.classic.NewServiceDAO;
 import com.petcoccolati.dto.NewServiceDTO;
+import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.dto.PetDTO;
 import com.petcoccolati.ngc.HistoryNGC;
 import com.petcoccolati.ngc.NewServiceNGC;
@@ -25,6 +27,7 @@ public class HistoryCTL extends GenericForwardComposer implements ListitemRender
 	private Listbox lbHistory;
 	private static final Logger logger = Logger.getLogger(HistoryCTL.class);
 	private NewServiceNGC newServiceNgc;
+	private PersonaDTO usuario;
 
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
@@ -39,13 +42,14 @@ public class HistoryCTL extends GenericForwardComposer implements ListitemRender
 	}
 
 	public void onCreate() {
+		usuario = (PersonaDTO) Executions.getCurrent().getSession().getAttribute("Usuario");
 		definirModelo();
 	}
 
 	private void definirModelo() {
 		List<NewServiceDTO> historyList = null;
 		try {
-			historyList = newServiceNgc.listaServicios(5);
+			historyList = newServiceNgc.listaServicios(usuario.getId());
 		} catch (ExceptionPet e) {
 			e.printStackTrace();
 		}

@@ -51,7 +51,9 @@
 			</html:li>
 			
 			<html:li>
-				<html:a style="font-weight: 400; margin-top: 50px;"><label id="lblLogOut" value="${labels.lblLogOut}"></label></html:a>
+				<html:a style="font-weight: 400; margin-top: 50px;">
+					<label id="lblLogOut" value="${labels.lblLogOut}"></label>
+				</html:a>
 			</html:li>
 			
 			</html:ul>

@@ -7,7 +7,7 @@
 		<hbox style="margin-left:3%; margin-top:1%;">
 			<vbox style="margin-right:30px;">
 				<label sclass="sub_header" value="${labels.lblType}"></label>
-				<combobox id="type" style="margin-top:20px;" sclass="cmbService" readonly="true" value="Select...">
+				<combobox id="type" style="margin-top:20px;" sclass="cmbService" readonly="true" value="" constraint="no empty">
 					<comboitem label="${labels.lblPeluqueria}" sclass="comboLink" />
 					<comboitem label="${labels.lblGuarderia}" sclass="comboLink" />
 					<comboitem label="${labels.lblCitaMedica}" sclass="comboLink" />
@@ -15,15 +15,12 @@
 			</vbox>
 			<vbox style="margin-right:30px;">
 				<label sclass="sub_header" value="${labels.lblDate}"></label>
-				<datebox style="margin-top:20px;" id="date" cols="12" format="yyyy/MM/dd" onCreate="self.value = new Date()" />
-            	<timebox style="margin-top:20px;" id="time" cols="12" format="a hh:mm:ss" onCreate="self.value = new Date()" />
+				<datebox style="margin-top:20px;" id="date" cols="12" format="yyyy/MM/dd" onCreate="self.value = new Date()" readonly="true"/>
+            	<timebox style="margin-top:20px;" id="time" cols="12" format="a hh:mm:ss" onCreate="self.value = new Date()"/>
 			</vbox>
 			<vbox style="margin-right:30px;">
 				<label sclass="sub_header" value="${labels.lblPet}"></label>
-				<combobox id="pet" style="margin-top:20px;" sclass="cmbService" readonly="true" value="Select...">
-					<comboitem label="${labels.lblmascota1}" sclass="comboLink" />
-					<comboitem label="${labels.lblmascota2}" sclass="comboLink" />
-					<comboitem label="${labels.lblmascota3}" sclass="comboLink" />
+				<combobox id="pet" style="margin-top:20px;" sclass="cmbService" readonly="true" value="" constraint="no empty">
 				</combobox>
 			</vbox>
 			<vbox style="margin-right:30px;">

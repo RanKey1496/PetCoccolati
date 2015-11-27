@@ -28,4 +28,13 @@ public class SignUpNGC {
 			throw eWeb;
 		}
 	}
+	
+	public void updatePersona(PersonaDTO personaDTO) throws ExceptionPet {
+		try {
+			signupDAO.updatePersona(personaDTO);
+			logger.info("Entro a updatePersona SignUpNGC");
+		}catch(ExceptionPet eWeb){
+			throw eWeb;
+		}
+	}
 }

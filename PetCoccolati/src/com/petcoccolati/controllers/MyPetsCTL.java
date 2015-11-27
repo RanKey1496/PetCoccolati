@@ -23,6 +23,8 @@ public class MyPetsCTL extends GenericForwardComposer implements ListitemRendere
 
 	private Listbox lsxPet;
 	private PetNGC petNGC;
+	private PersonaDTO usuario;
+	private static final Logger logger = Logger.getLogger(MyPetsCTL.class);
 
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
@@ -36,13 +38,15 @@ public class MyPetsCTL extends GenericForwardComposer implements ListitemRendere
 	}
 
 	public void onCreate() {
+		usuario = (PersonaDTO) Executions.getCurrent().getSession().getAttribute("Usuario");
 		definirModelo();
 	}
 
 	private void definirModelo() {
 		List<PetDTO> listaPet = null;
 		try {
-			listaPet = petNGC.listaPets();
+			listaPet = petNGC.listaPets(usuario.getId());
+			logger.info("Cargó la lista de Mascotas");
 		} catch (ExceptionPet e) {
 			e.printStackTrace();
 		}

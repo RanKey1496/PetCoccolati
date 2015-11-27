@@ -47,7 +47,8 @@ public class LoginCTL extends GenericForwardComposer{
 		try {
 			PersonaDTO usuario = loginNGC.verificarPersona(persona);
 			if(usuario != null){
-				Executions.sendRedirect("home.zul?Nombre="+usuario.getId());
+				Executions.getCurrent().getSession().setAttribute("Usuario", usuario);
+				Executions.sendRedirect("portal.zul");
 			}else{
 				Messagebox.show("El usuario no existe");
 			}

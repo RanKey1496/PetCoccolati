@@ -6,16 +6,26 @@ import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Include;
 
+import com.petcoccolati.dto.PersonaDTO;
+
 public class PortalCTL extends GenericForwardComposer implements PortalIntCTL{
 	
 	private Include innerIncld;
 	
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
+		
 	}
 	
 	public PortalCTL(){
 		
+	}
+	
+	public void onCreate(){
+		PersonaDTO usuario = (PersonaDTO) Executions.getCurrent().getSession().getAttribute("Usuario");
+		if(usuario == null){
+			Executions.sendRedirect("login.zul");
+		}
 	}
 	
 	public void onClick$lblHome(Event e) {
@@ -37,6 +47,7 @@ public class PortalCTL extends GenericForwardComposer implements PortalIntCTL{
 		innerIncld.setSrc("settings.zul");
 	}
 	public void onClick$lblLogOut(Event e) {
+		Executions.getCurrent().getSession().setAttribute("Usuario", null);
 		Executions.sendRedirect("index.zul");
-	}	
+	}
 }

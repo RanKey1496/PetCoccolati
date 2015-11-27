@@ -32,9 +32,14 @@ public class PetNGC {
 		}
 	}
 
-	public List<PetDTO> listaPets() throws ExceptionPet {
+	public List<PetDTO> listaPets(String cedula) throws ExceptionPet {
 		logger.info("Entro a listaPets PetNGC");
-		return petDAO.listaPets();
+		return petDAO.listaPets(cedula);
+	}
+	
+	public List<String> listaNombrePets(String cedula) throws ExceptionPet{
+		logger.info("Entro a listaPets PetNGC");
+		return petDAO.listNombrePets(cedula);
 	}
 
 }

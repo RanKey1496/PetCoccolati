@@ -9,6 +9,7 @@ public class PetDTO {
 	String breed;
 	String species;
 	String dni;
+	private String cedula;
 	
 	public int getId() {
 		return id;
@@ -51,6 +52,12 @@ public class PetDTO {
 	}
 	public void setDni(String dni) {
 		this.dni = dni;
+	}
+	public String getCedula() {
+		return cedula;
+	}
+	public void setCedula(String cedula) {
+		this.cedula = cedula;
 	}
 
 }
