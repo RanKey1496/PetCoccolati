@@ -18,8 +18,8 @@
 			<vbox style="margin-right:30px;" pack="center" align="center">
 				<label sclass="sub_header" value="${labels.lblChooseLanguage}"></label>
 				<radiogroup orient="vertical">
-					<radio id="English" selected="true" style="font-family: 'Roboto';" label="ENGLISH"></radio>
-					<radio id="Spanish" label="SPANISH" style="font-family: Roboto;"></radio>
+					<radio id="Spanish" selected="true" label="SPANISH" style="font-family: Roboto;"></radio>
+					<radio id="English" style="font-family: 'Roboto';" label="ENGLISH"></radio>
 				</radiogroup>						
 			</vbox>	
 			<vbox pack="center" align="center">				

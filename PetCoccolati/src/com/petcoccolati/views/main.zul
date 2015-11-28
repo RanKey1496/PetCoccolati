@@ -1,31 +1,30 @@
 <?page contentType="text/html;charset=UTF-8"?>
-<?link rel="shortcut icon" type="image/x-icon" href="img/icons/favicon.ico"?>
-<?link rel="icon" type="image/x-icon" href="img/icons/favicon.ico"?>
 <zk>
 	<style src="style/main_style.css"></style>
-	<div sclass="header">
+	<div sclass="header" style="background: url('img/wall.png');">
 		<hbox sclass="buttons" width="100%" pack="center">
-			<image style="margin-right:250px"
-				src="img/logoPetCoccolati.png" width="70px" height="70px">
+			<image style="margin-right: 350px; margin-top:20px;"
+				src="img/logoIndex.png" >
 			</image>
-			<button id="btnLogin" label="${labels.lblLogin}" class="btn-headers-session bigbtn">
+			<button id="btnLogin" label="${labels.lblLogin}" class="btn-headers-session bigbtn" style="margin-top:20px;">
 				<attribute name="onClick">
 					Executions.sendRedirect("login.zul");
 				</attribute>
 			</button>
-			<button id="btnSignup" label="${labels.lblSingUp}" class="btn-headers-session bigbtn">
+			<button id="btnSignup" label="${labels.lblSingUp}" class="btn-headers-session bigbtn" style="margin-top:20px;">
 				<attribute name="onClick">
 					Executions.sendRedirect("signup.zul");
 				</attribute>
 			</button>
 		</hbox>
+		<separator visible="true"></separator>
 	</div>
 	<div sclass="wallheader">
-		<image src="img/wall.png" width = "100%"></image>
 	</div>
 	<div sclass = "info_container" width="100%">
 		<vbox width="100%">
 			<hbox width="100%" pack="center">
+
 				<vbox pack="center" align="center" sclass="feature">
 					<image src="img/icons/history.png"></image>
 					<label sclass="label_title" value="${labels.lblHistorial}"></label>
@@ -91,7 +90,7 @@
 		</hbox>
 	</hbox>
 	<hbox sclass="footer" align="center" pack="center" width="100%" >
-		<label sclass="footer_copyright" style="margin-right:250px;"> © 2015 SoHomosexualRanGay - Villa pussy breaker - All Rights Reserved</label>
+		<label sclass="footer_copyright" style="margin-right:250px;" value="${labels.lblCopyright}"></label>
 		<image src="img/icons/facebook_extra.png" style="margin-left:250px;"></image>
 		<image src="img/icons/twitter.png" style="margin-left:2px;"></image>
 		<image src="img/icons/instagram.png" style="margin-left:2px;"></image>

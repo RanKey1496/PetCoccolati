@@ -66,4 +66,5 @@
 		src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 	</html:script>
 	<html:script src="scripts/nav_js.js"></html:script>
+	<html:script src="scripts/chat.js" data-cfasync='false'></html:script>
 </zk>
