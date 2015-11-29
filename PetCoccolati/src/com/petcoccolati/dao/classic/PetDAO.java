@@ -217,4 +217,58 @@ public class PetDAO implements PetDAOInt{
 		}
 
 	}
+
+	public void borrarPet(PetDTO pet) throws ExceptionPet {
+		Statement st = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		Conection conexion = null;
+
+		Connection conn = null;
+		try {
+			conexion = pool.getConexion();
+			System.out.println(conexion.toString());
+			conn = conexion.getConexion();
+
+			st = conn.createStatement();
+			String query = "DELETE FROM Mascotas WHERE Id = ?";
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, pet.getId());
+			ps.executeUpdate();
+			logger.info("Pet eliminada");
+
+		} catch (SQLException e) {
+			ExceptionPet excepPet = new ExceptionPet();
+			excepPet.setMensajeUsuario("Error borrando Pet");
+			excepPet.setMensajeTecnico("Error en borrarPet de la clase PetDAO (SQLException)");
+			excepPet.setExceptionOriginal(e);
+			throw excepPet;
+		} catch (NumberFormatException e) {
+			ExceptionPet excepPet = new ExceptionPet();
+			excepPet.setMensajeUsuario("Error borrando Pet");
+			excepPet.setMensajeTecnico("Error en borrarPet de la clase PetDAO (SQLException)");
+			excepPet.setExceptionOriginal(e);
+			throw excepPet;
+		} catch (Exception e) {
+			ExceptionPet excepPet = new ExceptionPet();
+			excepPet.setMensajeUsuario("Error borrando Pet");
+			excepPet.setMensajeTecnico("Error en borrarPet de la clase PetDAO");
+			excepPet.setExceptionOriginal(e);
+			throw excepPet;
+		} finally {
+			try {
+				rs.close();
+			} catch (Exception e) {
+				/* ignored */ }
+			try {
+				st.close();
+			} catch (Exception e) {
+				/* ignored */ }
+			try {
+				pool.liberarConexion(conexion);
+			} catch (Exception e) {
+				/* ignored */ }
+
+		}
+	}
 }

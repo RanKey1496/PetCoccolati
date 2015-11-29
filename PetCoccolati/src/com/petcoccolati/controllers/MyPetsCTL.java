@@ -1,18 +1,24 @@
 package com.petcoccolati.controllers;
 
 import java.util.List;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Execution;
 import org.zkoss.zk.ui.Executions;
+import org.zkoss.zk.ui.event.Event;
+import org.zkoss.zk.ui.util.Clients;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
+import org.zkoss.zkplus.acegi.ShowWindowEventListener;
 import org.zkoss.zul.ListModel;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Listcell;
 import org.zkoss.zul.Listitem;
 import org.zkoss.zul.ListitemRenderer;
+import org.zkoss.zul.Messagebox;
+import org.zkoss.zul.Window;
 
 import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.dto.PetDTO;
@@ -24,12 +30,16 @@ public class MyPetsCTL extends GenericForwardComposer implements ListitemRendere
 	private Listbox lsxPet;
 	private PetNGC petNGC;
 	private PersonaDTO usuario;
+	private ListModel model;
+	private PetDTO pet;
 	private static final Logger logger = Logger.getLogger(MyPetsCTL.class);
 
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
 	}
 
+	private Window win;
+	
 	public MyPetsCTL() {
 	}
 	
@@ -50,7 +60,7 @@ public class MyPetsCTL extends GenericForwardComposer implements ListitemRendere
 		} catch (ExceptionPet e) {
 			e.printStackTrace();
 		}
-		ListModel model = new ListModelList(listaPet);
+		model = new ListModelList(listaPet);
 		lsxPet.setModel(model);
 		lsxPet.setItemRenderer(this);
 	}
@@ -70,5 +80,31 @@ public class MyPetsCTL extends GenericForwardComposer implements ListitemRendere
 		arg0.appendChild(lcRaza);
 		arg0.appendChild(lcEspecie);
 		arg0.appendChild(lcDNI);
+	}
+
+	public void onSelect$lsxPet(Event e) throws ExceptionPet{
+		pet = (PetDTO) model.getElementAt(lsxPet.getSelectedIndex());
+	}
+	
+	public void onClick$btnMyPetDelete(Event e) throws ExceptionPet{
+		try {
+			petNGC.borrarPet(pet);
+			Messagebox.show(pet.getName() + " ya no es tu mascota :(", "Información", Messagebox.OK, Messagebox.EXCLAMATION, new org.zkoss.zk.ui.event.EventListener() {
+			    public void onEvent(Event evt) throws InterruptedException {
+			        if (evt.getName().equals("onOK")) {
+			        	Executions.sendRedirect("portal.zul?section=mypet");
+			        }
+			    }
+			});
+		} catch (NumberFormatException e2) {
+			e2.printStackTrace();
+		} catch (ExceptionPet e1) {
+			Messagebox.show(e1.getMensajeUsuario());
+			e1.pintarErrorLog(e1.getMensajeTecnico());
+		}
+	}
+	
+	public void onClick$btnMyPetAdd(Event e){
+		Executions.sendRedirect("portal.zul?section=newpet");
 	}
 }

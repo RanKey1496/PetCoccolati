@@ -15,8 +15,8 @@
 			</listhead>
 		</listbox>
 		<hbox style="position: fixed; bottom: 10%; right: 10%;">
-			<button sclass="bigbtn btn" label="${labels.btnDelete}"></button>
-			<button sclass="bigbtn btn" label="${labels.btnAdd}"></button>
+			<button id="btnMyPetDelete" sclass="bigbtn btn" label="${labels.btnDelete}"></button>
+			<button id="btnMyPetAdd" sclass="bigbtn btn" label="${labels.btnAdd}"></button>
 		</hbox>
 	</vbox>
 </zk>

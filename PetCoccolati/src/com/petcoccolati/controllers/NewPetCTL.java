@@ -54,6 +54,13 @@ public class NewPetCTL extends GenericForwardComposer{
 		try {
 			petNGC.crearPet(pet);
 			logger.info("Se añadió una mascota");
+			Messagebox.show(name.getText() + " es tu nueva mascota!", "Información", Messagebox.OK, Messagebox.EXCLAMATION, new org.zkoss.zk.ui.event.EventListener() {
+			    public void onEvent(Event evt) throws InterruptedException {
+			        if (evt.getName().equals("onOK")) {
+			        	Executions.sendRedirect("portal.zul?section=newpet");
+			        }
+			    }
+			});
 		} catch (NumberFormatException e2) {
 			e2.printStackTrace();
 		} catch (ExceptionPet e1) {

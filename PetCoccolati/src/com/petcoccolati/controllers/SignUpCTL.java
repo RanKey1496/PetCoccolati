@@ -58,6 +58,7 @@ public class SignUpCTL extends GenericForwardComposer {
 			try {
 				signupNgc.createPersona(persona);
 				logger.info("Se creó una Persona");
+				Executions.sendRedirect("login.zul");
 			} catch (ExceptionPet e2) {
 				Messagebox.show(e2.getMensajeUsuario());
 				System.out.println(e2.getMensajeTecnico());

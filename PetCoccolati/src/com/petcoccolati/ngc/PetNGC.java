@@ -42,4 +42,12 @@ public class PetNGC {
 		return petDAO.listNombrePets(cedula);
 	}
 
+	public void borrarPet(PetDTO pet) throws ExceptionPet{
+		try {
+			logger.info("Entro a borrarPet PetNGC");
+			petDAO.borrarPet(pet);
+		} catch (ExceptionPet e) {
+			throw e;
+		}
+	}
 }

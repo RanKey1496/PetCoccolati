@@ -14,7 +14,6 @@ public class PortalCTL extends GenericForwardComposer implements PortalIntCTL{
 	
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
-		
 	}
 	
 	public PortalCTL(){
@@ -25,6 +24,10 @@ public class PortalCTL extends GenericForwardComposer implements PortalIntCTL{
 		PersonaDTO usuario = (PersonaDTO) Executions.getCurrent().getSession().getAttribute("Usuario");
 		if(usuario == null){
 			Executions.sendRedirect("login.zul");
+		}
+		String link = execution.getParameter("section");
+		if (link != null){
+			innerIncld.setSrc(link+".zul");
 		}
 	}
 	

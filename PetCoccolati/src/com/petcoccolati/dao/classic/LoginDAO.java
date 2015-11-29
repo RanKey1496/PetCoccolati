@@ -9,7 +9,6 @@ import java.sql.Statement;
 import com.petcoccolati.bd.Conection;
 import com.petcoccolati.bd.PoolConection;
 import com.petcoccolati.dao.LoginDAOInt;
-import com.petcoccolati.dto.LoginDTO;
 import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.util.ExceptionPet;
 
@@ -23,7 +22,7 @@ public class LoginDAO implements LoginDAOInt {
 		pool = new PoolConection();
 	}
 	
-	public PersonaDTO searchPersona(LoginDTO persona) throws ExceptionPet{
+	public PersonaDTO searchPersona(PersonaDTO persona) throws ExceptionPet{
 		Statement st = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;

@@ -10,4 +10,5 @@ public interface PetDAOInt {
 	public void createPet(PetDTO pet) throws ExceptionPet;
 	public List<PetDTO> listaPets(String cedula) throws ExceptionPet;
 	public List<String> listNombrePets(String cedula) throws ExceptionPet;
+	public void borrarPet(PetDTO pet) throws ExceptionPet;
 }

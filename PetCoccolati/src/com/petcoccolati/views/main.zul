@@ -1,8 +1,8 @@
 <?page contentType="text/html;charset=UTF-8"?>
 <zk>
 	<style src="style/main_style.css"></style>
-	<div sclass="header" style="background: url('img/wall.png');">
-		<hbox sclass="buttons" width="100%" pack="center">
+	<div sclass="header" style="background: url('img/wall2.png');">
+		<hbox id="headers" sclass="buttons" width="100%" pack="center">
 			<image style="margin-right: 350px; margin-top:20px;"
 				src="img/logoIndex.png" >
 			</image>
@@ -17,7 +17,11 @@
 				</attribute>
 			</button>
 		</hbox>
-		<separator visible="true"></separator>
+		<vbox style="margin-left: 20%; margin-top: 15%;">
+			<label sclass="label_header">Tenemos demasiado Swag</label>
+			<label sclass="label_header">Entonces sobala en forma :V</label>
+			<button sclass="btn-headers bigbtn">CREAR MI CUENTA AHORA</button>
+		</vbox>
 	</div>
 	<div sclass="wallheader">
 	</div>

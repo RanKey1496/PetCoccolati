@@ -8,7 +8,6 @@ import org.zkoss.zul.Button;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Textbox;
 
-import com.petcoccolati.dto.LoginDTO;
 import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.ngc.LoginNGC;
 import com.petcoccolati.ngc.NewServiceNGC;
@@ -21,14 +20,14 @@ public class LoginCTL extends GenericForwardComposer{
 	private Button btnSignin;
 	private Button btnCreate;
 	
-	private LoginNGC loginNGC;
+	private LoginNGC personaNGC;
 	
 	public LoginCTL(){
 		
 	}
 	
-	public void setLoginNGC(LoginNGC loginNGC){
-		this.loginNGC = loginNGC;
+	public void setLoginNGC(LoginNGC personaNGC){
+		this.personaNGC = personaNGC;
 	}
 	
 	public void doAfterCompose(Component comp) throws Exception {
@@ -41,16 +40,16 @@ public class LoginCTL extends GenericForwardComposer{
 	}	
 	
 	public void onClick$btnSignin(Event e) {
-		LoginDTO persona = new LoginDTO();
+		PersonaDTO persona = new PersonaDTO();
 		persona.setEmail(txtEmail.getText());
 		persona.setPassword(txtPassword.getText());
 		try {
-			PersonaDTO usuario = loginNGC.verificarPersona(persona);
+			PersonaDTO usuario = personaNGC.verificarPersona(persona);
 			if(usuario != null){
 				Executions.getCurrent().getSession().setAttribute("Usuario", usuario);
 				Executions.sendRedirect("portal.zul");
 			}else{
-				Messagebox.show("El usuario no existe");
+				Messagebox.show("Email o contraseña incorrecto", "Error", Messagebox.OK, Messagebox.ERROR);
 			}
 		} catch (ExceptionPet e2) {
 			Messagebox.show(e2.getMensajeUsuario());
