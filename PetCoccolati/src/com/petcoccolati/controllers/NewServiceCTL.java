@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import javax.swing.ComboBoxModel;
 
@@ -88,10 +89,10 @@ public class NewServiceCTL extends GenericForwardComposer{
   		//Arreglar esta mierda
   		String valores = date.getValue().toString();
   		String valoresend = dateend.getValue().toString();
-  		Date fecha = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(valores);
-  		Date fechaend = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(valoresend);
+  		Date fecha = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss zzz").parse(valores);
+  		Date fechaend = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss zzz").parse(valoresend);
   		Date dateactual = new Date();
-  		
+  		System.out.println(fecha.getTime());  		
   		long diferencia = fechaend.getTime() - fecha.getTime();
   		double precio = diferencia/0.00416;
   		
@@ -128,8 +129,7 @@ public class NewServiceCTL extends GenericForwardComposer{
 		try {
 			listNombrePet = petNGC.listaNombrePets(usuario.getId());
 			listPet = petNGC.listaPets(usuario.getId());
-			listNombreType = newServiceNgc.listaNombreType();
-			listType = newServiceNgc.listaServicios();
+			listNombreType = newServiceNgc.listaNombreType();			
 			logger.info("Cargó la lista de Mascotas");
 		} catch (ExceptionPet e) {
 			e.printStackTrace();

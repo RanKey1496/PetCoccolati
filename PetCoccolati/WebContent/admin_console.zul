@@ -1,0 +1,21 @@
+<?page title="Consola de administracion" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<style src="style/admin_login_style.css"></style>
+	<vbox height="100%" width="100%" pack="center" align="center" style="background: url('img/dog_admin.jpg');" apply="${AdminLoginCTL}">
+		<div align="center" style="margin-top: 3%;">
+		<vbox width="220px" height="220px">
+			<vbox align="center" width="100%" style="background-color: rgba(255, 255, 255, .4);" sclass="container">
+				<image src="img/logoPetCoccolati.png" width="175px;" height="175px;"></image>
+				<label sclass="lbl" style="display: block; float: left;" value="${labels.lblLoginAdmin}"></label>
+				<textbox id="txtId" width="100%" height="35px" constraint="no empty"></textbox>
+				<hbox>
+					<label sclass="lbl" style="display: block; float: left; margin-right:100px;" value="${labels.lblLoginPassword}"></label>				
+				</hbox>
+				<textbox id="txtPassword" type="password" width="100%" height="35px" constraint="no empty"></textbox>
+				<button id="btnSignin" sclass="btn bigbtn" style="float: left; margin-top: 15px;" label="${labels.btnLoginSignIn}"></button>
+			</vbox>
+		</vbox>
+	</div>
+	</vbox>
+</zk>

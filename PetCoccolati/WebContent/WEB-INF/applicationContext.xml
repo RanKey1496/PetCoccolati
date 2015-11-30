@@ -17,6 +17,14 @@
 		<property name="newServiceNgc" ref="newServiceNgc"></property>
 	</bean>
 	
+	<bean id="AdminLoginCTL" class="com.petcoccolati.controllers.AdminLoginCTL" scope="prototype">
+		<property name="adminLoginNGC" ref="adminLoginNGC"></property>
+	</bean>
+	
+	<bean id="AdminDashCTL" class="com.petcoccolati.controllers.AdminDashCTL" scope="prototype">
+		<property name="adminDashNGC" ref="adminDashNGC"></property>
+	</bean>
+		
 	<bean id = "LoginCTL" class="com.petcoccolati.controllers.LoginCTL" scope="prototype">
 		<property name="loginNGC" ref="loginNGC"></property>
 	</bean>
@@ -48,6 +56,14 @@
 		<property name="loginDAO" ref="loginDAO"></property>
 	</bean>
 	
+	<bean id="adminDashNGC" class="com.petcoccolati.ngc.AdminDashNGC">
+		<property name="adminDashDAO" ref="adminDashDAO"></property>
+	</bean>
+	
+	<bean id="adminLoginNGC" class="com.petcoccolati.ngc.AdminLoginNGC">
+		<property name="adminLoginDAO" ref="adminLoginDAO"></property>
+	</bean>
+	
 	<bean id="petNGC" class="com.petcoccolati.ngc.PetNGC">
 		<property name="petDAO" ref="petDAO"></property>
 	</bean>
@@ -62,15 +78,10 @@
 	
 	<!-- BEANS PARA LA PERSISTENCIA -->
 	
-	<bean id="loginDAO" class="com.petcoccolati.dao.classic.LoginDAO"></bean>
-	
-	<bean id="petDAO" class="com.petcoccolati.dao.classic.PetDAO">
-	</bean>
-	
-	<bean id="newServiceDao" class="com.petcoccolati.dao.classic.NewServiceDAO">
-	</bean>
-	
-	<bean id="signupDAO" class="com.petcoccolati.dao.classic.SignUpDAO">
-	</bean>
-
+	<bean id="adminDashDAO" class="com.petcoccolati.dao.classic.AdminDashDAO"></bean>	
+	<bean id="loginDAO" class="com.petcoccolati.dao.classic.LoginDAO"></bean>	
+	<bean id="petDAO" class="com.petcoccolati.dao.classic.PetDAO"></bean>	
+	<bean id="adminLoginDAO" class="com.petcoccolati.dao.classic.AdminLoginDAO"></bean>		
+	<bean id="newServiceDao" class="com.petcoccolati.dao.classic.NewServiceDAO"></bean>	
+	<bean id="signupDAO" class="com.petcoccolati.dao.classic.SignUpDAO"></bean>
 </beans>

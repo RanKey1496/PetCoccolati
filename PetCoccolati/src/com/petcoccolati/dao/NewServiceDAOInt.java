@@ -14,7 +14,7 @@ public interface NewServiceDAOInt {
 	public void createDetalle(DetalleDTO detalle) throws ExceptionPet;
 	public void createFactura(FacturaDTO factura) throws ExceptionPet;
 	public int lastIdFactura() throws ExceptionPet;
-	public List<ServicioDTO> listaServicios() throws ExceptionPet;
+	public List<ServicioDTO> listaServicios(String userId) throws ExceptionPet;
 	public List<String> listNombreType() throws ExceptionPet;
 	
 }

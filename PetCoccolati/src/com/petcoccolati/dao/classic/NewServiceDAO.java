@@ -175,7 +175,7 @@ public class NewServiceDAO implements NewServiceDAOInt{
 		return -1;
 	}
 	
-	public List<ServicioDTO> listaServicios() throws ExceptionPet {
+	public List<ServicioDTO> listaServicios(String userId) throws ExceptionPet {
 
 		Statement st = null;
 		PreparedStatement ps = null;
@@ -187,13 +187,11 @@ public class NewServiceDAO implements NewServiceDAOInt{
 			conexion = pool.getConexion();
 			System.out.println(conexion.toString());
 			conn = conexion.getConexion();
-
 			st = conn.createStatement();
-			String query = "SELECT * FROM Servicios";
-			ps = conn.prepareStatement(query);
-			
+			String query = "SELECT * FROM Mascotas WHERE Cliente_Cedula = ?";
+			ps = conn.prepareStatement(query);			
+			ps.setInt(1, Integer.valueOf(userId));
 			rs = ps.executeQuery();
-
 			List<ServicioDTO> serviceList = new ArrayList<>();
 			
 			while (rs.next()) {
