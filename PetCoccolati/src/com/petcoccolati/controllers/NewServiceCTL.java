@@ -1,7 +1,10 @@
 package com.petcoccolati.controllers;
 
-import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.swing.ComboBoxModel;
@@ -24,9 +27,12 @@ import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Timebox;
 
+import com.petcoccolati.dto.DetalleDTO;
+import com.petcoccolati.dto.FacturaDTO;
 import com.petcoccolati.dto.NewServiceDTO;
 import com.petcoccolati.dto.PersonaDTO;
 import com.petcoccolati.dto.PetDTO;
+import com.petcoccolati.dto.ServicioDTO;
 import com.petcoccolati.ngc.NewServiceNGC;
 import com.petcoccolati.ngc.PetNGC;
 import com.petcoccolati.util.ExceptionPet;
@@ -34,18 +40,22 @@ import com.petcoccolati.util.ExceptionPet;
 public class NewServiceCTL extends GenericForwardComposer{
   	
 	private Combobox type, pet;
-	private Datebox date;
-	private Timebox time;
+	private Datebox date, dateend;
 	private PetNGC petNGC;
 	private PersonaDTO usuario;
+	private FacturaDTO factura;
 	private int mascotaid;
+	private int servicioid;
+	private int lastIdFactura;
 	
 	private static final Logger logger = Logger.getLogger(NewServiceCTL.class);
 	
 	private NewServiceNGC newServiceNgc;
 
 	private List<PetDTO> listPet;
+	private List<ServicioDTO> listType;
 	private List<String> listNombrePet;
+	private List<String> listNombreType;
 	
 	public NewServiceCTL(){
 	}
@@ -54,6 +64,8 @@ public class NewServiceCTL extends GenericForwardComposer{
 		usuario = (PersonaDTO) Executions.getCurrent().getSession().getAttribute("Usuario");
 		definirModelo();
 		loadComboboxPet();
+		loadFacturaId();
+		loadComboboxType();
 	}
 	
 	public void setNewServiceNgc(NewServiceNGC newServiceNgc){
@@ -69,31 +81,55 @@ public class NewServiceCTL extends GenericForwardComposer{
 		logger.info("Se creó NewServiceCTL");
 	}
   
-  	public void onClick$request(Event e) throws ExceptionPet {
+  	public void onClick$request(Event e) throws ExceptionPet, ParseException {
   		loadMascotaId();
-  		NewServiceDTO newServiceDTO = new NewServiceDTO();
-  		newServiceDTO.setMascotaId(mascotaid);  		
-  		newServiceDTO.setPersonalCedula(1152210337);
-  		newServiceDTO.setTipo(type.getText().toString());
-  		newServiceDTO.setFechaInicio(date.getText());
-  		newServiceDTO.setFechaFin(date.getText());
+  		loadServicioId();
   		
+  		//Arreglar esta mierda
+  		String valores = date.getValue().toString();
+  		String valoresend = dateend.getValue().toString();
+  		Date fecha = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(valores);
+  		Date fechaend = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(valoresend);
+  		Date dateactual = new Date();
+  		
+  		long diferencia = fechaend.getTime() - fecha.getTime();
+  		double precio = diferencia/0.00416;
+  		
+  		FacturaDTO factura = new FacturaDTO();
+  		factura.setId(lastIdFactura+1);
+  		factura.setFecha(dateactual);
+  		factura.setMascota_id(mascotaid);
+  		
+  		DetalleDTO detalle = new DetalleDTO();
+  		detalle.setFacturaid(lastIdFactura+1);
+  		detalle.setId(1);
+  		detalle.setServicioid(servicioid);
+  		detalle.setPersonalcedula(95845414);
+  		detalle.setDescripcion("Sin contratiempos");
+  		detalle.setFechainicio(fecha);
+  		detalle.setFechafin(fechaend);
+  		detalle.setPrecio(precio);
+  		  		
   		try {
-  			newServiceNgc.crearServicio(newServiceDTO);
+  			newServiceNgc.crearFactura(factura);
+  			newServiceNgc.crearDetalle(detalle);
   			logger.info("Se añadió un servicio");
 		} catch (ExceptionPet e1) {
 			Messagebox.show(e1.getMensajeUsuario());
 			e1.pintarErrorLog(e1.getMensajeTecnico());
 		}
-  		
   	}
   	
   	private void definirModelo() {
   		listNombrePet = null;
   		listPet = null;
+  		listNombreType = null;
+  		listType = null;
 		try {
 			listNombrePet = petNGC.listaNombrePets(usuario.getId());
 			listPet = petNGC.listaPets(usuario.getId());
+			listNombreType = newServiceNgc.listaNombreType();
+			listType = newServiceNgc.listaServicios();
 			logger.info("Cargó la lista de Mascotas");
 		} catch (ExceptionPet e) {
 			e.printStackTrace();
@@ -104,7 +140,6 @@ public class NewServiceCTL extends GenericForwardComposer{
   		try {
 			ListModelList model = new ListModelList(listNombrePet);
 			pet.setModel(model);
-			pet.setSelectedIndex(0);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -113,5 +148,29 @@ public class NewServiceCTL extends GenericForwardComposer{
   	
   	private void loadMascotaId(){
   		mascotaid = listPet.get(pet.getSelectedIndex()).getId();
+  	}
+
+  	private void loadFacturaId(){
+  		try {
+			lastIdFactura = newServiceNgc.lastIdFactura();
+			logger.info("Se cargó el id de la ultima factura");
+		} catch (ExceptionPet e1) {
+			Messagebox.show(e1.getMensajeUsuario());
+			e1.pintarErrorLog(e1.getMensajeTecnico());
+		}
+  	}
+
+  	private void loadComboboxType(){
+  		try {
+			ListModelList model = new ListModelList(listNombreType);
+			type.setModel(model);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+  	}
+
+  	private void loadServicioId(){
+  		servicioid = listType.get(type.getSelectedIndex()).getId();
   	}
 }

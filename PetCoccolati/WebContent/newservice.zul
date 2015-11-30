@@ -8,22 +8,22 @@
 			<vbox style="margin-right:30px;">
 				<label sclass="sub_header" value="${labels.lblType}"></label>
 				<combobox id="type" style="margin-top:20px;" sclass="cmbService" readonly="true" value="" constraint="no empty">
-					<comboitem label="${labels.lblPeluqueria}" sclass="comboLink" />
-					<comboitem label="${labels.lblGuarderia}" sclass="comboLink" />
-					<comboitem label="${labels.lblCitaMedica}" sclass="comboLink" />
 				</combobox>
 			</vbox>
-			<vbox style="margin-right:30px;">
+			<vbox style="margin-right:10px;">
 				<label sclass="sub_header" value="${labels.lblDate}"></label>
-				<datebox style="margin-top:20px;" id="date" cols="12" format="yyyy/MM/dd" onCreate="self.value = new Date()" readonly="true"/>
-            	<timebox style="margin-top:20px;" id="time" cols="12" format="a hh:mm:ss" onCreate="self.value = new Date()"/>
+				<datebox style="margin-top:20px;" id="date" cols="12" format="yyyy/MM/dd hh:mm:ss" onCreate="self.value = new Date()" readonly="true"/>
 			</vbox>
-			<vbox style="margin-right:30px;">
+			<vbox style="margin-right:10px;">
+				<label sclass="sub_header" value="${labels.lblDateEnd}"></label>
+				<datebox style="margin-top:20px;" id="dateend" cols="12" format="yyyy/MM/dd hh:mm:ss" onCreate="self.value = new Date()" readonly="true"/>
+			</vbox>
+			<vbox style="margin-right:10px;">
 				<label sclass="sub_header" value="${labels.lblPet}"></label>
 				<combobox id="pet" style="margin-top:20px;" sclass="cmbService" readonly="true" value="" constraint="no empty">
 				</combobox>
 			</vbox>
-			<vbox style="margin-right:30px;">
+			<vbox style="margin-right:10px;">
 				<label sclass="sub_header" value="${labels.lblPickUpPet}"></label>
 				<radiogroup orient="vertical">
 					<radio selected="true" label="${labels.lblYes}"></radio>
