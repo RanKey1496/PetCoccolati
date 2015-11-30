@@ -9,8 +9,8 @@ public class DetalleDTO {
 	private int servicioid;
 	private int personalcedula;
 	private String descripcion;
-	private Date fechainicio;
-	private Date fechafin;
+	private String fechainicio;
+	private String fechafin;
 	private double precio;
 	
 	public int getFacturaid() {
@@ -43,16 +43,16 @@ public class DetalleDTO {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	public Date getFechainicio() {
+	public String getFechainicio() {
 		return fechainicio;
 	}
-	public void setFechainicio(Date fechainicio) {
+	public void setFechainicio(String fechainicio) {
 		this.fechainicio = fechainicio;
 	}
-	public Date getFechafin() {
+	public String getFechafin() {
 		return fechafin;
 	}
-	public void setFechafin(Date fechafin) {
+	public void setFechafin(String fechafin) {
 		this.fechafin = fechafin;
 	}
 	public double getPrecio() {

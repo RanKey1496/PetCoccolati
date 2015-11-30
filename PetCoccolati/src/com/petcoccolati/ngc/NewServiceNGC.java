@@ -53,9 +53,9 @@ public class NewServiceNGC {
 		}
 	}
 
-	public List<ServicioDTO> listaServicios(String userId) throws ExceptionPet{
+	public List<ServicioDTO> listaServicios() throws ExceptionPet{
 		logger.info("Entro a listaPets PetNGC");
-		return newServiceDao.listaServicios(userId);
+		return newServiceDao.listaServicios();
 	}
 	
 	public List<String> listaNombreType() throws ExceptionPet{

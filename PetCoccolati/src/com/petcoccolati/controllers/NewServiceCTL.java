@@ -65,8 +65,8 @@ public class NewServiceCTL extends GenericForwardComposer{
 		usuario = (PersonaDTO) Executions.getCurrent().getSession().getAttribute("Usuario");
 		definirModelo();
 		loadComboboxPet();
-		loadFacturaId();
 		loadComboboxType();
+		loadFacturaId();
 	}
 	
 	public void setNewServiceNgc(NewServiceNGC newServiceNgc){
@@ -83,22 +83,18 @@ public class NewServiceCTL extends GenericForwardComposer{
 	}
   
   	public void onClick$request(Event e) throws ExceptionPet, ParseException {
-  		loadMascotaId();
   		loadServicioId();
+  		loadMascotaId();
   		
   		//Arreglar esta mierda
   		String valores = date.getValue().toString();
   		String valoresend = dateend.getValue().toString();
-  		Date fecha = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss zzz").parse(valores);
-  		Date fechaend = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss zzz").parse(valoresend);
   		Date dateactual = new Date();
-  		System.out.println(fecha.getTime());  		
-  		long diferencia = fechaend.getTime() - fecha.getTime();
-  		double precio = diferencia/0.00416;
+  		String fecha = dateactual.toString();
   		
   		FacturaDTO factura = new FacturaDTO();
   		factura.setId(lastIdFactura+1);
-  		factura.setFecha(dateactual);
+  		factura.setFecha(fecha);
   		factura.setMascota_id(mascotaid);
   		
   		DetalleDTO detalle = new DetalleDTO();
@@ -107,14 +103,21 @@ public class NewServiceCTL extends GenericForwardComposer{
   		detalle.setServicioid(servicioid);
   		detalle.setPersonalcedula(95845414);
   		detalle.setDescripcion("Sin contratiempos");
-  		detalle.setFechainicio(fecha);
-  		detalle.setFechafin(fechaend);
-  		detalle.setPrecio(precio);
+  		detalle.setFechainicio(valores);
+  		detalle.setFechafin(valoresend);
+  		detalle.setPrecio(15000);
   		  		
   		try {
   			newServiceNgc.crearFactura(factura);
   			newServiceNgc.crearDetalle(detalle);
   			logger.info("Se añadió un servicio");
+			Messagebox.show("Tu servicio será aceptado pronto!", "Información", Messagebox.OK, Messagebox.EXCLAMATION, new org.zkoss.zk.ui.event.EventListener() {
+			    public void onEvent(Event evt) throws InterruptedException {
+			        if (evt.getName().equals("onOK")) {
+			        	Executions.sendRedirect("portal.zul?section=newservice");
+			        }
+			    }
+			});
 		} catch (ExceptionPet e1) {
 			Messagebox.show(e1.getMensajeUsuario());
 			e1.pintarErrorLog(e1.getMensajeTecnico());
@@ -129,7 +132,8 @@ public class NewServiceCTL extends GenericForwardComposer{
 		try {
 			listNombrePet = petNGC.listaNombrePets(usuario.getId());
 			listPet = petNGC.listaPets(usuario.getId());
-			listNombreType = newServiceNgc.listaNombreType();			
+			listNombreType = newServiceNgc.listaNombreType();	
+			listType = newServiceNgc.listaServicios();
 			logger.info("Cargó la lista de Mascotas");
 		} catch (ExceptionPet e) {
 			e.printStackTrace();

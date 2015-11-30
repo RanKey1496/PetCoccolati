@@ -5,7 +5,7 @@ import java.util.Date;
 public class FacturaDTO {
 
 	private int id;
-	private Date fecha;
+	private String fecha;
 	private int mascota_id;
 	
 	public int getId() {
@@ -14,10 +14,10 @@ public class FacturaDTO {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Date getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
-	public void setFecha(Date fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 	public int getMascota_id() {

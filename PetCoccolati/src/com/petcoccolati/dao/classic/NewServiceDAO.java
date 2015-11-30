@@ -58,8 +58,8 @@ public class NewServiceDAO implements NewServiceDAOInt{
 			ps.setInt(3, detalle.getServicioid());
 			ps.setInt(4, detalle.getPersonalcedula());
 			ps.setString(5, detalle.getDescripcion());
-			ps.setDate(6, (Date) detalle.getFechainicio());
-			ps.setDate(7, (Date) detalle.getFechafin());
+			ps.setString(6, detalle.getFechainicio());
+			ps.setString(7, detalle.getFechafin());
 			ps.setDouble(8, detalle.getPrecio());
 			ps.executeUpdate();	
 			logger.info("Detalle creado");
@@ -104,7 +104,7 @@ public class NewServiceDAO implements NewServiceDAOInt{
 			String query = "INSERT INTO Facturas (Fecha, Mascota_Id) values (?, ?)";
 			ps = conn.prepareStatement(query);
 			
-			ps.setDate(1, (Date) factura.getFecha());
+			ps.setString(1, factura.getFecha());
 			ps.setInt(2, factura.getMascota_id());
 			logger.info("Factura creada");
 			ps.executeUpdate();			
@@ -175,7 +175,7 @@ public class NewServiceDAO implements NewServiceDAOInt{
 		return -1;
 	}
 	
-	public List<ServicioDTO> listaServicios(String userId) throws ExceptionPet {
+	public List<ServicioDTO> listaServicios() throws ExceptionPet {
 
 		Statement st = null;
 		PreparedStatement ps = null;
@@ -188,9 +188,8 @@ public class NewServiceDAO implements NewServiceDAOInt{
 			System.out.println(conexion.toString());
 			conn = conexion.getConexion();
 			st = conn.createStatement();
-			String query = "SELECT * FROM Mascotas WHERE Cliente_Cedula = ?";
-			ps = conn.prepareStatement(query);			
-			ps.setInt(1, Integer.valueOf(userId));
+			String query = "SELECT * FROM Servicios";
+			ps = conn.prepareStatement(query);
 			rs = ps.executeQuery();
 			List<ServicioDTO> serviceList = new ArrayList<>();
 			
