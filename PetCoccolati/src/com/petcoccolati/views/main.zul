@@ -18,8 +18,7 @@
 			</button>
 		</hbox>
 		<vbox style="margin-left: 20%; margin-top: 15%;">
-			<label sclass="label_header">Tenemos demasiado Swag</label>
-			<label sclass="label_header">Entonces sobala en forma :V</label>
+			<label sclass="label_header" value = "${labels.lblWelcome}"></label>
 			<button sclass="btn-headers bigbtn">CREAR MI CUENTA AHORA</button>
 		</vbox>
 	</div>
